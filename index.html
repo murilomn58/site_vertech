@@ -1,197 +1,350 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vertech Consultoria - Automatize sua PME com Inteligência Artificial.">
-    <title>Vertech Consultoria | Onde estratégia encontra automação</title>
+    <meta name="description" content="Vertech Consultoria - Pesquisa aplicada, automacao de redes e produto digital para PMEs.">
+    <title>Vertech Consultoria | IA e automacao para PMEs</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: -50px auto 0;
-            padding: 0 40px;
-            position: relative;
-            z-index: 10;
+        body.home-page {
+            background: radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.08), transparent 25%),
+                        radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.09), transparent 30%),
+                        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
         }
-        .stat-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        .hero-lean {
+            padding: 180px 40px 120px;
+            background: linear-gradient(135deg, #0f172a 0%, #111827 55%, #0b1224 100%);
+            color: white;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-lean::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 20%, rgba(59, 130, 246, 0.15), transparent 40%);
+            pointer-events: none;
+        }
+        .hero-lean .content {
+            max-width: 1080px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 24px;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .hero-lean h1 {
+            color: white;
+            margin: 0;
+            line-height: 1.1;
+            font-size: 56px;
+        }
+        .hero-lean p {
+            color: #e2e8f0;
+            font-size: 20px;
+            max-width: 760px;
+            line-height: 1.7;
+        }
+        .hero-cta-row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .btn-ghost {
+            background: transparent;
+            color: white;
+            padding: 16px 34px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s;
         }
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.15);
+        .btn-ghost:hover {
+            border-color: white;
+            transform: translateY(-2px);
         }
-        .stat-number {
-            font-size: 48px;
-            font-weight: 900;
-            color: var(--primary);
+        .section-header {
+            text-align: center;
+            max-width: 960px;
+            margin: 0 auto 32px;
+        }
+        .section-header h2 {
+            margin-bottom: 12px;
+        }
+        .panel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 24px;
+        }
+        .panel-card {
+            background: linear-gradient(145deg, #0f172a 0%, #111827 100%);
+            color: #e2e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3);
+        }
+        .panel-card h3 {
+            color: white;
+            margin: 0 0 12px;
+            font-size: 22px;
+        }
+        .panel-card p {
+            color: #cbd5e1;
+            margin: 0 0 14px;
+        }
+        .mini-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 8px;
+        }
+        .mini-list li {
+            color: #cbd5e1;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+        .mini-list strong {
+            color: white;
+        }
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .pill {
+            padding: 9px 14px;
+            background: var(--bg-light);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 14px;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 28px;
+        }
+        .step-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+        }
+        .step-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            color: var(--primary-dark);
             margin-bottom: 10px;
         }
-        .stat-label {
-            color: var(--text-light);
-            font-weight: 600;
-        }
-        .features {
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 28px;
         }
-        .feature-card {
-            text-align: center;
-            padding: 40px;
-            background: var(--bg-light);
-            border-radius: 15px;
-            border: 2px solid #e2e8f0;
-            transition: all 0.3s;
+        .portfolio-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
         }
-        .feature-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.1);
-        }
-        .feature-icon {
-            font-size: 56px;
-            margin-bottom: 20px;
-        }
-        .feature-card h3 {
-            font-size: 24px;
+        .portfolio-card h3 {
+            margin: 0 0 10px;
             color: var(--primary-dark);
-            margin-bottom: 15px;
         }
-        .feature-card p {
+        .portfolio-card ul {
+            margin: 0;
+            padding-left: 18px;
             color: var(--text-light);
-            line-height: 1.8;
+            display: grid;
+            gap: 8px;
         }
-        .cta-section {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            padding: 80px 40px;
+        .cta-block {
             text-align: center;
-            border-radius: 20px;
-            margin: 60px 0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            padding: 80px 40px;
+            border-radius: 18px;
+            color: white;
+            box-shadow: 0 24px 70px rgba(15, 23, 42, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 30px;
         }
-        .cta-section h2 {
-            margin-bottom: 20px;
+        .cta-block p {
+            color: #e0e7ff;
+            max-width: 640px;
+            margin: 0 auto 24px;
+            line-height: 1.7;
+            font-size: 18px;
         }
-        .cta-section p {
-            font-size: 20px;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        @media (max-width: 768px) {
+            .hero-lean { padding: 160px 20px 100px; }
+            .hero-lean h1 { font-size: 40px; }
+            .hero-lean p { font-size: 18px; }
         }
     </style>
 </head>
-<body>
+<body class="home-page">
     <header>
         <nav>
             <a href="index.html" class="logo">
                 <img src="logo.svg" alt="VERTECH">
                 VERTECH
+            </a>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="solucoes.html">Soluções</a></li>
-                <li><a href="casos.html">Casos</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="contato.html" class="cta-button">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h1>Onde estratégia encontra <span>automação</span></h1>
-            <p class="subtitle">Transforme sua empresas com Inteligência Artificial integrada em atendimento, vendas, financeiro e marketing</p>
-            <div class="hero-buttons">
-                <a href="contato.html" class="btn-primary">Agendar Consulta Grátis</a>
-                <a href="solucoes.html" class="btn-secondary">Conhecer Soluções</a>
+    <section class="hero-lean">
+        <div class="content">
+            <span class="eyebrow">Pesquisa aplicada + automacao</span>
+            <h1>IA, automacao e ciberseguranca para PMEs que querem escala</h1>
+            <p>Conectamos operacoes, dados e pessoas com agentes LLM + RAG, integracoes e governanca para entregar resultado medido em atendimento, vendas e financeiro.</p>
+            <div class="hero-cta-row">
+                <a href="https://wa.me/554989167594?text=Quero%20falar%20com%20a%20Vertech" class="btn-primary" target="_blank" rel="noopener">Falar no WhatsApp</a>
+                <a href="#portfolio" class="btn-ghost">Ver portfolio</a>
             </div>
-        </div>
-    </section>
-
-    <div class="stats">
-        <div class="stat-card">
-            <div class="stat-number">-40%</div>
-            <div class="stat-label">Redução de No-shows</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">+25%</div>
-            <div class="stat-label">Mais Agendamentos</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">15h</div>
-            <div class="stat-label">Economizadas/Semana</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-number">R$100</div>
-            <div class="stat-label">A partir de /mês</div>
-        </div>
-    </div>
-
-    <section>
-        <h2>Por que Vertech?</h2>
-        <p class="section-subtitle">Combinamos expertise técnica com profundo entendimento dos desafios reais de empresas emergentes brasileiras</p>
-        
-        <div class="features">
-            <div class="feature-card">
-                <div class="feature-icon">🎯</div>
-                <h3>Personalização Total</h3>
-                <p>Adaptamos a tecnologia ao seu processo, não o contrário. Cada negócio é único e merece uma solução sob medida.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔗</div>
-                <h3>Integração Completa</h3>
-                <p>Conectamos todos os sistemas da sua empresa de forma automatizada.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Resultados Rápidos</h3>
-                <p>Veja resultados reais em semanas, não meses. 1 mês grátis para validar o valor antes de se comprometer.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">👥</div>
-                <h3>Suporte Dedicado</h3>
-                <p>Time especializado acompanhando sua jornada do diagnóstico à otimização contínua.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🏆</div>
-                <h3>Tecnologias de Ponta</h3>
-                <p>Agentes de IA, Big Data, Webscraping inteligente, RAG, MCP server e Machine Learning. </p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>Investimento Acessível</h3>
-                <p>A partir de R$100/mês. Tecnologia de grande empresa com preço acessíveis.</p>
+            <div class="pill-row">
+                <div class="pill">Sprints de valor em 4 semanas</div>
+                <div class="pill">Stack seguro (IAM, SOC, MLOps)</div>
+                <div class="pill">Agente Verah com RAG</div>
             </div>
         </div>
     </section>
 
     <section>
-        <div class="cta-section">
-            <h2>Pronto para transformar seu negócio?</h2>
-            <p>Agende uma consulta gratuita e descubra como a Vertech pode automatizar seus processos e aumentar seus lucros</p>
-            <a href="contato.html" class="btn-primary">Falar com Especialista</a>
+        <div class="section-header">
+            <div class="eyebrow" style="background: rgba(30,64,175,0.08); color: var(--primary-dark);">Essencia</div>
+            <h2>Combinamos estrategia, engenharia e pessoas</h2>
+            <p class="section-subtitle">Guardrails, controle de acesso, observabilidade e produto digital para resolver gargalos reais de PMEs brasileiras.</p>
+        </div>
+        <div class="panel-grid">
+            <div class="panel-card">
+                <h3>DNA Tech + Negocio</h3>
+                <p>Olhar de impacto e metrica desde o desenho ate a operacao.</p>
+                <ul class="mini-list">
+                    <li><strong>Workshops</strong> com times de vendas, CS e financeiro.</li>
+                    <li><strong>Roadmap vivo</strong> de ganhos e riscos.</li>
+                </ul>
+            </div>
+            <div class="panel-card">
+                <h3>Governanca e seguranca</h3>
+                <p>Guardrails, controles de acesso e observabilidade em tudo que entregamos.</p>
+                <ul class="mini-list">
+                    <li><strong>Playbooks</strong> de SOC e respostas a incidentes.</li>
+                    <li><strong>Auditoria</strong> de prompts, dados e integracoes.</li>
+                </ul>
+            </div>
+            <div class="panel-card">
+                <h3>Sucesso compartilhado</h3>
+                <p>Cooperacao com metas quinzenais e revisao de KPIs.</p>
+                <ul class="mini-list">
+                    <li><strong>Equipe dedicada</strong> e acompanhamento semanal.</li>
+                    <li><strong>Treinamento</strong> para squads internos.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-header">
+            <div class="eyebrow" style="background: rgba(30,64,175,0.08); color: var(--primary-dark);">Como entregamos</div>
+            <h2>Resultados medidos em semanas</h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-title">1. Diagnostico rapido</div>
+                <p class="section-subtitle" style="margin: 0; text-align: left;">Mapa de fluxos, riscos e oportunidades em 10 dias.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-title">2. Prova de valor</div>
+                <p class="section-subtitle" style="margin: 0; text-align: left;">Piloto em 4 semanas com KPIs de atendimento, vendas ou financeiro.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-title">3. Operar com seguranca</div>
+                <p class="section-subtitle" style="margin: 0; text-align: left;">Acesso zero-trust, logging, guardrails e playbooks de resposta.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-title">4. Escalar</div>
+                <p class="section-subtitle" style="margin: 0; text-align: left;">Automacoes, integracoes e treinamento das squads internas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="section-header">
+            <div class="eyebrow" style="background: rgba(30,64,175,0.08); color: var(--primary-dark);">Portfolio</div>
+            <h2>Onde estamos entregando</h2>
+            <p class="section-subtitle">Solucoes integradas que conectam atendimento, vendas, financeiro e infraestrutura.</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <h3>Atendimento e vendas</h3>
+                <ul>
+                    <li>Chatbots com RAG e qualificacao automatica.</li>
+                    <li>Agendamento inteligente com reducao de no-show.</li>
+                    <li>Follow-ups automaticos e scoring de leads.</li>
+                </ul>
+            </div>
+            <div class="portfolio-card">
+                <h3>Financeiro e backoffice</h3>
+                <ul>
+                    <li>Previsao de fluxo de caixa e inadimplencia.</li>
+                    <li>Conciliacao e cobranca automatica.</li>
+                    <li>Relatorios gerenciais em tempo real.</li>
+                </ul>
+            </div>
+            <div class="portfolio-card">
+                <h3>Infraestrutura e seguranca</h3>
+                <ul>
+                    <li>Automatizacao de redes e observabilidade.</li>
+                    <li>Playbooks de SOC com resposta a incidentes.</li>
+                    <li>Auditoria de dados, acesso e prompts.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="cta-block">
+            <h2 style="color: white; margin-bottom: 12px;">Vamos rodar um piloto?</h2>
+            <p>Tracamos o plano, configuramos o agente Verah, orquestramos integracoes e entregamos KPIs rastreados. Sem burocracia.</p>
+            <a href="https://wa.me/554989167594?text=Quero%20validar%20um%20piloto%20com%20a%20Vertech" class="btn-primary" target="_blank" rel="noopener">Chamar no WhatsApp</a>
         </div>
     </section>
 
     <footer>
         <div style="max-width: 1200px; margin: 0 auto;">
             <div class="footer-logo">Vertech Consultoria</div>
-            <p style="opacity: 0.9; margin-bottom: 30px;">Onde estratégia encontra automação</p>
+            <p style="opacity: 0.9; margin-bottom: 30px;">Pesquisa aplicada, automacao e seguranca para PMEs</p>
             <div class="footer-contact">
                 <a href="mailto:murilomn58@gmail.com">Email: murilomn58@gmail.com</a>
                 <a href="tel:+554989167594">Telefone: +55 (49) 8916-7594</a>
@@ -199,13 +352,20 @@
             </div>
             <div class="footer-links">
                 <a href="index.html">Home</a>
-                <a href="solucoes.html">Soluções</a>
-                <a href="casos.html">Casos</a>
-                <a href="sobre.html">Sobre</a>
                 <a href="contato.html">Contato</a>
             </div>
-            <div class="copyright">© 2025 Vertech Consultoria. Todos os direitos reservados.</div>
+            <div class="copyright">c 2025 Vertech Consultoria. Todos os direitos reservados.</div>
         </div>
     </footer>
+
+    <a class="whatsapp-fab" href="https://wa.me/554989167594?text=Quero%20falar%20com%20a%20Vertech" target="_blank" rel="noopener">
+        <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.5 3.5a10.55 10.55 0 0 0-15 0 10.55 10.55 0 0 0-1.9 12.4L2 22l6.2-1.6a10.55 10.55 0 0 0 12.3-1.9 10.55 10.55 0 0 0 0-15Z"/>
+                <path d="M8.5 9c0 .7.2 1.4.6 2 .3.5 1.5 2.1 3.5 3.1.3.1 1.1.5 1.6.6.4.1.8 0 1.1-.3l.7-.7c.2-.2.2-.5 0-.7l-.9-1c-.2-.2-.5-.2-.7 0l-.5.5c-.1.1-.3.1-.5.1-.2-.1-.9-.3-1.5-.8-.5-.4-.9-1-.9-1.1 0-.1 0-.2.1-.2l.5-.6c.2-.2.2-.5 0-.7l-.9-1c-.2-.2-.5-.2-.7 0L9 7.7c-.3.3-.5.8-.5 1.3Z"/>
+            </svg>
+        </span>
+        Fale conosco
+    </a>
 </body>
 </html>
