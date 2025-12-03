@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vertech Consultoria - Automatize sua PME com Inteligência Artificial.">
+    <title>Vertech Consultoria | Onde estratégia encontra automação</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 0 40px;
+            position: relative;
+            z-index: 10;
+        }
+        .stat-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.15);
+        }
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .feature-card {
+            text-align: center;
+            padding: 40px;
+            background: var(--bg-light);
+            border-radius: 15px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.1);
+        }
+        .feature-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+        .feature-card h3 {
+            font-size: 24px;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 80px 40px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+        .cta-section h2 {
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="logo.svg" alt="VERTECH">
+                VERTECH
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="solucoes.html">Soluções</a></li>
+                <li><a href="casos.html">Casos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html" class="cta-button">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h1>Onde estratégia encontra <span>automação</span></h1>
+            <p class="subtitle">Transforme sua empresas com Inteligência Artificial integrada em atendimento, vendas, financeiro e marketing</p>
+            <div class="hero-buttons">
+                <a href="contato.html" class="btn-primary">Agendar Consulta Grátis</a>
+                <a href="solucoes.html" class="btn-secondary">Conhecer Soluções</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">-40%</div>
+            <div class="stat-label">Redução de No-shows</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">+25%</div>
+            <div class="stat-label">Mais Agendamentos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">15h</div>
+            <div class="stat-label">Economizadas/Semana</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">R$100</div>
+            <div class="stat-label">A partir de /mês</div>
+        </div>
+    </div>
+
+    <section>
+        <h2>Por que Vertech?</h2>
+        <p class="section-subtitle">Combinamos expertise técnica com profundo entendimento dos desafios reais de empresas emergentes brasileiras</p>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Personalização Total</h3>
+                <p>Adaptamos a tecnologia ao seu processo, não o contrário. Cada negócio é único e merece uma solução sob medida.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h3>Integração Completa</h3>
+                <p>Conectamos todos os sistemas da sua empresa de forma automatizada.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Resultados Rápidos</h3>
+                <p>Veja resultados reais em semanas, não meses. 1 mês grátis para validar o valor antes de se comprometer.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Suporte Dedicado</h3>
+                <p>Time especializado acompanhando sua jornada do diagnóstico à otimização contínua.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Tecnologias de Ponta</h3>
+                <p>Agentes de IA, Big Data, Webscraping inteligente, RAG, MCP server e Machine Learning. </p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Investimento Acessível</h3>
+                <p>A partir de R$100/mês. Tecnologia de grande empresa com preço acessíveis.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="cta-section">
+            <h2>Pronto para transformar seu negócio?</h2>
+            <p>Agende uma consulta gratuita e descubra como a Vertech pode automatizar seus processos e aumentar seus lucros</p>
+            <a href="contato.html" class="btn-primary">Falar com Especialista</a>
+        </div>
+    </section>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="footer-logo">Vertech Consultoria</div>
+            <p style="opacity: 0.9; margin-bottom: 30px;">Onde estratégia encontra automação</p>
+            <div class="footer-contact">
+                <a href="mailto:murilomn58@gmail.com">Email: murilomn58@gmail.com</a>
+                <a href="tel:+554989167594">Telefone: +55 (49) 8916-7594</a>
+                <a href="https://wa.me/554989167594" target="_blank" rel="noopener">WhatsApp: +55 (49) 8916-7594</a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="solucoes.html">Soluções</a>
+                <a href="casos.html">Casos</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div class="copyright">© 2025 Vertech Consultoria. Todos os direitos reservados.</div>
+        </div>
+    </footer>
+</body>
+</html>

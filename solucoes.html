@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossas Soluções | Vertech Consultoria</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .solutions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:60px}
+        .solution-card{background:var(--bg-light);padding:40px;border-radius:15px;border:2px solid #e2e8f0;transition:all .3s}
+        .solution-card:hover{border-color:var(--primary);transform:translateY(-5px);box-shadow:0 15px 40px rgba(59,130,246,.1)}
+        .solution-icon{font-size:56px;margin-bottom:20px}
+        .solution-card h3{font-size:28px;color:var(--primary-dark);margin-bottom:15px}
+        .solution-card p{color:var(--text-light);line-height:1.8;margin-bottom:20px}
+        .solution-features{background:white;padding:20px;border-radius:10px;margin-top:20px}
+        .solution-features h4{font-size:16px;color:var(--primary-dark);margin-bottom:10px}
+        .solution-features ul{list-style:none}
+        .solution-features li{padding:5px 0 5px 20px;position:relative;color:var(--text-light);font-size:14px}
+        .solution-features li::before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:900}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="logo.svg" alt="Vertech">VERTECH</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solucoes.html" class="active">Soluções</a></li>
+                <li><a href="casos.html">Casos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html" class="cta-button">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div style="max-width:900px;margin:0 auto">
+            <h1>Nossas <span>Soluções</span></h1>
+            <p class="subtitle">Automação inteligente e personalizada para cada área do seu negócio</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Portfólio</h2>
+        <p class="section-subtitle">Soluções integradas que trabalham em conjunto para maximizar seus resultados</p>
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <div class="solution-icon">🤝</div>
+                <h3>Atendimento ao Cliente</h3>
+                <p>IA conversacional 24/7 que transforma seu atendimento em uma máquina de conversão automatizada</p>
+                <div class="solution-features">
+                    <h4>Funcionalidades:</h4>
+                    <ul>
+                        <li>Chatbot inteligente via WhatsApp e site</li>
+                        <li>Qualificação automática de leads</li>
+                        <li>Agendamento inteligente de consultas</li>
+                        <li>Respostas personalizadas baseadas em histórico</li>
+                        <li>Integração com CRM e calendário</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-icon">📊</div>
+                <h3>Gestão de Vendas</h3>
+                <p>Pipeline automatizado que nunca deixa uma oportunidade escapar</p>
+                <div class="solution-features">
+                    <h4>Funcionalidades:</h4>
+                    <ul>
+                        <li>Follow-ups automáticos personalizados</li>
+                        <li>Análise preditiva de conversão</li>
+                        <li>Alertas de oportunidades quentes</li>
+                        <li>Relatórios de performance em tempo real</li>
+                        <li>Propostas automáticas personalizadas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-icon">💰</div>
+                <h3>Controle Financeiro</h3>
+                <p>Visão completa da saúde financeira com automação inteligente</p>
+                <div class="solution-features">
+                    <h4>Funcionalidades:</h4>
+                    <ul>
+                        <li>Categorização automática de despesas</li>
+                        <li>Previsão de fluxo de caixa com IA</li>
+                        <li>Alertas de inadimplência</li>
+                        <li>Relatórios gerenciais automáticos</li>
+                        <li>Integração com bancos e ERP</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-icon">📱</div>
+                <h3>Marketing Digital</h3>
+                <p>Campanhas inteligentes que se otimizam automaticamente</p>
+                <div class="solution-features">
+                    <h4>Funcionalidades:</h4>
+                    <ul>
+                        <li>Segmentação inteligente de público</li>
+                        <li>Criação de conteúdo assistida por IA</li>
+                        <li>Análise de ROI em tempo real</li>
+                        <li>Otimização automática de campanhas</li>
+                        <li>Relatórios de performance visual</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="text-align:center;background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 100%);padding:80px 40px;border-radius:20px;margin:60px 0">
+        <h2>Pronto para automatizar?</h2>
+        <p style="font-size:20px;color:var(--text-light);margin-bottom:30px">Comece com 1 mês grátis e veja os resultados</p>
+        <a href="contato.html" class="btn-primary">Solicitar Demo Gratuita</a>
+    </section>
+
+    <footer>
+        <div style="max-width:1200px;margin:0 auto">
+            <div class="footer-logo">VERTECH CONSULTORIA</div>
+            <p style="opacity:0.9;margin-bottom:30px">Onde estratégia encontra automação</p>
+            <div class="footer-contact">
+                <a href="mailto:murilomn58@gmail.com">Email: murilomn58@gmail.com</a>
+                <a href="tel:+554989167594">Telefone: +55 (49) 8916-7594</a>
+                <a href="https://wa.me/554989167594" target="_blank" rel="noopener">WhatsApp: +55 (49) 8916-7594</a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="solucoes.html">Soluções</a>
+                <a href="casos.html">Casos</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div class="copyright">© 2025 Vertech Consultoria. Todos os direitos reservados.</div>
+        </div>
+    </footer>
+</body>
+</html>

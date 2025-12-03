@@ -1,0 +1,19 @@
+<svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Cor de Destaque Primária: Azul Ciano (Ex: #00C8FF) -->
+    <defs>
+        <linearGradient id="grad" x1="50%" y1="0%" x2="50%" y2="100%">
+            <stop offset="0%" style="stop-color:#00C8FF;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0080FF;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Triângulo Base (Linhas de Convergência) -->
+    <!-- Linhas de fluxo de dados/camadas (Cores: Azul Profundo/Ciano) -->
+    <path d="M40 90 L50 70 L60 90" stroke="url(#grad)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30 90 L50 50 L70 90" stroke="url(#grad)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.7"/>
+    <path d="M20 90 L50 30 L80 90" stroke="url(#grad)" stroke-width="3" stroke-linecap="round" stroke-opacity="0.4"/>
+    
+    <!-- Ponto Vertex (O ápice da análise) - Brilho Branco -->
+    <circle cx="50" cy="10" r="5" fill="#FFFFFF"/>
+    <circle cx="50" cy="10" r="8" fill="none" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.5"/>
+</svg>
