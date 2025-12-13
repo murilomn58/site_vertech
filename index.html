@@ -1700,7 +1700,13 @@
                 });
 
                 const data = await response.json();
-                const botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || "Desculpe, tive um problema ao processar sua resposta. Tente novamente.";
+                if (!response.ok) {
+                    console.error("Gemini API error:", data);
+                    const msg = data?.error?.message || `Erro HTTP ${response.status}`;
+                    throw new Error(msg);
+                }
+                const botResponse =  data.candidates?.[0]?.content?.parts?.[0]?.text ||
+                "Não recebi texto do modelo. Tente novamente.";
 
                 // Add Bot Message
                 const botMsgDiv = document.createElement("div");
