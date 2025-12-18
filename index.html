@@ -3,48 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vertech Consultoria - Transforme sua PME com IA aplicada, automação e aplicativos sob medida. Entrega com disciplina militar.">
-    <title>Vertech Consultoria | IA, Automação e Apps para PMEs</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Vertech Soluções - Transforme sua PME com IA aplicada, automação e aplicativos sob medida. Entrega com disciplina militar.">
+    <title>Vertech Soluções | IA, Automação e Apps para PMEs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Adicionando biblioteca Marked para formatar o texto da IA -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    <!-- (Opcional) Fonte Inter - NÃO altera suas imagens. Se você já carrega Inter via style.css, pode remover. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
 
     <style>
-        body.home-page {
-            background: radial-gradient(circle at 10% 20%, rgba(30, 64, 175, 0.08), transparent 25%),
-                        radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.09), transparent 30%),
-                        linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            color: #1f2937;
-        }
+        /* ============================================
+           VERTECH SOLUÇÕES - NOVA IDENTIDADE VISUAL
+           Cores: Cyan #22D3EE, Navy #0F172A, Cyan Dark #0891B2
+           Tipografia: Montserrat
+        ============================================ */
         
-        /* Intro Section com logo grande */
+        :root {
+            --cyan: #22D3EE;
+            --cyan-light: #67E8F9;
+            --cyan-dark: #0891B2;
+            --navy: #0F172A;
+            --navy-light: #1E293B;
+            --gray-dark: #334155;
+            --gray: #64748B;
+            --gray-light: #94A3B8;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --border: #E2E8F0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #e11d48;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--off-white);
+            color: var(--navy);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { 
+            font-weight: 700; 
+            letter-spacing: -0.02em; 
+            color: var(--navy);
+        }
+        p { color: var(--gray-dark); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .text-center { text-align: center; }
+        .text-cyan { color: var(--cyan); }
+
+        /* ============================================
+           INTRO SECTION - LOGO VERTECH SOLUÇÕES
+        ============================================ */
         .intro-section {
-            background-color: #ffffff;
-            padding: 60px 0 40px;
+            background-color: var(--white);
+            padding: 50px 0 40px;
             text-align: center;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid var(--border);
             position: relative;
             z-index: 20;
         }
 
-        /* Tamanho fixo da logo */
-        .intro-logo {
-            width: 250px;
-            height: auto;
-            display: block;
-            margin: 0 auto 15px;
-        }
-
-        /* Animação da logo */
-        .logo-animate {
+        .intro-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
             opacity: 0;
             transform: translateX(-80px);
             animation: slideIn 1.2s ease-out forwards;
@@ -57,12 +89,45 @@
             }
         }
 
-        /* Frase com fade maior */
-        .fade-up {
+        .intro-logo-icon {
+            width: 90px;
+            height: 90px;
+            display: block;
+        }
+
+        .intro-logo-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .intro-logo-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            letter-spacing: 0.04em;
+            line-height: 1;
+            color: var(--navy);
+        }
+
+        .intro-logo-sub {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: 0.35em;
+            color: var(--cyan);
+            text-transform: uppercase;
+        }
+
+        .intro-phrase {
             opacity: 0;
             transform: translateY(60px);
             animation: fadeUp 1.4s ease-out forwards;
             animation-delay: 0.4s;
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         @keyframes fadeUp {
@@ -72,17 +137,12 @@
             }
         }
 
-        /* Typography & Utilities */
-        h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; }
-        p { line-height: 1.6; color: #4b5563; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .text-center { text-align: center; }
-        .text-primary { color: #2563eb; }
-        
-        /* Hero Section - Ajustado para layout lado a lado */
+        /* ============================================
+           HERO SECTION
+        ============================================ */
         .hero-lean {
-            padding: 120px 0;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #0b1224 100%);
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 55%, #0b1224 100%);
             color: white;
             display: flex;
             align-items: center;
@@ -93,13 +153,74 @@
             z-index: 10;
         }
 
+        .hero-lean::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(34,211,238,0.15), transparent 40%),
+                radial-gradient(circle at 80% 15%, rgba(103,232,249,0.10), transparent 45%);
+            pointer-events: none;
+        }
+
         .hero-content {
             flex: 1;
-            max-width: 700px;
+            max-width: 650px;
             text-align: left;
-            padding-left: 5%; 
+            padding-left: 5%;
             position: relative;
             z-index: 12;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(34,211,238,0.15);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(34,211,238,0.3);
+            color: var(--cyan-light);
+        }
+
+        .hero-badge i {
+            margin-right: 8px;
+            color: var(--cyan);
+        }
+
+        .hero-lean h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--white);
+        }
+
+        .hero-lean h1 span {
+            color: var(--cyan);
+        }
+
+        .hero-lean p {
+            font-size: 1.15rem;
+            color: var(--gray-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-dark) 100%);
+            color: var(--navy);
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(34,211,238,0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(34,211,238,0.5);
         }
 
         .hero-image {
@@ -111,13 +232,24 @@
             z-index: 11;
         }
 
-        .hero-image img {
-            width: 200%;
-            max-width: 700px; 
-            object-fit: contain;
-            animation: floatIn 2.5s ease-out forwards;
-            opacity: 2;
+        .hero-image svg {
+            width: 350px;
+            height: 350px;
+            opacity: 0;
             transform: translateX(60px);
+            animation: floatIn 2s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .hero-image img {
+            width: min(860px, 100%);
+            height: auto;
+            border-radius: 18px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+            opacity: 0;
+            transform: translateX(60px);
+            animation: floatIn 2s ease-out forwards;
+            animation-delay: 0.3s;
         }
 
         @keyframes floatIn {
@@ -127,7 +259,6 @@
             }
         }
 
-        /* Responsividade — empilha no mobile */
         @media (max-width: 900px) {
             .hero-lean {
                 flex-direction: column;
@@ -138,199 +269,637 @@
                 text-align: center;
                 padding-left: 0;
             }
-            .hero-image img {
-                max-width: 380px;
-                transform: translateY(40px);
-            }
+            .hero-lean h1 { font-size: 2.4rem; }
+            .hero-image svg { width: 250px; height: 250px; }
+            .hero-image img { width: min(520px, 100%); }
+            .intro-logo-container { flex-direction: column; gap: 15px; }
+            .intro-logo-text { text-align: center; }
+            .intro-logo-name { font-size: 36px; }
         }
 
-        .hero-lean h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            background: linear-gradient(to right, #ffffff, #93c5fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero-lean p {
-            font-size: 1.25rem;
-            color: #94a3b8;
-            margin-bottom: 2.5rem;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #2563eb;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
-        }
-        .cta-button:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        /* ============================================
+           FEATURES SECTION
+        ============================================ */
+        .features-section {
+            padding: 80px 0;
+            background: var(--white);
         }
 
-        /* Features/Services Section */
-        .features-section { padding: 80px 0; }
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 span {
+            color: var(--cyan-dark);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+        }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
         }
+
         .feature-card {
-            background: white;
+            background: var(--white);
             padding: 30px;
             border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #f1f5f9;
-            transition: transform 0.3s ease;
-            position: relative;
+            box-shadow: 0 4px 15px rgba(15,23,42,0.06);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
         }
-        .feature-card:hover { transform: translateY(-5px); border-color: #2563eb; }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan);
+            box-shadow: 0 12px 30px rgba(34,211,238,0.15);
+        }
+
         .feature-icon {
-            font-size: 2rem;
-            color: #2563eb;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(34,211,238,0.15) 0%, rgba(8,145,178,0.1) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
         }
-        
-        /* Botão de Chat com Animação de Pulso */
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+
+        .feature-icon i {
+            font-size: 1.5rem;
+            color: var(--cyan-dark);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            flex-grow: 1;
         }
 
         .ai-chat-btn {
-            margin-top: 15px;
-            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-            color: white;
+            margin-top: 20px;
+            background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%);
+            color: var(--white);
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             align-self: flex-start;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 4px 15px rgba(34,211,238,0.3);
             animation: pulse-glow 2s infinite;
         }
-        .ai-chat-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-            background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 100%);
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(34,211,238,0.5); }
+            70% { box-shadow: 0 0 0 12px rgba(34,211,238,0); }
+            100% { box-shadow: 0 0 0 0 rgba(34,211,238,0); }
         }
 
-        /* Solutions Table Section */
-        .solutions-section {
-            background-color: #ffffff;
-            padding: 80px 0;
-            border-top: 1px solid #f1f5f9;
+        .ai-chat-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(34,211,238,0.5);
         }
+
+        /* ============================================
+           PORTFOLIO SECTION
+        ============================================ */
+        .portfolio-section {
+            padding: 0;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+        }
+
+        .portfolio-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 55%, #0b1224 100%);
+            color: var(--white);
+            padding: 50px 0 30px;
+            position: relative;
+        }
+
+        .portfolio-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(34,211,238,0.18), transparent 40%),
+                radial-gradient(circle at 80% 15%, rgba(103,232,249,0.12), transparent 45%);
+            pointer-events: none;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-title {
+            font-size: 2.8rem;
+            margin: 0 0 15px;
+            color: var(--white);
+        }
+
+        .portfolio-title span {
+            color: var(--cyan);
+        }
+
+        .portfolio-subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-light);
+            margin-bottom: 25px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--cyan-light);
+            background: rgba(34,211,238,0.1);
+            border: 1px solid rgba(34,211,238,0.25);
+            backdrop-filter: blur(10px);
+        }
+
+        .trust-badge::before {
+            content: "✓";
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cyan);
+            color: var(--navy);
+            font-size: 0.7rem;
+            font-weight: 900;
+        }
+
+        .portfolio-wave {
+            position: relative;
+            margin-top: -6px;
+            height: 20px;
+            background: transparent;
+            z-index: 2;
+        }
+
+        .portfolio-wave::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            width: 140%;
+            height: 30px;
+            background: var(--off-white);
+            border-top-left-radius: 999px;
+            border-top-right-radius: 999px;
+            box-shadow: 0 -10px 22px rgba(15,23,42,0.1);
+        }
+
+        .portfolio-body {
+            background: var(--off-white);
+            padding: 30px 0 80px;
+        }
+
+        .filter-section {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .filter-chips {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .filter-chip {
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-chip:hover {
+            border-color: var(--cyan);
+            color: var(--cyan-dark);
+        }
+
+        .filter-chip.active {
+            background: var(--cyan);
+            color: var(--navy);
+            border-color: var(--cyan);
+        }
+
+        .project-count {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        @media (max-width: 1024px) {
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 700px) {
+            .projects-grid { grid-template-columns: 1fr; }
+            .portfolio-title { font-size: 2rem; }
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 15px rgba(15,23,42,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan);
+            box-shadow: 0 15px 40px rgba(34,211,238,0.15);
+        }
+
+        .project-topline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .category-badge {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: rgba(34,211,238,0.1);
+            color: var(--cyan-dark);
+            border: 1px solid rgba(34,211,238,0.2);
+        }
+
+        .project-num {
+            font-weight: 800;
+            font-size: 0.85rem;
+            color: var(--gray-light);
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.35;
+        }
+
+        .project-pain, .project-solution {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--gray);
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .project-pain::before { content: "⚠"; color: var(--warning); }
+        .project-solution {
+            color: var(--navy);
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 15px;
+        }
+        .project-solution::before { content: "✓"; color: var(--success); font-weight: 900; }
+
+        .metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .metric {
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            border: 1px solid var(--border);
+            background: var(--white);
+            color: var(--gray);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .view-details-btn {
+            background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%);
+            color: var(--white);
+            border: none;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .view-details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(34,211,238,0.3);
+        }
+
+        .portfolio-final-cta {
+            margin-top: 50px;
+            background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%);
+            color: var(--white);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 15px 50px rgba(34,211,238,0.25);
+        }
+
+        .portfolio-final-cta h3 {
+            color: var(--white);
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-final-cta p {
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .portfolio-final-cta a {
+            display: inline-block;
+            background: var(--white);
+            color: var(--cyan-dark);
+            padding: 14px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .portfolio-final-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+        }
+
+        /* ============================================
+           SOLUTIONS SECTION
+        ============================================ */
+        .solutions-section {
+            background: var(--white);
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+        }
+
         .comparison-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-top: 40px;
         }
+
+        @media (max-width: 768px) {
+            .comparison-grid { grid-template-columns: 1fr; }
+        }
+
         .pain-point {
             background: #fff1f2;
             padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #e11d48;
+            border-radius: 12px;
+            border-left: 4px solid var(--danger);
             margin-bottom: 15px;
         }
+
+        .pain-title {
+            color: #9f1239;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .solution-point {
             background: #f0fdf4;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 12px;
             border-left: 4px solid #16a34a;
             margin-bottom: 15px;
         }
-        .pain-title { color: #9f1239; font-weight: 700; margin-bottom: 5px; display: block; }
-        .solution-title { color: #166534; font-weight: 700; margin-bottom: 5px; display: block; }
 
-        /* Values Section */
+        .solution-title {
+            color: #166534;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ============================================
+           VALUES SECTION
+        ============================================ */
         .values-section {
-            background-color: #f8fafc;
+            background: var(--off-white);
             padding: 80px 0;
         }
+
         .values-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 40px;
         }
-        .value-item {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #2563eb;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .value-item h4 { margin: 0; color: #1e293b; }
 
-        /* Team Section */
+        .value-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--cyan);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(15,23,42,0.04);
+        }
+
+        .value-item i {
+            color: var(--cyan-dark);
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+
+        .value-item h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .value-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* ============================================
+           TEAM SECTION
+        ============================================ */
         .team-section {
             padding: 80px 0;
-            background-color: #ffffff;
+            background: var(--white);
         }
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
             margin-top: 50px;
-            justify-content: center;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
+
         .team-member {
             text-align: center;
-            background: #f8fafc;
+            background: var(--off-white);
             padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(15,23,42,0.05);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
         }
-        .team-member:hover { transform: translateY(-5px); border-color: #2563eb; }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            border-color: var(--cyan);
+        }
+
         .member-photo {
-            width: 160px;
-            height: 160px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 25px;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            background-color: #e2e8f0;
+            margin-bottom: 20px;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 15px rgba(15,23,42,0.1);
+            background: var(--border);
         }
-        .member-name { font-weight: 800; color: #1e293b; margin-bottom: 5px; font-size: 1.3rem; }
-        .member-role { color: #2563eb; font-weight: 700; margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-        .member-education { font-size: 0.9rem; color: #475569; font-weight: 600; margin-bottom: 15px; min-height: 40px; }
-        
-        .member-achievements { text-align: left; margin-top: 20px; font-size: 0.9rem; color: #4b5563; }
-        .achievement-item { margin-bottom: 8px; display: flex; align-items: flex-start; }
-        .achievement-item i { color: #16a34a; margin-right: 8px; margin-top: 3px; flex-shrink: 0; }
 
-        /* Social Links in Team */
-        .member-social {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
+        .member-name {
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 5px;
+            font-size: 1.25rem;
         }
+
+        .member-role {
+            color: var(--cyan-dark);
+            font-weight: 700;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .member-education {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .member-achievements {
+            text-align: left;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--gray-dark);
+        }
+
+        .achievement-item {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .achievement-item i {
+            color: #16a34a;
+            margin-top: 3px;
+        }
+
+        .member-social {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
         .linkedin-btn {
             display: inline-flex;
             align-items: center;
@@ -338,109 +907,203 @@
             color: #0077b5;
             font-weight: 600;
             text-decoration: none;
-            font-size: 0.95rem;
-            padding: 8px 16px;
+            font-size: 0.9rem;
+            padding: 10px 20px;
             border-radius: 50px;
-            background-color: #eef7fe;
+            background: #eef7fe;
             transition: all 0.3s ease;
         }
+
         .linkedin-btn:hover {
-            background-color: #0077b5;
+            background: #0077b5;
             color: white;
-            transform: translateY(-2px);
         }
 
-        /* FAQ Section */
+        /* ============================================
+           FAQ SECTION
+        ============================================ */
         .faq-section {
             padding: 80px 0;
-            background-color: #f1f5f9;
+            background: var(--off-white);
         }
-        .faq-item {
-            background: white;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 1px solid #e2e8f0;
-        }
-        .faq-question { font-weight: 600; color: #1e293b; display: flex; justify-content: space-between; }
-        .faq-answer { margin-top: 10px; color: #4b5563; font-size: 0.95rem; }
 
-        /* Final CTA */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            padding: 25px;
+            border-radius: 12px;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--cyan);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--navy);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question i {
+            color: var(--cyan-dark);
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--gray-dark);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           FINAL CTA
+        ============================================ */
         .final-cta {
-            width: full;
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
             color: white;
             padding: 80px 0;
             text-align: center;
+            position: relative;
         }
-        .final-cta h2 { color: white; margin-bottom: 20px; }
-        .final-cta p { color: #bfdbfe; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        .final-cta::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(34,211,238,0.15), transparent 60%);
+            pointer-events: none;
+        }
+
+        .final-cta h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .final-cta p {
+            color: var(--gray-light);
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
         .cta-button-light {
-            background-color: white;
-            color: #2563eb;
-            padding: 16px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .cta-button-light:hover { background-color: #f8fafc; transform: translateY(-2px); }
-		
-        /* Botão flutuante - Assistente Verah */
-        .verah-floating-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: white;
-            color: #1e293b;
-            padding: 10px 22px 10px 14px;
+            background: var(--cyan);
+            color: var(--navy);
+            padding: 16px 35px;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            cursor: pointer;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+            text-decoration: none;
             transition: all 0.3s ease;
-            z-index: 999;
+            display: inline-block;
+            position: relative;
         }
-        .verah-floating-btn:hover {
+
+        .cta-button-light:hover {
+            background: var(--cyan-light);
             transform: translateY(-3px);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.35);
-        }
-        .verah-avatar {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(34,211,238,0.4);
         }
 
-        /* animação suave */
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.55); }
-            70% { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
-        }
-
-        /* Footer */
+        /* ============================================
+           FOOTER
+        ============================================ */
         footer {
-            background: #0f172a;
-            color: #cbd5e1;
+            background: var(--navy);
+            color: var(--gray-light);
             padding: 60px 0 30px;
             text-align: center;
         }
+
         .footer-content {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
             align-items: center;
         }
-        .footer-links a { color: #94a3b8; text-decoration: none; margin: 0 10px; }
-        .footer-links a:hover { color: white; }
 
-        /* WhatsApp Button */
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo svg {
+            width: 45px;
+            height: 45px;
+        }
+
+        .footer-logo-text {
+            text-align: left;
+        }
+
+        .footer-logo-name {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--white);
+            letter-spacing: 0.04em;
+        }
+
+        .footer-logo-sub {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            color: var(--cyan);
+            text-transform: uppercase;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            max-width: 400px;
+            color: var(--gray-light);
+        }
+
+        .footer-contact a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-contact a:hover {
+            color: var(--cyan);
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--cyan);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            border-top: 1px solid var(--navy-light);
+            padding-top: 25px;
+            width: 100%;
+            color: var(--gray);
+        }
+
+        /* ============================================
+           WHATSAPP FAB
+        ============================================ */
         .whatsapp-fab {
             position: fixed;
             bottom: 30px;
@@ -453,20 +1116,75 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(37,211,102,0.4);
             z-index: 1000;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
         }
-        .whatsapp-fab:hover { transform: scale(1.1); }
 
-        /* Chat Modal Styles */
+        .whatsapp-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37,211,102,0.5);
+        }
+
+        .whatsapp-fab i {
+            font-size: 30px;
+        }
+
+        /* ============================================
+           VERAH FLOATING BTN
+        ============================================ */
+        .verah-floating-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--white);
+            color: var(--navy);
+            padding: 12px 24px 12px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(15,23,42,0.15);
+            transition: all 0.3s ease;
+            z-index: 999;
+            border: 1px solid var(--border);
+        }
+
+        .verah-floating-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(15,23,42,0.2);
+            border-color: var(--cyan);
+        }
+
+        .verah-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .verah-avatar svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* ============================================
+           CHAT MODAL
+        ============================================ */
         .chat-modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(15,23,42,0.6);
+            backdrop-filter: blur(4px);
             display: none;
             align-items: center;
             justify-content: center;
@@ -474,110 +1192,150 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .chat-modal-overlay.active {
             display: flex;
             opacity: 1;
         }
+
         .chat-container {
-            background-color: white;
+            background: var(--white);
             width: 90%;
             max-width: 500px;
             height: 600px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(15,23,42,0.25);
             display: flex;
             flex-direction: column;
             overflow: hidden;
             transform: translateY(20px);
             transition: transform 0.3s ease;
         }
+
         .chat-modal-overlay.active .chat-container {
             transform: translateY(0);
         }
+
         .chat-header {
-            background-color: #2563eb;
-            color: white;
-            padding: 15px 20px;
+            background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%);
+            color: var(--white);
+            padding: 18px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .chat-header h3 { margin: 0; font-size: 1.1rem; font-weight: 600; display: flex; align-items: center; gap: 8px;}
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+        }
+
         .close-chat-btn {
-            background: none;
+            background: rgba(255,255,255,0.2);
             border: none;
             color: white;
-            font-size: 1.2rem;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
             cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
         }
+
+        .close-chat-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
         .chat-messages {
             flex: 1;
             padding: 20px;
             overflow-y: auto;
-            background-color: #f8fafc;
+            background: var(--off-white);
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
+
         .message {
-            max-width: 80%;
-            padding: 12px 16px;
-            border-radius: 12px;
+            max-width: 85%;
+            padding: 14px 18px;
+            border-radius: 16px;
             font-size: 0.95rem;
             line-height: 1.6;
         }
-        /* Estilo para formatar o HTML gerado pelo Markdown */
+
         .message.bot {
-            background-color: #e0f2fe;
-            color: #0c4a6e;
+            background: var(--white);
+            color: var(--navy);
             align-self: flex-start;
-            border-bottom-left-radius: 2px;
+            border: 1px solid var(--border);
+            border-bottom-left-radius: 4px;
         }
-        .message.bot strong { font-weight: 700; color: #0369a1; }
-        .message.bot ul { margin: 5px 0 5px 20px; padding: 0; list-style-type: disc; }
-        .message.bot li { margin-bottom: 4px; }
-        .message.bot p { margin: 0 0 10px 0; }
-        .message.bot p:last-child { margin-bottom: 0; }
+
+        .message.bot strong {
+            color: var(--cyan-dark);
+        }
 
         .message.user {
-            background-color: #2563eb;
-            color: white;
+            background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%);
+            color: var(--white);
             align-self: flex-end;
-            border-bottom-right-radius: 2px;
+            border-bottom-right-radius: 4px;
         }
+
         .chat-input-area {
-            padding: 15px;
-            border-top: 1px solid #e2e8f0;
+            padding: 18px;
+            border-top: 1px solid var(--border);
             display: flex;
-            gap: 10px;
-            background-color: white;
+            gap: 12px;
+            background: var(--white);
         }
+
         .chat-input {
             flex: 1;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 25px;
+            padding: 14px 18px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
             outline: none;
             font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
         }
-        .chat-input:focus { border-color: #2563eb; }
+
+        .chat-input:focus {
+            border-color: var(--cyan);
+        }
+
         .send-btn {
-            background-color: #2563eb;
-            color: white;
+            background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%);
+            color: var(--white);
             border: none;
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background-color 0.2s;
+            transition: all 0.2s ease;
         }
-        .send-btn:hover { background-color: #1d4ed8; }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(34,211,238,0.4);
+        }
+
         .typing-indicator {
             font-size: 0.8rem;
-            color: #64748b;
+            color: var(--gray);
             margin-top: 5px;
             display: none;
             align-self: flex-start;
@@ -585,524 +1343,103 @@
         }
 
         @media (max-width: 768px) {
-            .hero-lean { 
-                flex-direction: column; 
-                text-align: center;
-                padding: 80px 20px;
+            .chat-container {
+                width: 100%;
+                height: 100%;
+                max-width: none;
+                border-radius: 0;
             }
-            .hero-content {
-                text-align: center;
-                padding-left: 0;
-            }
-            .hero-lean h1 { font-size: 2.5rem; }
-            .hero-image img { max-width: 380px; transform: translateY(40px); }
-            .comparison-grid { grid-template-columns: 1fr; }
-            .team-grid { grid-template-columns: 1fr; }
-            .chat-container { width: 100%; height: 100%; max-width: none; border-radius: 0; }
         }
 
-        /* ============================================================
-           ✅ NOVA SEÇÃO: PORTFÓLIO DE PROJETOS (mini-hero + carrossel)
-           - NÃO altera suas imagens (png/jpg existentes)
-           - CSS 100% escopado em .portfolio-section para evitar conflito
-        ============================================================ */
-
-        :root {
-            --vt-primary: #2563eb;
-            --vt-primary-dark: #1d4ed8;
-            --vt-text-dark: #0f172a;
-            --vt-text-gray: #64748b;
-            --vt-border: #e2e8f0;
-            --vt-bg: #f8fafc;
-            --vt-success: #10b981;
-            --vt-warning: #f59e0b;
-        }
-
-        .portfolio-section {
-            width: 100%;
-            padding: 0;
-            background: #ffffff;
-            border-top: 1px solid #f1f5f9;
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Mini-hero escuro */
-        .portfolio-hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #0b1224 100%);
-            color: #fff;
-            padding: 35px 0 22px;
-            position: relative;
-            z-index: 3;
-        }
-        .portfolio-hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 15% 25%, rgba(37,99,235,0.22), transparent 40%),
-                radial-gradient(circle at 80% 15%, rgba(96,165,250,0.18), transparent 45%),
-                radial-gradient(circle at 70% 80%, rgba(79,70,229,0.14), transparent 55%);
-            pointer-events: none;
-        }
-
-        .portfolio-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .portfolio-header {
-            text-align: center;
-            max-width: 860px;
-            margin: 0 auto;
-        }
-
-        .portfolio-title {
-            font-size: 3rem;
-            margin: 0 0 14px;
-            line-height: 1.1;
-            background: linear-gradient(to right, #ffffff, #93c5fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .portfolio-subtitle {
-            margin: 0 auto 16px;
-            max-width: 680px;
-            font-size: 1.05rem;
-            color: #cbd5e1;
-        }
-
-        /* Selos glass */
-        .trust-badges {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .trust-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #eaf2ff;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.18);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.22);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        .trust-badge::before {
-            content: "✓";
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--vt-primary);
-            color: #fff;
-            font-size: 0.7rem;
-            font-weight: 900;
-        }
-
-        /* Área clara (onde ficam filtros + cards) */
-        .portfolio-body {
-            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 55%);
-            padding: 18px 0 64px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* “Wave” simples */
-        .portfolio-wave {
-            position: relative;
-            margin-top: -6px;
-            height: 18px;
-            background: transparent;
-            z-index: 2;
-        }
-        .portfolio-wave::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0;
-            width: 140%;
-            height: 28px;
-            background: #f8fafc;
-            border-top-left-radius: 999px;
-            border-top-right-radius: 999px;
-            box-shadow: 0 -10px 22px rgba(15,23,42,0.12);
-        }
-
-        /* Filtros */
-        .filter-section {
-            margin-bottom: 26px;
-            text-align: center;
-        }
-        .filter-chips {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 12px;
-        }
-        .filter-chip {
-            background: #ffffff;
-            padding: 10px 18px;
-            border-radius: 999px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #64748b;
-            border: 1px solid var(--vt-border);
-            cursor: pointer;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-            outline: none;
-        }
-        .filter-chip:hover {
-            border-color: var(--vt-primary);
-            color: var(--vt-primary);
-            transform: translateY(-1px);
-            box-shadow: 0 10px 25px rgba(37,99,235,0.10);
-        }
-        .filter-chip:focus-visible {
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.25);
-            border-color: var(--vt-primary);
-        }
-        .filter-chip.active {
-            background: var(--vt-primary);
-            color: #fff;
-            border-color: var(--vt-primary);
-            box-shadow: 0 12px 26px rgba(37,99,235,0.22);
-        }
-        .project-count {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #64748b;
-            margin: 0;
-        }
-
-        /* Grid desktop */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 22px;
-        }
-
-        /* Cards */
-        .project-card {
-            background: #ffffff;
-            border-radius: 18px;
-            padding: 26px;
-            border: 1px solid var(--vt-border);
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-        .project-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 20% 15%, rgba(37,99,235,0.10), transparent 40%);
-            opacity: 0;
-            transition: opacity 0.25s ease;
-            pointer-events: none;
-        }
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(15,23,42,0.12);
-            border-color: rgba(37,99,235,0.55);
-        }
-        .project-card:hover::before { opacity: 1; }
-
-        .project-topline {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .category-badge {
-            padding: 7px 12px;
-            border-radius: 10px;
-            font-size: 0.72rem;
-            font-weight: 900;
-            letter-spacing: 0.6px;
-            text-transform: uppercase;
-            border: 1px solid rgba(37,99,235,0.18);
-            background: #eff6ff;
-            color: var(--vt-primary);
-        }
-
-        .project-num {
-            font-weight: 900;
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
-
-        .project-title {
-            font-size: 1.15rem;
-            margin: 0 0 10px;
-            color: #0f172a;
-            line-height: 1.35;
-        }
-        .project-pain, .project-solution {
-            margin: 0 0 10px;
-            font-size: 0.92rem;
-            color: #64748b;
-            display: flex;
-            gap: 8px;
-            align-items: flex-start;
-        }
-        .project-pain::before { content: "⚠"; color: var(--vt-warning); }
-        .project-solution {
-            color: #0f172a;
-            padding-bottom: 14px;
-            border-bottom: 1px solid #eef2f7;
-            margin-bottom: 14px;
-        }
-        .project-solution::before { content: "✓"; color: var(--vt-success); font-weight: 900; }
-
-        .metrics {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 12px;
-        }
-        .metric {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 6px 10px;
-            border-radius: 10px;
-            font-size: 0.78rem;
-            font-weight: 800;
-            color: #0f172a;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 18px;
-            align-items: flex-start;
-            flex-grow: 0;
-        }
-        .tag {
-            border: 1px solid #e2e8f0;
-            background: #ffffff;
-            color: #64748b;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 0.72rem;
-            font-weight: 700;
-        }
-
-        .view-details-btn {
-            background: linear-gradient(135deg, var(--vt-primary) 0%, #4f46e5 100%);
-            color: #fff;
-            border: none;
-            padding: 12px 16px;
-            border-radius: 14px;
-            font-size: 0.92rem;
-            font-weight: 800;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            width: 100%;
-        }
-        .view-details-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 25px rgba(37,99,235,0.25);
-        }
-        .view-details-btn:focus-visible {
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.25);
-            outline: none;
-        }
-
-        /* Reveal (scroll animation) */
-        .reveal {
-            opacity: 0;
-            transform: translateY(18px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .reveal.reveal-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Carrossel (mobile) */
-        .carousel-container { display: none; margin-top: 18px; }
-        .carousel-wrapper {
-            display: flex;
-            gap: 14px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            padding: 10px 4px 18px;
-            scrollbar-width: none;
-        }
-        .carousel-wrapper::-webkit-scrollbar { display: none; }
-
-        .carousel-wrapper .project-card {
-            flex: 0 0 305px;
-            scroll-snap-align: center;
-        }
-
-        .carousel-controls {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .carousel-nav {
-            display: flex;
-            justify-content: center;
-            gap: 14px;
-        }
-        .carousel-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            border: 1px solid var(--vt-border);
-            background: #fff;
-            color: var(--vt-primary);
-            cursor: pointer;
-            font-size: 18px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-        .carousel-btn:hover {
-            background: var(--vt-primary);
-            color: #fff;
-            border-color: var(--vt-primary);
-        }
-        .carousel-btn:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.25);
-        }
-
-        .carousel-dots {
-            display: flex;
-            gap: 8px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 999px;
-            border: none;
-            background: #cbd5e1;
-            cursor: pointer;
-            transition: transform 0.2s ease, background 0.2s ease, width 0.2s ease;
-        }
-        .dot.active {
-            background: var(--vt-primary);
-            width: 22px;
-            transform: scale(1.0);
-        }
-        .dot:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.25);
-        }
-
-        /* Modal */
+        /* ============================================
+           MODAL PORTFOLIO
+        ============================================ */
         .portfolio-modal-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(15, 23, 42, 0.72);
+            background: rgba(15,23,42,0.7);
             backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
             z-index: 9999;
             opacity: 0;
             transition: opacity 0.25s ease;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 20px;
         }
+
         .portfolio-modal-overlay.active {
             display: flex;
             opacity: 1;
         }
+
         .portfolio-modal {
-            background: #fff;
+            background: var(--white);
             width: 100%;
-            max-width: 860px;
+            max-width: 800px;
             max-height: 90vh;
             overflow: auto;
-            border-radius: 22px;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.35);
-            transform: translateY(10px) scale(0.98);
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(15,23,42,0.3);
+            transform: translateY(15px) scale(0.98);
             transition: transform 0.25s ease;
-            position: relative;
         }
+
         .portfolio-modal-overlay.active .portfolio-modal {
             transform: translateY(0) scale(1);
         }
+
         .portfolio-modal-header {
-            padding: 24px 24px 18px;
-            border-bottom: 1px solid #eef2f7;
+            padding: 25px;
+            border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
-            background: #fff;
+            background: var(--white);
             z-index: 2;
         }
+
         .portfolio-modal-close {
             position: absolute;
-            right: 18px;
-            top: 16px;
+            right: 20px;
+            top: 20px;
             width: 40px;
             height: 40px;
             border-radius: 50%;
             border: none;
-            background: #f1f5f9;
-            color: #475569;
+            background: var(--off-white);
+            color: var(--gray);
             cursor: pointer;
-            font-size: 22px;
-            display: inline-flex;
+            font-size: 20px;
+            display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.2s ease;
         }
-        .portfolio-modal-close:hover { background: #e2e8f0; color: #0f172a; }
-        .portfolio-modal-close:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.25);
+
+        .portfolio-modal-close:hover {
+            background: var(--border);
+            color: var(--navy);
         }
 
         .portfolio-modal-title {
-            margin: 10px 0 0;
-            font-size: 1.6rem;
-            color: #0f172a;
-            line-height: 1.25;
+            margin: 12px 0 0;
+            font-size: 1.5rem;
+            color: var(--navy);
+            padding-right: 50px;
         }
 
-        .portfolio-modal-body { padding: 22px 24px 26px; }
+        .portfolio-modal-body {
+            padding: 25px;
+        }
 
-        .pm-section { margin-bottom: 22px; }
+        .pm-section {
+            margin-bottom: 25px;
+        }
+
         .pm-section h4 {
-            margin: 0 0 12px;
+            margin: 0 0 15px;
             font-size: 1rem;
-            color: #0f172a;
+            color: var(--navy);
             display: flex;
             gap: 10px;
             align-items: center;
@@ -1113,162 +1450,112 @@
             padding: 0;
             margin: 0;
         }
+
         .pm-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #f1f5f9;
-            color: #64748b;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--gray-dark);
             display: flex;
-            gap: 10px;
+            gap: 12px;
             align-items: flex-start;
         }
-        .pm-list li:last-child { border-bottom: none; }
+
+        .pm-list li:last-child {
+            border-bottom: none;
+        }
+
         .pm-list li::before {
             content: "→";
-            color: var(--vt-primary);
-            font-weight: 900;
+            color: var(--cyan-dark);
+            font-weight: 700;
         }
 
         .pm-before-after {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            background: #f8fafc;
-            border: 1px solid #eef2f7;
-            border-radius: 18px;
-            padding: 16px;
+            gap: 20px;
+            background: var(--off-white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
         }
+
+        @media (max-width: 600px) {
+            .pm-before-after { grid-template-columns: 1fr; }
+        }
+
         .pm-col h5 {
-            margin: 0 0 6px;
+            margin: 0 0 8px;
             text-transform: uppercase;
-            font-size: 0.78rem;
-            letter-spacing: 0.6px;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
         }
+
         .pm-col.before h5 { color: #dc2626; }
-        .pm-col.after h5 { color: #10b981; }
+        .pm-col.after h5 { color: var(--success); }
+
         .pm-col p {
             margin: 0;
-            color: #64748b;
-            font-size: 0.95rem;
+            color: var(--gray-dark);
+            font-size: 0.9rem;
             line-height: 1.6;
         }
 
         .pm-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
+
         .pm-stack span {
-            background: #eff6ff;
-            border: 1px solid #dbeafe;
-            color: #1d4ed8;
-            padding: 8px 12px;
-            border-radius: 12px;
+            background: rgba(34,211,238,0.1);
+            border: 1px solid rgba(34,211,238,0.2);
+            color: var(--cyan-dark);
+            padding: 8px 14px;
+            border-radius: 10px;
             font-size: 0.85rem;
-            font-weight: 800;
+            font-weight: 700;
         }
 
         .pm-cta {
-            margin-top: 18px;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #fff;
-            border-radius: 18px;
-            padding: 20px;
+            margin-top: 25px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 25px;
             text-align: center;
         }
-        .pm-cta p { color: #cbd5e1; margin: 8px 0 0; }
+
+        .pm-cta h3 {
+            color: var(--white);
+            margin: 0;
+        }
+
+        .pm-cta p {
+            color: var(--gray-light);
+            margin: 10px 0 0;
+        }
+
         .pm-cta a {
             display: inline-block;
-            margin-top: 14px;
-            padding: 13px 22px;
+            margin-top: 18px;
+            padding: 14px 25px;
             border-radius: 999px;
-            background: var(--vt-primary);
-            color: #fff;
+            background: var(--cyan);
+            color: var(--navy);
             text-decoration: none;
-            font-weight: 900;
+            font-weight: 700;
             transition: all 0.2s ease;
         }
+
         .pm-cta a:hover {
-            background: #fff;
-            color: var(--vt-primary);
+            background: var(--cyan-light);
             transform: translateY(-2px);
-        }
-        .pm-cta a:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(37,99,235,0.25);
-        }
-
-        /* CTA final da seção */
-        .portfolio-final-cta {
-            margin-top: 46px;
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            color: #fff;
-            border-radius: 22px;
-            padding: 34px 22px;
-            text-align: center;
-            box-shadow: 0 18px 50px rgba(37,99,235,0.25);
-        }
-        .portfolio-final-cta h3 {
-            margin: 0 0 10px;
-            font-size: 1.65rem;
-            color: #fff;
-        }
-        .portfolio-final-cta p {
-            margin: 0 auto 18px;
-            max-width: 720px;
-            color: #bfdbfe;
-            font-weight: 600;
-        }
-        .portfolio-final-cta a {
-            display: inline-block;
-            background: #fff;
-            color: #2563eb;
-            padding: 14px 26px;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 900;
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-        .portfolio-final-cta a:hover {
-            background: #f8fafc;
-            transform: translateY(-2px);
-        }
-        .portfolio-final-cta a:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(255,255,255,0.35);
-        }
-
-        /* Responsivo portfolio */
-        @media (max-width: 1024px) {
-            .projects-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 700px) {
-            .portfolio-title { font-size: 2rem; }
-            .portfolio-subtitle { font-size: 0.98rem; }
-            .projects-grid { display: none; }
-            .carousel-container { display: block; }
-            .pm-before-after { grid-template-columns: 1fr; }
-            .portfolio-modal { border-radius: 0; max-height: 100vh; height: 100vh; }
-            .portfolio-modal-overlay { padding: 0; }
-        }
-
-        /* Reduce motion */
-        @media (prefers-reduced-motion: reduce) {
-            .portfolio-section .reveal,
-            .portfolio-section .reveal.reveal-visible {
-                transition: none !important;
-                transform: none !important;
-                opacity: 1 !important;
-            }
-            .portfolio-section * {
-                scroll-behavior: auto !important;
-                transition: none !important;
-                animation: none !important;
-            }
         }
     </style>
 </head>
 
-<body class="home-page">
+<body>
 
     <!-- Chat Modal -->
     <div class="chat-modal-overlay" id="chatModal">
@@ -1279,7 +1566,7 @@
             </div>
             <div class="chat-messages" id="chatMessages">
                 <div class="message bot">
-                    Olá! Sou o assistente virtual da Vertech. Como posso ajudar sua empresa a crescer com tecnologia hoje?
+                    Olá! Sou o assistente virtual da Vertech Soluções. Como posso ajudar sua empresa a crescer com tecnologia hoje?
                 </div>
             </div>
             <div class="typing-indicator" id="typingIndicator">Digitando...</div>
@@ -1290,12 +1577,23 @@
         </div>
     </div>
 
-    <!-- Intro Section with Logo and Phrase -->
+    <!-- Intro Section - LOGO VERTECH SOLUÇÕES -->
     <div class="intro-section">
         <div class="container">
-            <img src="marcamista.jpg" alt="Logo da Vertech Consultoria" class="intro-logo logo-animate">
-            <p class="intro-phrase fade-up">
-                Transformando pequenas e médias empresas em negócios inteligentes através da tecnologia aplicada.
+            <div class="intro-logo-container">
+                <!-- SVG do Logo V Semi-Preenchido -->
+                <svg class="intro-logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo Vertech Soluções" role="img">
+                    <path d="M8 12 L40 68 L40 44 L24 12 Z" fill="#22D3EE" opacity="0.15"/>
+                    <path d="M8 12 L40 68 L72 12 L56 12 L40 44 L24 12 Z" stroke="#22D3EE" stroke-width="2.5" fill="none"/>
+                </svg>
+                <div class="intro-logo-text">
+                    <span class="intro-logo-name">VERTECH</span>
+                    <span class="intro-logo-sub">Soluções</span>
+                </div>
+            </div>
+            <p class="intro-phrase">
+                IA aplicada, automação e segurança para PMEs.<br>
+                Transformando negócios com tecnologia acessível.
             </p>
         </div>
     </div>
@@ -1303,44 +1601,47 @@
     <!-- Hero Section -->
     <header class="hero-lean">
         <div class="hero-content">
-            <div style="display: inline-block; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.2);">
-                <i class="fas fa-shield-alt" style="margin-right: 8px;"></i> Tecnologia com Segurança de Dados
+            <div class="hero-badge">
+                <i class="fas fa-shield-alt"></i> Tecnologia com Segurança de Dados
             </div>
             
-            <h1>Transforme sua PME em um Negócio<br>Inteligente e Competitivo</h1>
+            <h1>Transforme sua PME em um Negócio <span>Inteligente</span> e Competitivo</h1>
             <p>
                 Entregamos soluções tecnológicas acessíveis — apps, automações e IA aplicada — 
                 que otimizam processos, reduzem custos e impulsionam sua produtividade em semanas.
             </p>
-            <a href="https://wa.me/554989167594?text=Quero%20uma%20análise%20estratégica%20da%20Vertech" class="cta-button">
+            <a href="https://wa.me/554989167594?text=Quero%20uma%20an%C3%A1lise%20estrat%C3%A9gica%20da%20Vertech" class="cta-button">
                 Quero uma Análise Estratégica
             </a>
         </div>
         <div class="hero-image">
-            <img src="herologo.png" alt="Hero Vertech">
+            <img src="herologo.png" alt="Tecnologia, dados e performance para PMEs">
         </div>
     </header>
 
-    <!-- Nossa Missão & Proposta de Valor -->
+    <!-- Features Section -->
     <section class="features-section">
         <div class="container">
-            <div class="text-center" style="max-width: 800px; margin: 0 auto 60px;">
-                <h2 style="font-size: 2.5rem; color: #1e293b; margin-bottom: 20px;">Menos Manual, Mais Digital</h2>
-                <p style="font-size: 1.1rem;">
+            <div class="section-header">
+                <h2>Menos Manual, <span>Mais Digital</span></h2>
+                <p>
                     Ajudamos empresas a eliminar tarefas manuais e aumentar a segurança através de tecnologia de ponta. 
                     Nosso foco é resolver a falta de automação e dados desorganizados com soluções rápidas e sob medida.
                 </p>
             </div>
 
-            <!-- Portfólio de Serviços -->
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
                     <h3>Apps e Plataformas</h3>
                     <p>Desenvolvimento de aplicativos sob demanda e plataformas de gestão, como soluções completas para clínicas e serviços.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-robot feature-icon"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
                     <h3>IA e Agentes de IA</h3>
                     <p>Dashboards inteligentes, análise de documentos e atendimento automatizado para reduzir a dependência de grandes equipes.</p>
                     <button class="ai-chat-btn" onclick="openChat()">
@@ -1348,12 +1649,16 @@
                     </button>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-cogs feature-icon"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
                     <h3>Automação de Processos</h3>
                     <p>Soluções RPA e Low-code para automatizar tarefas repetitivas, garantindo produtividade imediata.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-laptop-code feature-icon"></i>
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
                     <h3>Sites Profissionais</h3>
                     <p>Criação de presença digital robusta para empresas que precisam se destacar no mercado moderno com alta performance.</p>
                 </div>
@@ -1361,16 +1666,14 @@
         </div>
     </section>
 
-    <!-- ============================================================
-         ✅ NOVO PORTFÓLIO DE PROJETOS (mini-hero + filtros + grid/carrossel + modal + CTA)
-    ============================================================ -->
+    <!-- Portfolio Section -->
     <section class="portfolio-section" id="servicos">
         <div class="portfolio-hero">
-            <div class="portfolio-container">
+            <div class="container">
                 <div class="portfolio-header">
-                    <h2 class="portfolio-title">Portfólio que vira resultado</h2>
+                    <h2 class="portfolio-title">Portfólio que vira <span>resultado</span></h2>
                     <p class="portfolio-subtitle">Projetos reais que reduzem custos e aceleram resultados em semanas.</p>
-                    <div class="trust-badges" aria-label="Diferenciais de entrega">
+                    <div class="trust-badges">
                         <span class="trust-badge">Entrega em semanas</span>
                         <span class="trust-badge">Segurança de dados</span>
                         <span class="trust-badge">Foco em ROI</span>
@@ -1379,43 +1682,18 @@
             </div>
         </div>
 
-        <div class="portfolio-wave" aria-hidden="true"></div>
+        <div class="portfolio-wave"></div>
 
         <div class="portfolio-body">
-            <div class="portfolio-container">
-                <!-- Filtros -->
+            <div class="container">
                 <div class="filter-section">
-                    <div class="filter-chips" id="vt-filter-container" aria-label="Filtros de projetos">
-                        <!-- Gerado via JS -->
-                    </div>
-                    <p class="project-count">Mostrando <span id="vt-project-count-display">0</span> projetos</p>
+                    <div class="filter-chips" id="filterContainer"></div>
+                    <p class="project-count">Mostrando <span id="projectCountDisplay">0</span> projetos</p>
                 </div>
 
-                <!-- Grid Desktop/Tablet -->
-                <div class="projects-grid" id="vt-projects-grid" aria-label="Lista de projetos (grid)">
-                    <!-- Gerado via JS -->
-                </div>
+                <div class="projects-grid" id="projectsGrid"></div>
 
-                <!-- Carrossel Mobile -->
-                <div class="carousel-container" id="vt-carousel-container" aria-label="Lista de projetos (carrossel)">
-                    <div class="carousel-wrapper" id="vt-carousel-wrapper">
-                        <!-- Gerado via JS -->
-                    </div>
-
-                    <div class="carousel-controls">
-                        <nav class="carousel-nav" aria-label="Navegação do carrossel">
-                            <button class="carousel-btn" id="vt-prev-btn" aria-label="Anterior">←</button>
-                            <button class="carousel-btn" id="vt-next-btn" aria-label="Próximo">→</button>
-                        </nav>
-
-                        <div class="carousel-dots" id="vt-carousel-dots" aria-label="Indicadores do carrossel">
-                            <!-- Gerado via JS -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CTA final da seção -->
-                <div class="portfolio-final-cta reveal">
+                <div class="portfolio-final-cta">
                     <h3>Quer ver isso rodando na sua empresa?</h3>
                     <p>A gente analisa sua operação e propõe automações/IA com ROI claro — rápido, seguro e sob medida.</p>
                     <a href="https://wa.me/554989167594?text=Quero%20uma%20an%C3%A1lise%20estrat%C3%A9gica%20da%20Vertech">
@@ -1426,104 +1704,102 @@
         </div>
 
         <!-- Modal -->
-        <div class="portfolio-modal-overlay" id="vt-modal-overlay" aria-hidden="true">
-            <div class="portfolio-modal" role="dialog" aria-modal="true" aria-labelledby="vt-modal-title">
+        <div class="portfolio-modal-overlay" id="modalOverlay">
+            <div class="portfolio-modal">
                 <div class="portfolio-modal-header">
-                    <button class="portfolio-modal-close" id="vt-modal-close" aria-label="Fechar modal">×</button>
-                    <span class="category-badge" id="vt-modal-category">Categoria</span>
-                    <h2 class="portfolio-modal-title" id="vt-modal-title">Título do Projeto</h2>
+                    <button class="portfolio-modal-close" id="modalClose">×</button>
+                    <span class="category-badge" id="modalCategory">Categoria</span>
+                    <h2 class="portfolio-modal-title" id="modalTitle">Título</h2>
                 </div>
-                <div class="portfolio-modal-body" id="vt-modal-body">
-                    <!-- Conteúdo dinâmico -->
-                </div>
+                <div class="portfolio-modal-body" id="modalBody"></div>
             </div>
         </div>
     </section>
 
-    <!-- Dores vs Soluções -->
+    <!-- Solutions Section -->
     <section class="solutions-section">
         <div class="container">
-            <h2 class="text-center" style="color: #1e293b; margin-bottom: 40px;">Como Transformamos seu Negócio</h2>
+            <h2 class="text-center" style="margin-bottom: 40px;">Como Transformamos seu Negócio</h2>
             <div class="comparison-grid">
                 <div>
                     <h3 style="color: #9f1239; margin-bottom: 20px; text-align: center;">Seus Desafios Atuais</h3>
                     <div class="pain-point">
                         <span class="pain-title"><i class="fas fa-times-circle"></i> Processos Manuais</span>
-                        Tarefas repetitivas que consomem tempo e geram erros humanos.
+                        <p>Tarefas repetitivas que consomem tempo e geram erros humanos.</p>
                     </div>
                     <div class="pain-point">
                         <span class="pain-title"><i class="fas fa-times-circle"></i> Dados Desorganizados</span>
-                        Falta de visibilidade sobre métricas reais para tomada de decisão.
+                        <p>Falta de visibilidade sobre métricas reais para tomada de decisão.</p>
                     </div>
                     <div class="pain-point">
                         <span class="pain-title"><i class="fas fa-times-circle"></i> Baixa Presença Digital</span>
-                        Perda de oportunidades por não ter canais digitais eficientes.
+                        <p>Perda de oportunidades por não ter canais digitais eficientes.</p>
                     </div>
                 </div>
                 <div>
                     <h3 style="color: #166534; margin-bottom: 20px; text-align: center;">Soluções Vertech</h3>
                     <div class="solution-point">
                         <span class="solution-title"><i class="fas fa-check-circle"></i> Automação Inteligente</span>
-                        Implementação de RPA e scripts para liberar sua equipe.
+                        <p>Implementação de RPA e scripts para liberar sua equipe.</p>
                     </div>
                     <div class="solution-point">
                         <span class="solution-title"><i class="fas fa-check-circle"></i> Dashboards com IA</span>
-                        Análises preditivas e visualização de dados em tempo real.
+                        <p>Análises preditivas e visualização de dados em tempo real.</p>
                     </div>
                     <div class="solution-point">
                         <span class="solution-title"><i class="fas fa-check-circle"></i> Ecossistema Digital</span>
-                        Sites e Apps integrados que ampliam seu alcance de mercado.
+                        <p>Sites e Apps integrados que ampliam seu alcance de mercado.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Valores (Diferenciais) -->
+    <!-- Values Section -->
     <section class="values-section">
         <div class="container">
-            <h2 class="text-center" style="margin-bottom: 40px; color: #1e293b;">Nossos Valores e Diferenciais</h2>
+            <h2 class="text-center" style="margin-bottom: 40px;">Nossos Valores e Diferenciais</h2>
             <div class="values-grid">
                 <div class="value-item">
-                    <i class="fas fa-tachometer-alt text-primary"></i>
+                    <i class="fas fa-tachometer-alt"></i>
                     <div>
                         <h4>Eficiência e Produtividade</h4>
-                        <p style="margin: 5px 0 0; font-size: 0.9rem;">Foco em resultados rápidos e redução de custos operacionais.</p>
+                        <p>Foco em resultados rápidos e redução de custos operacionais.</p>
                     </div>
                 </div>
                 <div class="value-item">
-                    <i class="fas fa-user-shield text-primary"></i>
+                    <i class="fas fa-user-shield"></i>
                     <div>
                         <h4>Segurança e Ética</h4>
-                        <p style="margin: 5px 0 0; font-size: 0.9rem;">Proteção rigorosa de dados e mitigação de vulnerabilidades.</p>
+                        <p>Proteção rigorosa de dados e mitigação de vulnerabilidades.</p>
                     </div>
                 </div>
                 <div class="value-item">
-                    <i class="fas fa-medal text-primary"></i>
+                    <i class="fas fa-medal"></i>
                     <div>
                         <h4>Disciplina Militar</h4>
-                        <p style="margin: 5px 0 0; font-size: 0.9rem;">Execução precisa, pontual e altamente organizada.</p>
+                        <p>Execução precisa, pontual e altamente organizada.</p>
                     </div>
                 </div>
                 <div class="value-item">
-                    <i class="fas fa-lightbulb text-primary"></i>
+                    <i class="fas fa-lightbulb"></i>
                     <div>
                         <h4>Inovação Aplicada</h4>
-                        <p style="margin: 5px 0 0; font-size: 0.9rem;">Tecnologia prática, sem complexidade desnecessária para o seu dia a dia.</p>
+                        <p>Tecnologia prática, sem complexidade desnecessária.</p>
                     </div>
                 </div>
                 <div class="value-item">
-                    <i class="fas fa-check-circle text-primary"></i>
+                    <i class="fas fa-check-circle"></i>
                     <div>
                         <h4>Simplicidade</h4>
-                        <p style="margin: 5px 0 0; font-size: 0.9rem;">Soluções fáceis de usar e implementar pela sua equipe.</p>
+                        <p>Soluções fáceis de usar e implementar pela sua equipe.</p>
                     </div>
                 </div>
                 <div class="value-item">
-                    <i class="fas fa-users text-primary"></i>
+                    <i class="fas fa-users"></i>
                     <div>
                         <h4>Foco Total no Cliente</h4>
-                        <p style="margin: 5px 0 0; font-size: 0.9rem;">Soluções desenhadas sob medida para a sua dor real.</p>
+                        <p>Soluções desenhadas sob medida para a sua dor real.</p>
                     </div>
                 </div>
             </div>
@@ -1533,27 +1809,22 @@
     <!-- Team Section -->
     <section class="team-section" id="contato">
         <div class="container">
-            <h2 class="text-center" style="color: #1e293b; margin-bottom: 20px;">Liderança e Execução</h2>
-            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px; color: #4b5563;">
+            <h2 class="text-center" style="margin-bottom: 20px;">Liderança e Execução</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px; color: var(--gray);">
                 Formação de elite e experiência prática para garantir a melhor entrega tecnológica para o seu negócio.
             </p>
             <div class="team-grid">
-                
-                <!-- Membro 1: Murilo -->
                 <div class="team-member">
-                    <img src="fotolinkedinmurilo.jfif" alt="Murilo Miguel Narciso - CEO" class="member-photo">
-                    
+                    <img src="fotolinkedinmurilo.jfif" alt="Murilo Miguel Narciso - Co-Fundador" class="member-photo">
                     <h3 class="member-name">Murilo Miguel Narciso</h3>
-                    <p class="member-role">CEO & Co-Fundador</p>
+                    <p class="member-role">Co-Fundador</p>
                     <p class="member-education">Engenheiro Civil – IME<br>(Instituto Militar de Engenharia)</p>
-                    
                     <div class="member-achievements">
                         <div class="achievement-item"><i class="fas fa-check-circle"></i> Vencedor Hackathon IA 2025 (COPPE/UFRJ)</div>
                         <div class="achievement-item"><i class="fas fa-check-circle"></i> 1º Lugar Programa VALE 2025</div>
-                        <div class="achievement-item"><i class="fas fa-check-circle"></i> 4 anos em P&D (CNPq) + 6 publicações</div>
+                        <div class="achievement-item"><i class="fas fa-check-circle"></i> 4 anos em P&D (CNPq)</div>
                         <div class="achievement-item"><i class="fas fa-check-circle"></i> IC em Webscraping (ITA-SP)</div>
                     </div>
-
                     <div class="member-social">
                         <a href="https://www.linkedin.com/in/murilonarciso/" target="_blank" class="linkedin-btn">
                             <i class="fab fa-linkedin"></i> Conectar no LinkedIn
@@ -1561,28 +1832,23 @@
                     </div>
                 </div>
 
-                <!-- Membro 2: Jean -->
                 <div class="team-member">
-                    <img src="fotolinkedinjean.jfif" alt="Jean Kairo Crispim - CTO" class="member-photo">
-                    
+                    <img src="fotolinkedinjean.jfif" alt="Jean Kairo Crispim - Co-Fundador" class="member-photo">
                     <h3 class="member-name">Jean Kairo Crispim</h3>
-                    <p class="member-role">CTO & Co-Fundador</p>
+                    <p class="member-role">Co-Fundador</p>
                     <p class="member-education">Engenheiro de Telecomunicações – IME<br>(Instituto Militar de Engenharia)</p>
-                    
                     <div class="member-achievements">
                         <div class="achievement-item"><i class="fas fa-check-circle"></i> Vencedor Hackathon IA 2025 (COPPE/UFRJ)</div>
                         <div class="achievement-item"><i class="fas fa-check-circle"></i> Cybersecurity – West Point (EUA)</div>
                         <div class="achievement-item"><i class="fas fa-check-circle"></i> Especialista em Agentes de IA e RAG</div>
                         <div class="achievement-item"><i class="fas fa-check-circle"></i> Certificação CCNA (Cisco)</div>
                     </div>
-
                     <div class="member-social">
                         <a href="https://www.linkedin.com/in/jean-kairo-crispim-a11312284/" target="_blank" class="linkedin-btn">
                             <i class="fab fa-linkedin"></i> Conectar no LinkedIn
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -1590,7 +1856,7 @@
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2 class="text-center" style="margin-bottom: 40px; color: #1e293b;">Perguntas Frequentes</h2>
+            <h2 class="text-center" style="margin-bottom: 40px;">Perguntas Frequentes</h2>
             <div style="max-width: 800px; margin: 0 auto;">
                 <div class="faq-item">
                     <div class="faq-question">Quais tipos de empresas vocês atendem? <i class="fas fa-chevron-down"></i></div>
@@ -1626,35 +1892,53 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-content">
-            <div>
-                <h3 style="color: white; font-size: 1.5rem; margin-bottom: 10px;">Vertech Consultoria</h3>
-                <p style="font-size: 0.9rem; max-width: 400px;">
-                    IA aplicada, automação e segurança para PMEs. Transformando negócios com tecnologia acessível.
-                </p>
+            <div class="footer-logo">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 12 L40 68 L40 44 L24 12 Z" fill="#22D3EE" opacity="0.15"/>
+                    <path d="M8 12 L40 68 L72 12 L56 12 L40 44 L24 12 Z" stroke="#22D3EE" stroke-width="2" fill="none"/>
+                </svg>
+                <div class="footer-logo-text">
+                    <span class="footer-logo-name">VERTECH</span>
+                    <span class="footer-logo-sub">Soluções</span>
+                </div>
             </div>
+            <p>
+                IA aplicada, automação e segurança para PMEs. Transformando negócios com tecnologia acessível.
+            </p>
             <div class="footer-contact">
-                <p><i class="fas fa-envelope"></i> <a href="mailto:vertech2026@gmail.com" style="color: #94a3b8; text-decoration: none;">vertech2026@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> <a href="tel:+554989167594" style="color: #94a3b8; text-decoration: none;">+55 (49) 8916-7594</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:vertech2026@gmail.com">vertech2026@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+554989167594">+55 (49) 8916-7594</a></p>
             </div>
-            <div class="footer-links" style="margin-top: 20px;">
+            <div class="footer-links">
                 <a href="#">Home</a>
                 <a href="#servicos">Serviços</a>
                 <a href="#contato">Contato</a>
             </div>
-            <div class="copyright" style="margin-top: 30px; font-size: 0.8rem; border-top: 1px solid #1e293b; padding-top: 20px; width: 100%;">
-                &copy; 2025 Vertech Consultoria. Todos os direitos reservados.
+            <div class="copyright">
+                &copy; 2025 Vertech Soluções. Todos os direitos reservados.
             </div>
         </div>
     </footer>
 
-    <!-- Botão Flutuante do WhatsApp -->
-    <a class="whatsapp-fab" href="https://wa.me/554989167594?text=Olá,%20gostaria%20de%20conhecer%20as%20soluções%20da%20Vertech" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-        <i class="fab fa-whatsapp" style="font-size: 30px;"></i>
+    <!-- WhatsApp FAB -->
+    <a class="whatsapp-fab" href="https://wa.me/554989167594?text=Ol%C3%A1,%20gostaria%20de%20conhecer%20as%20solu%C3%A7%C3%B5es%20da%20Vertech" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Verah Floating Btn -->
+    <div class="verah-floating-btn" onclick="openChat()">
+        <div class="verah-avatar">
+            <svg viewBox="0 0 80 80" fill="none">
+                <path d="M20 25 L40 55 L40 42 L28 25 Z" fill="#22D3EE" opacity="0.3"/>
+                <path d="M20 25 L40 55 L60 25 L50 25 L40 42 L30 25 Z" stroke="#22D3EE" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+        Assistente Verah
+    </div>
 
     <script>
         /* =============================
-           CHAT IA (SEU CÓDIGO ORIGINAL)
+           CHAT IA
         ============================== */
         const apiKey = "AIzaSyBEt5S3v_ZVdIng_ZNWVfH0sD1RYpEWd0M";
         
@@ -1665,7 +1949,6 @@
 
             const chatMessages = document.getElementById("chatMessages");
             
-            // Add User Message
             const userMsgDiv = document.createElement("div");
             userMsgDiv.className = "message user";
             userMsgDiv.textContent = messageText;
@@ -1674,44 +1957,31 @@
             input.value = "";
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Show Typing Indicator
             const typingIndicator = document.getElementById("typingIndicator");
             typingIndicator.style.display = "block";
 
             try {
-                // Call Gemini API
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        contents: [{
-                            parts: [{
-                                text: messageText
-                            }]
-                        }],
+                        contents: [{ parts: [{ text: messageText }] }],
                         systemInstruction: {
                             parts: [{
-                                text: "Você é um assistente virtual inteligente e prestativo da Vertech Consultoria. Sua função é ajudar potenciais clientes a entender como a Vertech pode transformar seus negócios. Responda de forma concisa, profissional e amigável, sempre em português do Brasil. Use emojis ocasionalmente para manter o tom leve. \n\nInformações sobre a Vertech:\n- Missão: Transformar PMEs com IA e automação.\n- Serviços: Apps, Agentes de IA, Automação de Processos, Sites Profissionais.\n- Diferenciais: Disciplina militar na execução, entrega rápida (em semanas), foco em segurança e redução de custos.\n- Contato: WhatsApp +55 (49) 8916-7594, Email murilomn58@gmail.com.\n\nSe perguntarem sobre preços específicos, diga que cada projeto é sob medida e sugira agendar uma análise estratégica gratuita pelo link do WhatsApp."
+                                text: "Você é um assistente virtual inteligente e prestativo da Vertech Soluções. Sua função é ajudar potenciais clientes a entender como a Vertech pode transformar seus negócios. Responda de forma concisa, profissional e amigável, sempre em português do Brasil. Use emojis ocasionalmente para manter o tom leve.\n\nInformações sobre a Vertech Soluções:\n- Missão: Transformar PMEs com IA e automação.\n- Serviços: Apps, Agentes de IA, Automação de Processos, Sites Profissionais.\n- Diferenciais: Disciplina militar na execução, entrega rápida (em semanas), foco em segurança e redução de custos.\n- Contato: WhatsApp +55 (49) 8916-7594, Email vertech2026@gmail.com.\n\nSe perguntarem sobre preços específicos, diga que cada projeto é sob medida e sugira agendar uma análise estratégica gratuita pelo WhatsApp."
                             }]
                         }
                     })
                 });
 
                 const data = await response.json();
-                if (!response.ok) {
-                    console.error("Gemini API error:", data);
-                    const msg = data?.error?.message || `Erro HTTP ${response.status}`;
-                    throw new Error(msg);
-                }
-                const botResponse =  data.candidates?.[0]?.content?.parts?.[0]?.text ||
-                "Não recebi texto do modelo. Tente novamente.";
+                if (!response.ok) throw new Error(data?.error?.message || `Erro HTTP ${response.status}`);
+                
+                const botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || "Não recebi resposta. Tente novamente.";
 
-                // Add Bot Message
                 const botMsgDiv = document.createElement("div");
                 botMsgDiv.className = "message bot";
-                botMsgDiv.innerHTML = marked.parse(botResponse); 
+                botMsgDiv.innerHTML = marked.parse(botResponse);
                 chatMessages.appendChild(botMsgDiv);
 
             } catch (error) {
@@ -1726,7 +1996,6 @@
             }
         }
 
-        // Modal Controls
         function openChat() {
             document.getElementById("chatModal").classList.add("active");
         }
@@ -1736,17 +2005,14 @@
         });
 
         document.getElementById("sendBtn").addEventListener("click", sendMessage);
-        
         document.getElementById("chatInput").addEventListener("keypress", (e) => {
             if (e.key === "Enter") sendMessage();
         });
 
         /* =============================
-           ✅ PORTFÓLIO (NOVO)
+           PORTFOLIO
         ============================== */
-
-        // --- DADOS DOS PROJETOS (edite aqui textos/métricas/tags se quiser) ---
-        const vtProjectsData = [
+        const projectsData = [
             {
                 id: 0,
                 category: "ia-agentes",
@@ -1756,14 +2022,9 @@
                 solution: "Agente que responde, qualifica e encaminha automaticamente",
                 metrics: ["-60% tempo de atendimento", "+35% conversão", "24/7"],
                 tags: ["WhatsApp", "IA", "Fluxos", "CRM"],
-                deliverables: [
-                    "Agente de IA treinado com base de conhecimento da empresa",
-                    "Fluxos de qualificação e roteamento automático",
-                    "Integrações com atendimento e registro de leads",
-                    "Dashboard de métricas e conversas"
-                ],
+                deliverables: ["Agente de IA treinado com base de conhecimento da empresa", "Fluxos de qualificação e roteamento automático", "Integrações com atendimento e registro de leads", "Dashboard de métricas e conversas"],
                 before: "Equipe sobrecarregada respondendo mensagens repetitivas, perda de leads por demora, qualificação manual.",
-                after: "Atendimento instantâneo 24/7, leads qualificados automaticamente, equipe focada em conversão e menos retrabalho.",
+                after: "Atendimento instantâneo 24/7, leads qualificados automaticamente, equipe focada em conversão.",
                 stack: ["Agentes IA", "WhatsApp", "n8n/Make", "Banco de dados", "Dashboards"]
             },
             {
@@ -1775,14 +2036,9 @@
                 solution: "Busca inteligente + respostas com referência exata",
                 metrics: ["-70% tempo de busca", "+20% produtividade", "Auditável"],
                 tags: ["RAG", "OCR", "Segurança", "Permissões"],
-                deliverables: [
-                    "Ingestão de documentos com OCR",
-                    "Busca semântica com referências ao documento original",
-                    "Controle de permissões por usuário/grupo",
-                    "Auditoria de acessos e logs"
-                ],
-                before: "Pastas desorganizadas, busca manual demorada, risco de informação perdida e acesso indevido.",
-                after: "Respostas rápidas com evidência, organização e rastreabilidade, com segurança e controle de acesso.",
+                deliverables: ["Ingestão de documentos com OCR", "Busca semântica com referências ao documento original", "Controle de permissões por usuário/grupo", "Auditoria de acessos e logs"],
+                before: "Pastas desorganizadas, busca manual demorada, risco de informação perdida.",
+                after: "Respostas rápidas com evidência, organização e rastreabilidade, segurança e controle de acesso.",
                 stack: ["RAG", "OCR", "Embeddings", "Storage", "Controle de acesso"]
             },
             {
@@ -1794,14 +2050,9 @@
                 solution: "Robôs que cruzam dados e geram relatórios automáticos",
                 metrics: ["-80% tarefas repetitivas", "-50% erros", "Semana 1"],
                 tags: ["RPA", "ERP", "Planilhas", "Alertas"],
-                deliverables: [
-                    "Robô de conciliação automática",
-                    "Integração com ERP/planilhas/sistemas",
-                    "Relatórios e trilha de auditoria",
-                    "Alertas de divergência por e-mail/WhatsApp"
-                ],
-                before: "Horas por dia em conciliação manual, erros frequentes e processos travados aguardando validação.",
-                after: "Conciliação em minutos, redução drástica de retrabalho, alertas proativos e rotina padronizada.",
+                deliverables: ["Robô de conciliação automática", "Integração com ERP/planilhas/sistemas", "Relatórios e trilha de auditoria", "Alertas de divergência por e-mail/WhatsApp"],
+                before: "Horas por dia em conciliação manual, erros frequentes e processos travados.",
+                after: "Conciliação em minutos, redução drástica de retrabalho, alertas proativos.",
                 stack: ["Python", "RPA", "Integrações", "ETL", "Alertas"]
             },
             {
@@ -1813,14 +2064,9 @@
                 solution: "Painel em tempo real + alertas automáticos",
                 metrics: ["KPIs em tempo real", "+25% previsibilidade", "1 fonte"],
                 tags: ["BI", "KPIs", "Alertas", "Dados"],
-                deliverables: [
-                    "Painel com KPIs críticos em tempo real",
-                    "Integração de múltiplas fontes de dados",
-                    "Alertas automáticos (anomalias/limites)",
-                    "Relatórios recorrentes automatizados"
-                ],
-                before: "Dados em planilhas fragmentadas, KPIs calculados manualmente, decisões baseadas em intuição.",
-                after: "Visão unificada, métricas atualizadas, alertas de desvios e decisões baseadas em dados confiáveis.",
+                deliverables: ["Painel com KPIs críticos em tempo real", "Integração de múltiplas fontes de dados", "Alertas automáticos (anomalias/limites)", "Relatórios recorrentes automatizados"],
+                before: "Dados em planilhas fragmentadas, KPIs calculados manualmente.",
+                after: "Visão unificada, métricas atualizadas, decisões baseadas em dados confiáveis.",
                 stack: ["Power BI", "SQL", "Python", "ETL", "Automação"]
             },
             {
@@ -1832,14 +2078,9 @@
                 solution: "App com fluxo ponta a ponta e notificações",
                 metrics: ["-30% faltas", "+20% recorrência", "Menos caos"],
                 tags: ["App", "Agenda", "Pagamento", "Notificações"],
-                deliverables: [
-                    "App com jornada completa do cliente",
-                    "Agendamento e confirmação automatizada",
-                    "Notificações de lembrete (push/WhatsApp)",
-                    "Integração com pagamentos e relatórios"
-                ],
-                before: "Agendamento manual, faltas sem aviso e muito retrabalho em confirmação e cobrança.",
-                after: "Self-service 24/7, lembretes automáticos, melhor presença e mais previsibilidade no caixa.",
+                deliverables: ["App com jornada completa do cliente", "Agendamento e confirmação automatizada", "Notificações de lembrete (push/WhatsApp)", "Integração com pagamentos e relatórios"],
+                before: "Agendamento manual, faltas sem aviso e muito retrabalho.",
+                after: "Self-service 24/7, lembretes automáticos, melhor presença e previsibilidade.",
                 stack: ["App", "Back-end", "Banco de dados", "Notificações", "Pagamentos"]
             },
             {
@@ -1851,19 +2092,14 @@
                 solution: "Site rápido com SEO e CTA forte",
                 metrics: ["+40% leads", "LCP otimizado", "SEO base"],
                 tags: ["SEO", "Performance", "Landing", "Conversão"],
-                deliverables: [
-                    "Página rápida e responsiva (mobile-first)",
-                    "Estrutura de SEO técnico e conteúdo",
-                    "CTAs e tracking de conversão",
-                    "Otimização de performance (Core Web Vitals)"
-                ],
-                before: "Site lento, pouca conversão e sem rastreamento confiável de leads.",
-                after: "Carregamento rápido, melhor ranqueamento e funil claro com métricas de conversão.",
+                deliverables: ["Página rápida e responsiva (mobile-first)", "Estrutura de SEO técnico e conteúdo", "CTAs e tracking de conversão", "Otimização de performance (Core Web Vitals)"],
+                before: "Site lento, pouca conversão e sem rastreamento confiável.",
+                after: "Carregamento rápido, melhor ranqueamento e funil claro com métricas.",
                 stack: ["HTML", "CSS", "JS", "SEO", "Analytics"]
             }
         ];
 
-        const vtFilters = [
+        const filters = [
             { id: "todos", label: "Todos" },
             { id: "ia-agentes", label: "IA & Agentes" },
             { id: "automacao", label: "Automação" },
@@ -1872,323 +2108,108 @@
             { id: "dashboards", label: "Dashboards" }
         ];
 
-        // DOM
-        const vtGridContainer = document.getElementById('vt-projects-grid');
-        const vtCarouselWrapper = document.getElementById('vt-carousel-wrapper');
-        const vtFilterContainer = document.getElementById('vt-filter-container');
-        const vtCountDisplay = document.getElementById('vt-project-count-display');
+        const gridContainer = document.getElementById('projectsGrid');
+        const filterContainer = document.getElementById('filterContainer');
+        const countDisplay = document.getElementById('projectCountDisplay');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalCategory = document.getElementById('modalCategory');
+        const modalBody = document.getElementById('modalBody');
+        const modalClose = document.getElementById('modalClose');
 
-        const vtModalOverlay = document.getElementById('vt-modal-overlay');
-        const vtModalTitle = document.getElementById('vt-modal-title');
-        const vtModalCategory = document.getElementById('vt-modal-category');
-        const vtModalBody = document.getElementById('vt-modal-body');
-        const vtModalClose = document.getElementById('vt-modal-close');
-
-        const vtNextBtn = document.getElementById('vt-next-btn');
-        const vtPrevBtn = document.getElementById('vt-prev-btn');
-        const vtDotsContainer = document.getElementById('vt-carousel-dots');
-
-        // Util: detectar reduce motion
-        const vtReduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        function vtCategoryBadgeStyle(label) {
-            // Mantém variações elegantes sem quebrar tema
-            const map = {
-                "IA & Agentes": { bg: "#eef2ff", border: "rgba(79,70,229,0.20)", fg: "#4338ca" },
-                "Automação": { bg: "#ecfeff", border: "rgba(6,182,212,0.20)", fg: "#0891b2" },
-                "Apps": { bg: "#f0fdf4", border: "rgba(16,185,129,0.22)", fg: "#059669" },
-                "Sites": { bg: "#eff6ff", border: "rgba(37,99,235,0.20)", fg: "#2563eb" },
-                "Dashboards": { bg: "#fff7ed", border: "rgba(249,115,22,0.22)", fg: "#ea580c" }
-            };
-            return map[label] || { bg: "#eff6ff", border: "rgba(37,99,235,0.20)", fg: "#2563eb" };
-        }
-
-        function vtCreateCardHTML(project, indexInList) {
-            const badge = vtCategoryBadgeStyle(project.categoryLabel);
-            const num = String(indexInList + 1).padStart(2, "0");
+        function createCardHTML(project, idx) {
             return `
-                <article class="project-card reveal" data-project-id="${project.id}">
+                <article class="project-card" data-project-id="${project.id}">
                     <div class="project-topline">
-                        <span class="category-badge" style="background:${badge.bg};border-color:${badge.border};color:${badge.fg};">
-                            ${project.categoryLabel}
-                        </span>
-                        <span class="project-num" aria-hidden="true">${num}</span>
+                        <span class="category-badge">${project.categoryLabel}</span>
+                        <span class="project-num">${String(idx + 1).padStart(2, "0")}</span>
                     </div>
-
                     <h3 class="project-title">${project.title}</h3>
                     <p class="project-pain">${project.pain}</p>
                     <p class="project-solution">${project.solution}</p>
-
-                    <div class="metrics" aria-label="Métricas do projeto">
-                        ${project.metrics.map(m => `<span class="metric">${m}</span>`).join('')}
-                    </div>
-
-                    <div class="tags" aria-label="Tecnologias/Tags do projeto">
-                        ${project.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-                    </div>
-
-                    <button class="view-details-btn" type="button" aria-label="Ver detalhes de ${project.title}">
-                        Ver detalhes
-                    </button>
+                    <div class="metrics">${project.metrics.map(m => `<span class="metric">${m}</span>`).join('')}</div>
+                    <div class="tags">${project.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+                    <button class="view-details-btn" type="button">Ver detalhes</button>
                 </article>
             `;
         }
 
-        function vtRenderFilters() {
-            vtFilterContainer.innerHTML = vtFilters.map(f => `
-                <button class="filter-chip ${f.id === 'todos' ? 'active' : ''}" type="button" data-filter="${f.id}">
-                    ${f.label}
-                </button>
+        function renderFilters() {
+            filterContainer.innerHTML = filters.map(f => `
+                <button class="filter-chip ${f.id === 'todos' ? 'active' : ''}" type="button" data-filter="${f.id}">${f.label}</button>
             `).join('');
         }
 
-        function vtBuildDots(count) {
-            vtDotsContainer.innerHTML = "";
-            for (let i = 0; i < count; i++) {
-                const btn = document.createElement("button");
-                btn.className = "dot" + (i === 0 ? " active" : "");
-                btn.type = "button";
-                btn.setAttribute("aria-label", `Ir para o projeto ${i + 1}`);
-                btn.addEventListener("click", () => vtScrollToIndex(i));
-                vtDotsContainer.appendChild(btn);
-            }
+        function renderProjects(filterId = "todos") {
+            const filtered = filterId === "todos" ? projectsData : projectsData.filter(p => p.category === filterId);
+            countDisplay.textContent = filtered.length;
+            gridContainer.innerHTML = filtered.map((p, idx) => createCardHTML(p, idx)).join("");
+            bindCardEvents();
         }
 
-        function vtScrollToIndex(i) {
-            const cards = vtCarouselWrapper.querySelectorAll(".project-card");
-            if (!cards[i]) return;
-            const target = cards[i];
-            target.scrollIntoView({ behavior: vtReduceMotion ? "auto" : "smooth", inline: "center", block: "nearest" });
-            vtSetActiveDot(i);
-        }
-
-        function vtSetActiveDot(activeIndex) {
-            const dots = vtDotsContainer.querySelectorAll(".dot");
-            dots.forEach((d, idx) => d.classList.toggle("active", idx === activeIndex));
-        }
-
-        function vtGetClosestCenteredIndex() {
-            const cards = Array.from(vtCarouselWrapper.querySelectorAll(".project-card"));
-            if (!cards.length) return 0;
-            const wrapperRect = vtCarouselWrapper.getBoundingClientRect();
-            const centerX = wrapperRect.left + wrapperRect.width / 2;
-
-            let bestIdx = 0;
-            let bestDist = Infinity;
-            cards.forEach((card, idx) => {
-                const r = card.getBoundingClientRect();
-                const cardCenter = r.left + r.width / 2;
-                const dist = Math.abs(centerX - cardCenter);
-                if (dist < bestDist) {
-                    bestDist = dist;
-                    bestIdx = idx;
-                }
-            });
-            return bestIdx;
-        }
-
-        function vtRenderProjects(filterId = "todos") {
-            const filtered = filterId === "todos" ? vtProjectsData : vtProjectsData.filter(p => p.category === filterId);
-
-            vtCountDisplay.textContent = filtered.length;
-
-            // Grid
-            vtGridContainer.innerHTML = filtered.map((p, idx) => vtCreateCardHTML(p, idx)).join("");
-
-            // Carrossel
-            vtCarouselWrapper.innerHTML = filtered.map((p, idx) => vtCreateCardHTML(p, idx)).join("");
-
-            // Dots (mobile)
-            vtBuildDots(filtered.length);
-
-            // Scroll carrossel pro início quando filtra
-            vtCarouselWrapper.scrollTo({ left: 0, behavior: "auto" });
-            vtSetActiveDot(0);
-
-            // Bind clicks (cards + button)
-            vtBindCardEvents();
-
-            // Re-iniciar reveal observer
-            vtObserveReveals();
-        }
-
-        function vtBindCardEvents() {
-            const cards = document.querySelectorAll("#vt-projects-grid .project-card, #vt-carousel-wrapper .project-card");
-            cards.forEach(card => {
-                const id = Number(card.getAttribute("data-project-id"));
-                const btn = card.querySelector(".view-details-btn");
-
-                const open = () => vtOpenProjectModal(id);
-
-                // Clique no card abre modal
-                card.addEventListener("click", (e) => {
-                    // Se clicar no botão, também abre (e evita duplo clique)
-                    if (e.target && e.target.classList && e.target.classList.contains("view-details-btn")) return;
-                    open();
-                });
-
-                // Clique no botão abre modal e impede propagação
-                btn.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    open();
-                });
+        function bindCardEvents() {
+            document.querySelectorAll('.project-card').forEach(card => {
+                const id = Number(card.getAttribute('data-project-id'));
+                card.addEventListener('click', () => openModal(id));
             });
         }
 
-        function vtOpenProjectModal(projectId) {
-            const project = vtProjectsData.find(p => p.id === projectId);
+        function openModal(projectId) {
+            const project = projectsData.find(p => p.id === projectId);
             if (!project) return;
 
-            const badge = vtCategoryBadgeStyle(project.categoryLabel);
+            modalTitle.textContent = project.title;
+            modalCategory.textContent = project.categoryLabel;
 
-            vtModalTitle.textContent = project.title;
-            vtModalCategory.textContent = project.categoryLabel;
-            vtModalCategory.style.background = badge.bg;
-            vtModalCategory.style.borderColor = badge.border;
-            vtModalCategory.style.color = badge.fg;
-
-            vtModalBody.innerHTML = `
+            modalBody.innerHTML = `
                 <div class="pm-section">
                     <h4>📦 O que foi entregue</h4>
-                    <ul class="pm-list">
-                        ${project.deliverables.map(item => `<li>${item}</li>`).join("")}
-                    </ul>
+                    <ul class="pm-list">${project.deliverables.map(item => `<li>${item}</li>`).join("")}</ul>
                 </div>
-
                 <div class="pm-section">
                     <h4>🔄 Antes / Depois</h4>
                     <div class="pm-before-after">
-                        <div class="pm-col before">
-                            <h5>Antes</h5>
-                            <p>${project.before}</p>
-                        </div>
-                        <div class="pm-col after">
-                            <h5>Depois</h5>
-                            <p>${project.after}</p>
-                        </div>
+                        <div class="pm-col before"><h5>Antes</h5><p>${project.before}</p></div>
+                        <div class="pm-col after"><h5>Depois</h5><p>${project.after}</p></div>
                     </div>
                 </div>
-
                 <div class="pm-section">
                     <h4>🛠️ Stack</h4>
-                    <div class="pm-stack">
-                        ${project.stack.map(s => `<span>${s}</span>`).join("")}
-                    </div>
+                    <div class="pm-stack">${project.stack.map(s => `<span>${s}</span>`).join("")}</div>
                 </div>
-
                 <div class="pm-cta">
-                    <h3 style="margin:0;">Quer um resultado assim?</h3>
-                    <p>Agende uma análise estratégica e te mostramos o caminho mais rápido (e seguro) para seu caso.</p>
-                    <a href="https://wa.me/554989167594?text=Quero%20uma%20an%C3%A1lise%20estrat%C3%A9gica%20da%20Vertech">
-                        Quero um projeto assim
-                    </a>
+                    <h3>Quer um resultado assim?</h3>
+                    <p>Agende uma análise estratégica e te mostramos o caminho mais rápido para seu caso.</p>
+                    <a href="https://wa.me/554989167594?text=Quero%20uma%20an%C3%A1lise%20estrat%C3%A9gica%20da%20Vertech">Quero um projeto assim</a>
                 </div>
             `;
 
-            vtModalOverlay.classList.add("active");
-            vtModalOverlay.setAttribute("aria-hidden", "false");
+            modalOverlay.classList.add("active");
             document.body.style.overflow = "hidden";
         }
 
-        function vtCloseModal() {
-            vtModalOverlay.classList.remove("active");
-            vtModalOverlay.setAttribute("aria-hidden", "true");
+        function closeModal() {
+            modalOverlay.classList.remove("active");
             document.body.style.overflow = "";
         }
 
-        vtModalClose.addEventListener("click", vtCloseModal);
-        vtModalOverlay.addEventListener("click", (e) => {
-            if (e.target === vtModalOverlay) vtCloseModal();
+        modalClose.addEventListener("click", closeModal);
+        modalOverlay.addEventListener("click", (e) => { if (e.target === modalOverlay) closeModal(); });
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+        filterContainer.addEventListener("click", (e) => {
+            const btn = e.target.closest(".filter-chip");
+            if (!btn) return;
+            document.querySelectorAll(".filter-chip").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            renderProjects(btn.getAttribute("data-filter") || "todos");
         });
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && vtModalOverlay.classList.contains("active")) vtCloseModal();
-        });
-
-        // Carrossel nav
-        vtNextBtn.addEventListener("click", () => {
-            vtCarouselWrapper.scrollBy({ left: 320, behavior: vtReduceMotion ? "auto" : "smooth" });
-        });
-        vtPrevBtn.addEventListener("click", () => {
-            vtCarouselWrapper.scrollBy({ left: -320, behavior: vtReduceMotion ? "auto" : "smooth" });
-        });
-
-        // Dots sync por scroll (throttle simples)
-        let vtScrollTimer = null;
-        vtCarouselWrapper.addEventListener("scroll", () => {
-            if (vtScrollTimer) clearTimeout(vtScrollTimer);
-            vtScrollTimer = setTimeout(() => {
-                const idx = vtGetClosestCenteredIndex();
-                vtSetActiveDot(idx);
-            }, 60);
-        }, { passive: true });
-
-        // Teclado (opcional): setas navegam quando foco está no carrossel
-        document.addEventListener("keydown", (e) => {
-            const isModalOpen = vtModalOverlay.classList.contains("active");
-            if (isModalOpen) return;
-
-            // Se o viewport é mobile (carrossel visível), permitir setas
-            if (window.matchMedia("(max-width: 700px)").matches) {
-                if (e.key === "ArrowRight") vtNextBtn.click();
-                if (e.key === "ArrowLeft") vtPrevBtn.click();
-            }
-        });
-
-        // Reveal observer
-        let vtRevealObserver = null;
-        function vtObserveReveals() {
-            if (vtReduceMotion) {
-                document.querySelectorAll(".portfolio-section .reveal").forEach(el => el.classList.add("reveal-visible"));
-                return;
-            }
-
-            if (vtRevealObserver) vtRevealObserver.disconnect();
-
-            vtRevealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("reveal-visible");
-                        vtRevealObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12 });
-
-            document.querySelectorAll(".portfolio-section .reveal").forEach(el => {
-                el.classList.remove("reveal-visible");
-                vtRevealObserver.observe(el);
-            });
-        }
-
-        // Filtros click
-        function vtBindFilterClicks() {
-            vtFilterContainer.addEventListener("click", (e) => {
-                const btn = e.target.closest(".filter-chip");
-                if (!btn) return;
-
-                document.querySelectorAll(".filter-chip").forEach(b => b.classList.remove("active"));
-                btn.classList.add("active");
-
-                const filterId = btn.getAttribute("data-filter") || "todos";
-                vtRenderProjects(filterId);
-
-                // reset carrossel para início
-                vtCarouselWrapper.scrollTo({ left: 0, behavior: "auto" });
-            });
-        }
 
         document.addEventListener("DOMContentLoaded", () => {
-            vtRenderFilters();
-            vtBindFilterClicks();
-            vtRenderProjects("todos");
-            vtObserveReveals();
+            renderFilters();
+            renderProjects("todos");
         });
     </script>
-	
-    <!-- Botão Flutuante Assistente Verah -->
-    <div class="verah-floating-btn" onclick="openChat()">
-        <img src="verah-avatar.png" class="verah-avatar">
-        Assistente Verah
-    </div>
 
 </body>
 </html>
