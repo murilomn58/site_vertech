@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="<%= t.lang %>">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= t.meta.description %>">
+    <title><%= t.meta.title %></title>
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="canonical" href="https://www.vertechlabs.tech<%= currentPath %>">
+    <link rel="alternate" hreflang="pt-BR" href="https://www.vertechlabs.tech/">
+    <link rel="alternate" hreflang="fr" href="https://www.vertechlabs.tech/fr">
+    <link rel="alternate" hreflang="en" href="https://www.vertechlabs.tech/en">
+    <link rel="alternate" hreflang="x-default" href="https://www.vertechlabs.tech/">
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="<%= locale === 'pt' ? 'pt_BR' : locale === 'fr' ? 'fr_FR' : 'en_US' %>">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cyan: #22D3EE;
+            --cyan-light: #67E8F9;
+            --cyan-dark: #0891B2;
+            --navy: #0F172A;
+            --navy-light: #1E293B;
+            --gray-dark: #334155;
+            --gray: #64748B;
+            --gray-light: #94A3B8;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+            --border: #E2E8F0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #e11d48;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--off-white); color: var(--navy); line-height: 1.6; }
+        h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; color: var(--navy); }
+        p { color: var(--gray-dark); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .text-center { text-align: center; }
+        .text-cyan { color: var(--cyan); }
+
+        /* Language Selector */
+        .language-selector { position: fixed; top: 20px; right: 20px; display: flex; gap: 8px; z-index: 9999; background: rgba(255,255,255,0.95); padding: 8px 12px; border-radius: 30px; box-shadow: 0 4px 15px rgba(15,23,42,0.1); border: 1px solid var(--border); }
+        .lang-flag { display: flex; align-items: center; padding: 4px; border-radius: 4px; opacity: 0.6; transition: all 0.2s ease; border: 2px solid transparent; text-decoration: none; }
+        .lang-flag:hover { opacity: 1; }
+        .lang-flag.active { opacity: 1; border-color: var(--cyan); }
+        .lang-flag img { display: block; border-radius: 2px; }
+
+        /* Intro Section */
+        .intro-section { background-color: var(--white); padding: 50px 0 40px; text-align: center; border-bottom: 1px solid var(--border); position: relative; z-index: 20; }
+        .intro-logo-container { display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px; opacity: 0; transform: translateX(-80px); animation: slideIn 1.2s ease-out forwards; }
+        @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+        .intro-logo-icon { width: 90px; height: 90px; display: block; }
+        .intro-logo-text { display: flex; flex-direction: column; text-align: left; }
+        .intro-logo-name { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 48px; letter-spacing: 0.04em; line-height: 1; color: var(--navy); }
+        .intro-logo-sub { font-family: 'Montserrat', sans-serif; font-weight: 400; font-size: 16px; letter-spacing: 0.35em; color: var(--cyan); text-transform: uppercase; }
+        .intro-phrase { opacity: 0; transform: translateY(60px); animation: fadeUp 1.4s ease-out forwards; animation-delay: 0.4s; font-size: 1.1rem; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+        /* Hero Section */
+        .hero-lean { padding: 100px 0; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 55%, #0b1224 100%); color: white; display: flex; align-items: center; justify-content: center; gap: 50px; overflow: hidden; position: relative; z-index: 10; }
+        .hero-lean::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 15% 25%, rgba(34,211,238,0.15), transparent 40%), radial-gradient(circle at 80% 15%, rgba(103,232,249,0.10), transparent 45%); pointer-events: none; }
+        .hero-content { flex: 1; max-width: 650px; text-align: left; padding-left: 5%; position: relative; z-index: 12; }
+        .hero-badge { display: inline-block; background: rgba(34,211,238,0.15); padding: 8px 18px; border-radius: 30px; font-size: 0.85rem; margin-bottom: 25px; border: 1px solid rgba(34,211,238,0.3); color: var(--cyan-light); }
+        .hero-badge i { margin-right: 8px; color: var(--cyan); }
+        .hero-lean h1 { font-size: 3.2rem; margin-bottom: 1.5rem; line-height: 1.1; color: var(--white); }
+        .hero-lean h1 span { color: var(--cyan); }
+        .hero-lean p { font-size: 1.15rem; color: var(--gray-light); margin-bottom: 2.5rem; line-height: 1.7; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-dark) 100%); color: var(--navy); padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(34,211,238,0.4); }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(34,211,238,0.5); }
+        .hero-image { flex: 1; display: flex; align-items: center; justify-content: center; position: relative; z-index: 11; }
+        .hero-image img { width: min(860px, 100%); height: auto; border-radius: 18px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35); opacity: 0; transform: translateX(60px); animation: floatIn 2s ease-out forwards; animation-delay: 0.3s; }
+        @keyframes floatIn { to { opacity: 1; transform: translateX(0); } }
+
+        @media (max-width: 900px) {
+            .hero-lean { flex-direction: column; text-align: center; padding: 80px 20px; }
+            .hero-content { text-align: center; padding-left: 0; }
+            .hero-lean h1 { font-size: 2.4rem; }
+            .hero-image img { width: min(520px, 100%); }
+            .intro-logo-container { flex-direction: column; gap: 15px; }
+            .intro-logo-text { text-align: center; }
+            .intro-logo-name { font-size: 36px; }
+        }
+
+        /* Features Section */
+        .features-section { padding: 80px 0; background: var(--white); }
+        .section-header { max-width: 800px; margin: 0 auto 60px; text-align: center; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .section-header h2 span { color: var(--cyan-dark); }
+        .section-header p { font-size: 1.1rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .feature-card { background: var(--white); padding: 30px; border-radius: 16px; box-shadow: 0 4px 15px rgba(15,23,42,0.06); border: 1px solid var(--border); transition: all 0.3s ease; display: flex; flex-direction: column; }
+        .feature-card:hover { transform: translateY(-5px); border-color: var(--cyan); box-shadow: 0 12px 30px rgba(34,211,238,0.15); }
+        .feature-icon { width: 60px; height: 60px; background: linear-gradient(135deg, rgba(34,211,238,0.15) 0%, rgba(8,145,178,0.1) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+        .feature-icon i { font-size: 1.5rem; color: var(--cyan-dark); }
+        .feature-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+        .feature-card p { font-size: 0.95rem; flex-grow: 1; }
+        .ai-chat-btn { margin-top: 20px; background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%); color: var(--white); border: none; padding: 12px 20px; border-radius: 30px; cursor: pointer; font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(34,211,238,0.3); animation: pulse-glow 2s infinite; }
+        @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(34,211,238,0.5); } 70% { box-shadow: 0 0 0 12px rgba(34,211,238,0); } 100% { box-shadow: 0 0 0 0 rgba(34,211,238,0); } }
+        .ai-chat-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(34,211,238,0.5); }
+
+        /* Portfolio Section */
+        .portfolio-section { padding: 0; background: var(--white); border-top: 1px solid var(--border); }
+        .portfolio-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 55%, #0b1224 100%); color: var(--white); padding: 50px 0 30px; position: relative; }
+        .portfolio-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 15% 25%, rgba(34,211,238,0.18), transparent 40%), radial-gradient(circle at 80% 15%, rgba(103,232,249,0.12), transparent 45%); pointer-events: none; }
+        .portfolio-header { text-align: center; max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+        .portfolio-title { font-size: 2.8rem; margin: 0 0 15px; color: var(--white); }
+        .portfolio-title span { color: var(--cyan); }
+        .portfolio-subtitle { font-size: 1.05rem; color: var(--gray-light); margin-bottom: 25px; }
+        .trust-badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .trust-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; color: var(--cyan-light); background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.25); backdrop-filter: blur(10px); }
+        .trust-badge::before { content: "✓"; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--cyan); color: var(--navy); font-size: 0.7rem; font-weight: 900; }
+        .portfolio-wave { position: relative; margin-top: -6px; height: 20px; background: transparent; z-index: 2; }
+        .portfolio-wave::before { content: ""; position: absolute; left: 50%; transform: translateX(-50%); top: 0; width: 140%; height: 30px; background: var(--off-white); border-top-left-radius: 999px; border-top-right-radius: 999px; box-shadow: 0 -10px 22px rgba(15,23,42,0.1); }
+        .portfolio-body { background: var(--off-white); padding: 30px 0 80px; }
+        .filter-section { margin-bottom: 30px; text-align: center; }
+        .filter-chips { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 15px; }
+        .filter-chip { background: var(--white); padding: 10px 20px; border-radius: 999px; font-size: 0.9rem; font-weight: 600; color: var(--gray); border: 1px solid var(--border); cursor: pointer; transition: all 0.2s ease; }
+        .filter-chip:hover { border-color: var(--cyan); color: var(--cyan-dark); }
+        .filter-chip.active { background: var(--cyan); color: var(--navy); border-color: var(--cyan); }
+        .project-count { font-size: 0.9rem; font-weight: 600; color: var(--gray); }
+        .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 25px; }
+        @media (max-width: 1024px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 700px) { .projects-grid { grid-template-columns: 1fr; } .portfolio-title { font-size: 2rem; } }
+        .project-card { background: var(--white); border-radius: 16px; padding: 25px; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(15,23,42,0.05); transition: all 0.3s ease; display: flex; flex-direction: column; cursor: pointer; }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--cyan); box-shadow: 0 15px 40px rgba(34,211,238,0.15); }
+        .project-topline { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
+        .category-badge { padding: 6px 12px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; background: rgba(34,211,238,0.1); color: var(--cyan-dark); border: 1px solid rgba(34,211,238,0.2); }
+        .project-num { font-weight: 800; font-size: 0.85rem; color: var(--gray-light); }
+        .project-title { font-size: 1.1rem; margin-bottom: 10px; line-height: 1.35; }
+        .project-pain, .project-solution { margin-bottom: 10px; font-size: 0.9rem; color: var(--gray); display: flex; gap: 8px; align-items: flex-start; }
+        .project-pain::before { content: "⚠"; color: var(--warning); }
+        .project-solution { color: var(--navy); padding-bottom: 15px; border-bottom: 1px solid var(--border); margin-bottom: 15px; }
+        .project-solution::before { content: "✓"; color: var(--success); font-weight: 900; }
+        .metrics { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .metric { background: var(--off-white); border: 1px solid var(--border); padding: 6px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--navy); }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+        .tag { border: 1px solid var(--border); background: var(--white); color: var(--gray); padding: 4px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; }
+        .view-details-btn { background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%); color: var(--white); border: none; padding: 12px 18px; border-radius: 12px; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; width: 100%; margin-top: auto; }
+        .view-details-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(34,211,238,0.3); }
+        .portfolio-final-cta { margin-top: 50px; background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%); color: var(--white); border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: 0 15px 50px rgba(34,211,238,0.25); }
+        .portfolio-final-cta h3 { color: var(--white); font-size: 1.6rem; margin-bottom: 12px; }
+        .portfolio-final-cta p { color: rgba(255,255,255,0.85); margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .portfolio-final-cta a { display: inline-block; background: var(--white); color: var(--cyan-dark); padding: 14px 28px; border-radius: 999px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; }
+        .portfolio-final-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,255,255,0.3); }
+
+        /* Solutions Section */
+        .solutions-section { background: var(--white); padding: 80px 0; border-top: 1px solid var(--border); }
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        @media (max-width: 768px) { .comparison-grid { grid-template-columns: 1fr; } }
+        .pain-point { background: #fff1f2; padding: 20px; border-radius: 12px; border-left: 4px solid var(--danger); margin-bottom: 15px; }
+        .pain-title { color: #9f1239; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .solution-point { background: #f0fdf4; padding: 20px; border-radius: 12px; border-left: 4px solid #16a34a; margin-bottom: 15px; }
+        .solution-title { color: #166534; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+
+        /* Values Section */
+        .values-section { background: var(--off-white); padding: 80px 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+        .value-item { background: var(--white); padding: 25px; border-radius: 12px; border-left: 4px solid var(--cyan); display: flex; align-items: flex-start; gap: 15px; box-shadow: 0 2px 10px rgba(15,23,42,0.04); }
+        .value-item i { color: var(--cyan-dark); font-size: 1.3rem; margin-top: 3px; }
+        .value-item h4 { margin-bottom: 5px; font-size: 1rem; }
+        .value-item p { font-size: 0.9rem; margin: 0; }
+
+        /* Team Section */
+        .team-section { padding: 80px 0; background: var(--white); }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 50px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .team-member { text-align: center; background: var(--off-white); padding: 35px; border-radius: 20px; box-shadow: 0 4px 15px rgba(15,23,42,0.05); border: 1px solid var(--border); transition: all 0.3s ease; }
+        .team-member:hover { transform: translateY(-5px); border-color: var(--cyan); }
+        .member-photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 4px solid var(--white); box-shadow: 0 4px 15px rgba(15,23,42,0.1); background: var(--border); }
+        .member-name { font-weight: 700; color: var(--navy); margin-bottom: 5px; font-size: 1.25rem; }
+        .member-role { color: var(--cyan-dark); font-weight: 700; margin-bottom: 12px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        .member-education { font-size: 0.9rem; color: var(--gray); margin-bottom: 15px; }
+        .member-achievements { text-align: left; margin-top: 20px; font-size: 0.85rem; color: var(--gray-dark); }
+        .achievement-item { margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px; }
+        .achievement-item i { color: #16a34a; margin-top: 3px; }
+        .member-social { margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border); }
+        .linkedin-btn { display: inline-flex; align-items: center; gap: 8px; color: #0077b5; font-weight: 600; text-decoration: none; font-size: 0.9rem; padding: 10px 20px; border-radius: 50px; background: #eef7fe; transition: all 0.3s ease; }
+        .linkedin-btn:hover { background: #0077b5; color: white; }
+
+        /* FAQ Section */
+        .faq-section { padding: 80px 0; background: var(--off-white); }
+        .faq-item { background: var(--white); margin-bottom: 15px; padding: 25px; border-radius: 12px; cursor: pointer; border: 1px solid var(--border); transition: all 0.2s ease; }
+        .faq-item:hover { border-color: var(--cyan); }
+        .faq-question { font-weight: 700; color: var(--navy); display: flex; justify-content: space-between; align-items: center; }
+        .faq-question i { color: var(--cyan-dark); }
+        .faq-answer { margin-top: 15px; color: var(--gray-dark); font-size: 0.95rem; line-height: 1.7; }
+
+        /* Final CTA */
+        .final-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: white; padding: 80px 0; text-align: center; position: relative; }
+        .final-cta::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(34,211,238,0.15), transparent 60%); pointer-events: none; }
+        .final-cta h2 { color: var(--white); margin-bottom: 20px; font-size: 2.2rem; position: relative; }
+        .final-cta p { color: var(--gray-light); margin-bottom: 35px; max-width: 600px; margin-left: auto; margin-right: auto; position: relative; }
+        .cta-button-light { background: var(--cyan); color: var(--navy); padding: 16px 35px; border-radius: 50px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; display: inline-block; position: relative; }
+        .cta-button-light:hover { background: var(--cyan-light); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(34,211,238,0.4); }
+
+        /* Footer */
+        footer { background: var(--navy); color: var(--gray-light); padding: 60px 0 30px; text-align: center; }
+        .footer-content { display: flex; flex-direction: column; gap: 25px; align-items: center; }
+        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .footer-logo svg { width: 45px; height: 45px; }
+        .footer-logo-text { text-align: left; }
+        .footer-logo-name { font-weight: 700; font-size: 1.3rem; color: var(--white); letter-spacing: 0.04em; }
+        .footer-logo-sub { font-size: 0.65rem; letter-spacing: 0.3em; color: var(--cyan); text-transform: uppercase; }
+        footer p { font-size: 0.9rem; max-width: 400px; color: var(--gray-light); }
+        .footer-contact a { color: var(--gray-light); text-decoration: none; transition: color 0.2s; }
+        .footer-contact a:hover { color: var(--cyan); }
+        .footer-links { margin-top: 20px; }
+        .footer-links a { color: var(--gray-light); text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--cyan); }
+        .copyright { margin-top: 30px; font-size: 0.8rem; border-top: 1px solid var(--navy-light); padding-top: 25px; width: 100%; color: var(--gray); }
+
+        /* WhatsApp FAB */
+        .whatsapp-fab { position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 1000; transition: all 0.3s ease; }
+        .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(37,211,102,0.5); }
+        .whatsapp-fab i { font-size: 30px; }
+
+        /* Verah Floating Btn */
+        .verah-floating-btn { position: fixed; bottom: 30px; left: 30px; background: var(--white); color: var(--navy); padding: 12px 24px 12px 16px; border-radius: 50px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 12px; cursor: pointer; box-shadow: 0 4px 20px rgba(15,23,42,0.15); transition: all 0.3s ease; z-index: 999; border: 1px solid var(--border); }
+        .verah-floating-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(15,23,42,0.2); border-color: var(--cyan); }
+        .verah-avatar { width: 45px; height: 45px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; }
+        .verah-avatar svg { width: 28px; height: 28px; }
+
+        /* Chat Modal */
+        .chat-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(15,23,42,0.6); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 2000; opacity: 0; transition: opacity 0.3s ease; }
+        .chat-modal-overlay.active { display: flex; opacity: 1; }
+        .chat-container { background: var(--white); width: 90%; max-width: 500px; height: 600px; border-radius: 20px; box-shadow: 0 15px 50px rgba(15,23,42,0.25); display: flex; flex-direction: column; overflow: hidden; transform: translateY(20px); transition: transform 0.3s ease; }
+        .chat-modal-overlay.active .chat-container { transform: translateY(0); }
+        .chat-header { background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%); color: var(--white); padding: 18px 25px; display: flex; justify-content: space-between; align-items: center; }
+        .chat-header h3 { margin: 0; font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 10px; color: var(--white); }
+        .close-chat-btn { background: rgba(255,255,255,0.2); border: none; color: white; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+        .close-chat-btn:hover { background: rgba(255,255,255,0.3); }
+        .chat-messages { flex: 1; padding: 20px; overflow-y: auto; background: var(--off-white); display: flex; flex-direction: column; gap: 15px; }
+        .message { max-width: 85%; padding: 14px 18px; border-radius: 16px; font-size: 0.95rem; line-height: 1.6; }
+        .message.bot { background: var(--white); color: var(--navy); align-self: flex-start; border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+        .message.bot strong { color: var(--cyan-dark); }
+        .message.user { background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%); color: var(--white); align-self: flex-end; border-bottom-right-radius: 4px; }
+        .chat-input-area { padding: 18px; border-top: 1px solid var(--border); display: flex; gap: 12px; background: var(--white); }
+        .chat-input { flex: 1; padding: 14px 18px; border: 1px solid var(--border); border-radius: 30px; outline: none; font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s; }
+        .chat-input:focus { border-color: var(--cyan); }
+        .send-btn { background: linear-gradient(135deg, var(--cyan-dark) 0%, var(--cyan) 100%); color: var(--white); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+        .send-btn:hover { transform: scale(1.05); box-shadow: 0 4px 15px rgba(34,211,238,0.4); }
+        .typing-indicator { font-size: 0.8rem; color: var(--gray); margin-top: 5px; display: none; align-self: flex-start; margin-left: 10px; }
+        @media (max-width: 768px) { .chat-container { width: 100%; height: 100%; max-width: none; border-radius: 0; } }
+
+        /* Portfolio Modal */
+        .portfolio-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.7); backdrop-filter: blur(6px); z-index: 9999; opacity: 0; transition: opacity 0.25s ease; align-items: center; justify-content: center; padding: 20px; }
+        .portfolio-modal-overlay.active { display: flex; opacity: 1; }
+        .portfolio-modal { background: var(--white); width: 100%; max-width: 800px; max-height: 90vh; overflow: auto; border-radius: 20px; box-shadow: 0 25px 60px rgba(15,23,42,0.3); transform: translateY(15px) scale(0.98); transition: transform 0.25s ease; }
+        .portfolio-modal-overlay.active .portfolio-modal { transform: translateY(0) scale(1); }
+        .portfolio-modal-header { padding: 25px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--white); z-index: 2; }
+        .portfolio-modal-close { position: absolute; right: 20px; top: 20px; width: 40px; height: 40px; border-radius: 50%; border: none; background: var(--off-white); color: var(--gray); cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+        .portfolio-modal-close:hover { background: var(--border); color: var(--navy); }
+        .portfolio-modal-title { margin: 12px 0 0; font-size: 1.5rem; color: var(--navy); padding-right: 50px; }
+        .portfolio-modal-body { padding: 25px; }
+        .pm-section { margin-bottom: 25px; }
+        .pm-section h4 { margin: 0 0 15px; font-size: 1rem; color: var(--navy); display: flex; gap: 10px; align-items: center; }
+        .pm-list { list-style: none; padding: 0; margin: 0; }
+        .pm-list li { padding: 12px 0; border-bottom: 1px solid var(--border); color: var(--gray-dark); display: flex; gap: 12px; align-items: flex-start; }
+        .pm-list li:last-child { border-bottom: none; }
+        .pm-list li::before { content: "→"; color: var(--cyan-dark); font-weight: 700; }
+        .pm-before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; background: var(--off-white); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+        @media (max-width: 600px) { .pm-before-after { grid-template-columns: 1fr; } }
+        .pm-col h5 { margin: 0 0 8px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px; }
+        .pm-col.before h5 { color: #dc2626; }
+        .pm-col.after h5 { color: var(--success); }
+        .pm-col p { margin: 0; color: var(--gray-dark); font-size: 0.9rem; line-height: 1.6; }
+        .pm-stack { display: flex; flex-wrap: wrap; gap: 10px; }
+        .pm-stack span { background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.2); color: var(--cyan-dark); padding: 8px 14px; border-radius: 10px; font-size: 0.85rem; font-weight: 700; }
+        .pm-cta { margin-top: 25px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); border-radius: 16px; padding: 25px; text-align: center; }
+        .pm-cta h3 { color: var(--white); margin: 0; }
+        .pm-cta p { color: var(--gray-light); margin: 10px 0 0; }
+        .pm-cta a { display: inline-block; margin-top: 18px; padding: 14px 25px; border-radius: 999px; background: var(--cyan); color: var(--navy); text-decoration: none; font-weight: 700; transition: all 0.2s ease; }
+        .pm-cta a:hover { background: var(--cyan-light); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <a href="/" class="lang-flag <%= locale === 'pt' ? 'active' : '' %>" title="Português">
+            <img src="/flags/br.svg" alt="PT" width="24" height="18">
+        </a>
+        <a href="/fr" class="lang-flag <%= locale === 'fr' ? 'active' : '' %>" title="Français">
+            <img src="/flags/fr.svg" alt="FR" width="24" height="18">
+        </a>
+        <a href="/en" class="lang-flag <%= locale === 'en' ? 'active' : '' %>" title="English">
+            <img src="/flags/gb.svg" alt="EN" width="24" height="18">
+        </a>
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="chat-modal-overlay" id="chatModal">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3><i class="fas fa-robot"></i> <%= t.chat.title %></h3>
+                <button class="close-chat-btn" id="closeChatBtn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot"><%= t.chat.initialMessage %></div>
+            </div>
+            <div class="typing-indicator" id="typingIndicator"><%= t.chat.typing %></div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" class="chat-input" placeholder="<%= t.chat.placeholder %>">
+                <button class="send-btn" id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="intro-section">
+        <div class="container">
+            <div class="intro-logo-container">
+                <svg class="intro-logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo Vertech" role="img">
+                    <path d="M8 12 L40 68 L40 44 L24 12 Z" fill="#22D3EE" opacity="0.15"/>
+                    <path d="M8 12 L40 68 L72 12 L56 12 L40 44 L24 12 Z" stroke="#22D3EE" stroke-width="2.5" fill="none"/>
+                </svg>
+                <div class="intro-logo-text">
+                    <span class="intro-logo-name">VERTECH</span>
+                    <span class="intro-logo-sub"><%= t.intro.logoSub %></span>
+                </div>
+            </div>
+            <p class="intro-phrase">
+                <%= t.intro.tagline %><br>
+                <%= t.intro.tagline2 %>
+            </p>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero-lean">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-shield-alt"></i> <%= t.hero.badge %>
+            </div>
+            <h1><%= t.hero.title %> <span><%= t.hero.titleHighlight %></span> <%= t.hero.titleEnd %></h1>
+            <p><%= t.hero.description %></p>
+            <a href="https://wa.me/554989167594?text=<%= encodeURIComponent(t.whatsapp.message) %>" class="cta-button">
+                <%= t.hero.cta %>
+            </a>
+        </div>
+        <div class="hero-image">
+            <img src="/images/herologo.png" alt="<%= t.hero.imageAlt %>">
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><%= t.features.title %> <span><%= t.features.titleHighlight %></span></h2>
+                <p><%= t.features.description %></p>
+            </div>
+            <div class="features-grid">
+                <% t.features.cards.forEach(function(card, index) { %>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas <%= card.icon %>"></i>
+                    </div>
+                    <h3><%= card.title %></h3>
+                    <p><%= card.description %></p>
+                    <% if (card.chatBtn) { %>
+                    <button class="ai-chat-btn" onclick="openChat()">
+                        <i class="fas fa-sparkles"></i> <%= card.chatBtn %>
+                    </button>
+                    <% } %>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="servicos">
+        <div class="portfolio-hero">
+            <div class="container">
+                <div class="portfolio-header">
+                    <h2 class="portfolio-title"><%= t.portfolio.title %> <span><%= t.portfolio.titleHighlight %></span></h2>
+                    <p class="portfolio-subtitle"><%= t.portfolio.subtitle %></p>
+                    <div class="trust-badges">
+                        <% t.portfolio.badges.forEach(function(badge) { %>
+                        <span class="trust-badge"><%= badge %></span>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-wave"></div>
+        <div class="portfolio-body">
+            <div class="container">
+                <div class="filter-section">
+                    <div class="filter-chips" id="filterContainer"></div>
+                    <p class="project-count"><%= t.portfolio.showing %> <span id="projectCountDisplay">0</span> <%= t.portfolio.projects %></p>
+                </div>
+                <div class="projects-grid" id="projectsGrid"></div>
+                <div class="portfolio-final-cta">
+                    <h3><%= t.portfolio.finalCta.title %></h3>
+                    <p><%= t.portfolio.finalCta.description %></p>
+                    <a href="https://wa.me/554989167594?text=<%= encodeURIComponent(t.whatsapp.message) %>">
+                        <%= t.portfolio.finalCta.button %>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Modal -->
+        <div class="portfolio-modal-overlay" id="modalOverlay">
+            <div class="portfolio-modal">
+                <div class="portfolio-modal-header">
+                    <button class="portfolio-modal-close" id="modalClose">×</button>
+                    <span class="category-badge" id="modalCategory"></span>
+                    <h2 class="portfolio-modal-title" id="modalTitle"></h2>
+                </div>
+                <div class="portfolio-modal-body" id="modalBody"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px;"><%= t.solutions.title %></h2>
+            <div class="comparison-grid">
+                <div>
+                    <h3 style="color: #9f1239; margin-bottom: 20px; text-align: center;"><%= t.solutions.painTitle %></h3>
+                    <% t.solutions.painPoints.forEach(function(point) { %>
+                    <div class="pain-point">
+                        <span class="pain-title"><i class="fas fa-times-circle"></i> <%= point.title %></span>
+                        <p><%= point.description %></p>
+                    </div>
+                    <% }); %>
+                </div>
+                <div>
+                    <h3 style="color: #166534; margin-bottom: 20px; text-align: center;"><%= t.solutions.solutionTitle %></h3>
+                    <% t.solutions.solutionPoints.forEach(function(point) { %>
+                    <div class="solution-point">
+                        <span class="solution-title"><i class="fas fa-check-circle"></i> <%= point.title %></span>
+                        <p><%= point.description %></p>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px;"><%= t.values.title %></h2>
+            <div class="values-grid">
+                <% t.values.items.forEach(function(value) { %>
+                <div class="value-item">
+                    <i class="fas <%= value.icon %>"></i>
+                    <div>
+                        <h4><%= value.title %></h4>
+                        <p><%= value.description %></p>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="contato">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 20px;"><%= t.team.title %></h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 40px; color: var(--gray);"><%= t.team.subtitle %></p>
+            <div class="team-grid">
+                <% t.team.members.forEach(function(member) { %>
+                <div class="team-member">
+                    <img src="/images/<%= member.photo %>" alt="<%= member.name %>" class="member-photo">
+                    <h3 class="member-name"><%= member.name %></h3>
+                    <p class="member-role"><%= member.role %></p>
+                    <p class="member-education"><%= member.education %><br><%= member.educationFull %></p>
+                    <div class="member-achievements">
+                        <% member.achievements.forEach(function(achievement) { %>
+                        <div class="achievement-item"><i class="fas fa-check-circle"></i> <%= achievement %></div>
+                        <% }); %>
+                    </div>
+                    <div class="member-social">
+                        <a href="<%= member.linkedin %>" target="_blank" class="linkedin-btn">
+                            <i class="fab fa-linkedin"></i> <%= member.linkedinText %>
+                        </a>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px;"><%= t.faq.title %></h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <% t.faq.items.forEach(function(item) { %>
+                <div class="faq-item">
+                    <div class="faq-question"><%= item.question %> <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer"><%= item.answer %></div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2><%= t.finalCta.title %></h2>
+            <p><%= t.finalCta.description %></p>
+            <a href="https://wa.me/554989167594?text=<%= encodeURIComponent(t.whatsapp.message) %>" class="cta-button-light">
+                <%= t.finalCta.button %>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 12 L40 68 L40 44 L24 12 Z" fill="#22D3EE" opacity="0.15"/>
+                    <path d="M8 12 L40 68 L72 12 L56 12 L40 44 L24 12 Z" stroke="#22D3EE" stroke-width="2" fill="none"/>
+                </svg>
+                <div class="footer-logo-text">
+                    <span class="footer-logo-name">VERTECH</span>
+                    <span class="footer-logo-sub"><%= t.intro.logoSub %></span>
+                </div>
+            </div>
+            <p><%= t.footer.tagline %></p>
+            <div class="footer-contact">
+                <p><i class="fas fa-envelope"></i> <a href="mailto:<%= t.footer.email %>"><%= t.footer.email %></a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+554989167594"><%= t.footer.phone %></a></p>
+            </div>
+            <div class="footer-links">
+                <a href="<%= locale === 'pt' ? '/' : '/' + locale %>"><%= t.nav.home %></a>
+                <a href="#servicos"><%= t.nav.services %></a>
+                <a href="<%= locale === 'pt' ? '/contato' : '/' + locale + '/contact' %>"><%= t.nav.contact %></a>
+            </div>
+            <div class="copyright">&copy; <%= t.footer.copyright %></div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp FAB -->
+    <a class="whatsapp-fab" href="https://wa.me/554989167594?text=<%= encodeURIComponent(t.whatsapp.message) %>" target="_blank" rel="noopener" aria-label="<%= t.whatsapp.ariaLabel %>">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Verah Floating Btn -->
+    <div class="verah-floating-btn" onclick="openChat()">
+        <div class="verah-avatar">
+            <svg viewBox="0 0 80 80" fill="none">
+                <path d="M20 25 L40 55 L40 42 L28 25 Z" fill="#22D3EE" opacity="0.3"/>
+                <path d="M20 25 L40 55 L60 25 L50 25 L40 42 L30 25 Z" stroke="#22D3EE" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+        <%= t.chat.verahBtn %>
+    </div>
+
+    <script>
+        /* Chat IA */
+        const apiKey = "AIzaSyBEt5S3v_ZVdIng_ZNWVfH0sD1RYpEWd0M";
+        const systemPrompt = <%- JSON.stringify(t.chat.systemPrompt) %>;
+
+        async function sendMessage() {
+            const input = document.getElementById("chatInput");
+            const messageText = input.value.trim();
+            if (!messageText) return;
+
+            const chatMessages = document.getElementById("chatMessages");
+            const userMsgDiv = document.createElement("div");
+            userMsgDiv.className = "message user";
+            userMsgDiv.textContent = messageText;
+            chatMessages.appendChild(userMsgDiv);
+            input.value = "";
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            const typingIndicator = document.getElementById("typingIndicator");
+            typingIndicator.style.display = "block";
+
+            try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: messageText }] }],
+                        systemInstruction: { parts: [{ text: systemPrompt }] }
+                    })
+                });
+
+                const data = await response.json();
+                if (!response.ok) throw new Error(data?.error?.message || `HTTP ${response.status}`);
+
+                const botResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || "...";
+                const botMsgDiv = document.createElement("div");
+                botMsgDiv.className = "message bot";
+                botMsgDiv.innerHTML = marked.parse(botResponse);
+                chatMessages.appendChild(botMsgDiv);
+            } catch (error) {
+                console.error("Chat error:", error);
+                const errorDiv = document.createElement("div");
+                errorDiv.className = "message bot";
+                errorDiv.textContent = "Connection error.";
+                chatMessages.appendChild(errorDiv);
+            } finally {
+                typingIndicator.style.display = "none";
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        function openChat() { document.getElementById("chatModal").classList.add("active"); }
+        document.getElementById("closeChatBtn").addEventListener("click", () => { document.getElementById("chatModal").classList.remove("active"); });
+        document.getElementById("sendBtn").addEventListener("click", sendMessage);
+        document.getElementById("chatInput").addEventListener("keypress", (e) => { if (e.key === "Enter") sendMessage(); });
+
+        /* Portfolio */
+        const projectsData = <%- JSON.stringify(t.portfolio.projectsData) %>;
+        const filters = [
+            { id: "todos", label: "<%= t.portfolio.filters.all %>" },
+            { id: "ia-agentes", label: "<%= t.portfolio.filters.iaAgents %>" },
+            { id: "automacao", label: "<%= t.portfolio.filters.automation %>" },
+            { id: "apps", label: "<%= t.portfolio.filters.apps %>" },
+            { id: "sites", label: "<%= t.portfolio.filters.sites %>" },
+            { id: "dashboards", label: "<%= t.portfolio.filters.dashboards %>" }
+        ];
+        const modalTexts = <%- JSON.stringify(t.portfolio.modal) %>;
+
+        const gridContainer = document.getElementById('projectsGrid');
+        const filterContainer = document.getElementById('filterContainer');
+        const countDisplay = document.getElementById('projectCountDisplay');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalCategory = document.getElementById('modalCategory');
+        const modalBody = document.getElementById('modalBody');
+        const modalClose = document.getElementById('modalClose');
+
+        function createCardHTML(project, idx) {
+            return `
+                <article class="project-card" data-project-id="${project.id}">
+                    <div class="project-topline">
+                        <span class="category-badge">${project.categoryLabel}</span>
+                        <span class="project-num">${String(idx + 1).padStart(2, "0")}</span>
+                    </div>
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-pain">${project.pain}</p>
+                    <p class="project-solution">${project.solution}</p>
+                    <div class="metrics">${project.metrics.map(m => `<span class="metric">${m}</span>`).join('')}</div>
+                    <div class="tags">${project.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+                    <button class="view-details-btn" type="button"><%= t.portfolio.viewDetails %></button>
+                </article>
+            `;
+        }
+
+        function renderFilters() {
+            filterContainer.innerHTML = filters.map(f => `
+                <button class="filter-chip ${f.id === 'todos' ? 'active' : ''}" type="button" data-filter="${f.id}">${f.label}</button>
+            `).join('');
+        }
+
+        function renderProjects(filterId = "todos") {
+            const filtered = filterId === "todos" ? projectsData : projectsData.filter(p => p.category === filterId);
+            countDisplay.textContent = filtered.length;
+            gridContainer.innerHTML = filtered.map((p, idx) => createCardHTML(p, idx)).join("");
+            bindCardEvents();
+        }
+
+        function bindCardEvents() {
+            document.querySelectorAll('.project-card').forEach(card => {
+                const id = Number(card.getAttribute('data-project-id'));
+                card.addEventListener('click', () => openModal(id));
+            });
+        }
+
+        function openModal(projectId) {
+            const project = projectsData.find(p => p.id === projectId);
+            if (!project) return;
+            modalTitle.textContent = project.title;
+            modalCategory.textContent = project.categoryLabel;
+            modalBody.innerHTML = `
+                <div class="pm-section">
+                    <h4>📦 ${modalTexts.deliverables}</h4>
+                    <ul class="pm-list">${project.deliverables.map(item => `<li>${item}</li>`).join("")}</ul>
+                </div>
+                <div class="pm-section">
+                    <h4>🔄 ${modalTexts.beforeAfter}</h4>
+                    <div class="pm-before-after">
+                        <div class="pm-col before"><h5>${modalTexts.before}</h5><p>${project.before}</p></div>
+                        <div class="pm-col after"><h5>${modalTexts.after}</h5><p>${project.after}</p></div>
+                    </div>
+                </div>
+                <div class="pm-section">
+                    <h4>🛠️ ${modalTexts.stack}</h4>
+                    <div class="pm-stack">${project.stack.map(s => `<span>${s}</span>`).join("")}</div>
+                </div>
+                <div class="pm-cta">
+                    <h3>${modalTexts.ctaTitle}</h3>
+                    <p>${modalTexts.ctaDescription}</p>
+                    <a href="https://wa.me/554989167594?text=<%= encodeURIComponent(t.whatsapp.message) %>">${modalTexts.ctaButton}</a>
+                </div>
+            `;
+            modalOverlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        modalClose.addEventListener("click", closeModal);
+        modalOverlay.addEventListener("click", (e) => { if (e.target === modalOverlay) closeModal(); });
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+        filterContainer.addEventListener("click", (e) => {
+            const btn = e.target.closest(".filter-chip");
+            if (!btn) return;
+            document.querySelectorAll(".filter-chip").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            renderProjects(btn.getAttribute("data-filter") || "todos");
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderFilters();
+            renderProjects("todos");
+        });
+    </script>
+
+</body>
+</html>

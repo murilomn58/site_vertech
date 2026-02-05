@@ -1,0 +1,389 @@
+{
+  "lang": "fr",
+  "meta": {
+    "title": "Vertech Solutions | IA, Automatisation et Applications pour PME",
+    "description": "Vertech Solutions - Transformez votre PME avec l'IA appliquée, l'automatisation et des applications sur mesure. Livraison avec discipline militaire.",
+    "contactTitle": "Contact | Vertech Conseil"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "intro": {
+    "logoSub": "Solutions",
+    "tagline": "IA appliquée, automatisation et sécurité pour les PME.",
+    "tagline2": "Transformer les entreprises avec une technologie accessible."
+  },
+  "hero": {
+    "badge": "Technologie avec Sécurité des Données",
+    "title": "Transformez votre PME en une Entreprise",
+    "titleHighlight": "Intelligente",
+    "titleEnd": "et Compétitive",
+    "description": "Nous fournissons des solutions technologiques accessibles — applications, automatisations et IA appliquée — qui optimisent les processus, réduisent les coûts et boostent votre productivité en quelques semaines.",
+    "cta": "Je veux une Analyse Stratégique",
+    "imageAlt": "Technologie, données et performance pour les PME"
+  },
+  "features": {
+    "title": "Moins de Manuel,",
+    "titleHighlight": "Plus de Digital",
+    "description": "Nous aidons les entreprises à éliminer les tâches manuelles et à renforcer la sécurité grâce à une technologie de pointe. Notre objectif est de résoudre le manque d'automatisation et les données désorganisées avec des solutions rapides et sur mesure.",
+    "cards": [
+      {
+        "icon": "fa-mobile-alt",
+        "title": "Applications et Plateformes",
+        "description": "Développement d'applications sur demande et de plateformes de gestion, comme des solutions complètes pour cliniques et services."
+      },
+      {
+        "icon": "fa-robot",
+        "title": "IA et Agents IA",
+        "description": "Tableaux de bord intelligents, analyse de documents et service client automatisé pour réduire la dépendance aux grandes équipes.",
+        "chatBtn": "Essayer le Chat IA"
+      },
+      {
+        "icon": "fa-cogs",
+        "title": "Automatisation des Processus",
+        "description": "Solutions RPA et Low-code pour automatiser les tâches répétitives, garantissant une productivité immédiate."
+      },
+      {
+        "icon": "fa-laptop-code",
+        "title": "Sites Professionnels",
+        "description": "Création d'une présence numérique robuste pour les entreprises qui doivent se démarquer sur le marché moderne avec haute performance."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Portfolio qui devient",
+    "titleHighlight": "résultat",
+    "subtitle": "Projets réels qui réduisent les coûts et accélèrent les résultats en quelques semaines.",
+    "badges": ["Livraison en semaines", "Sécurité des données", "Focus sur le ROI"],
+    "filters": {
+      "all": "Tous",
+      "iaAgents": "IA & Agents",
+      "automation": "Automatisation",
+      "apps": "Apps",
+      "sites": "Sites",
+      "dashboards": "Tableaux de bord"
+    },
+    "showing": "Affichage de",
+    "projects": "projets",
+    "viewDetails": "Voir détails",
+    "projectsData": [
+      {
+        "id": 0,
+        "category": "ia-agentes",
+        "categoryLabel": "IA & Agents",
+        "title": "Service Client IA sur WhatsApp (Agent Verah)",
+        "pain": "Volume élevé de messages et retravail constant",
+        "solution": "Agent qui répond, qualifie et redirige automatiquement",
+        "metrics": ["-60% temps de service", "+35% conversion", "24/7"],
+        "tags": ["WhatsApp", "IA", "Flux", "CRM"],
+        "deliverables": [
+          "Agent IA formé avec la base de connaissances de l'entreprise",
+          "Flux de qualification et routage automatique",
+          "Intégrations avec service client et enregistrement des leads",
+          "Tableau de bord des métriques et conversations"
+        ],
+        "before": "Équipe surchargée répondant aux messages répétitifs, perte de leads par délai, qualification manuelle.",
+        "after": "Service instantané 24/7, leads qualifiés automatiquement, équipe focalisée sur la conversion.",
+        "stack": ["Agents IA", "WhatsApp", "n8n/Make", "Base de données", "Tableaux de bord"]
+      },
+      {
+        "id": 1,
+        "category": "ia-agentes",
+        "categoryLabel": "IA & Agents",
+        "title": "Portail de Documents avec Recherche Sémantique (RAG)",
+        "pain": "Documents éparpillés et information difficile à trouver",
+        "solution": "Recherche intelligente + réponses avec référence exacte",
+        "metrics": ["-70% temps de recherche", "+20% productivité", "Auditable"],
+        "tags": ["RAG", "OCR", "Sécurité", "Permissions"],
+        "deliverables": [
+          "Ingestion de documents avec OCR",
+          "Recherche sémantique avec références au document original",
+          "Contrôle des permissions par utilisateur/groupe",
+          "Audit des accès et logs"
+        ],
+        "before": "Dossiers désorganisés, recherche manuelle lente, risque d'information perdue.",
+        "after": "Réponses rapides avec preuves, organisation et traçabilité, sécurité et contrôle d'accès.",
+        "stack": ["RAG", "OCR", "Embeddings", "Stockage", "Contrôle d'accès"]
+      },
+      {
+        "id": 2,
+        "category": "automacao",
+        "categoryLabel": "Automatisation",
+        "title": "RPA Financier : Rapprochement et Émission",
+        "pain": "Rapprochement manuel et erreurs de saisie fréquentes",
+        "solution": "Robots qui croisent les données et génèrent des rapports automatiques",
+        "metrics": ["-80% tâches répétitives", "-50% erreurs", "Semaine 1"],
+        "tags": ["RPA", "ERP", "Tableurs", "Alertes"],
+        "deliverables": [
+          "Robot de rapprochement automatique",
+          "Intégration avec ERP/tableurs/systèmes",
+          "Rapports et piste d'audit",
+          "Alertes de divergence par e-mail/WhatsApp"
+        ],
+        "before": "Heures par jour en rapprochement manuel, erreurs fréquentes et processus bloqués.",
+        "after": "Rapprochement en minutes, réduction drastique du retravail, alertes proactives.",
+        "stack": ["Python", "RPA", "Intégrations", "ETL", "Alertes"]
+      },
+      {
+        "id": 3,
+        "category": "dashboards",
+        "categoryLabel": "Tableaux de bord",
+        "title": "Tableau de Bord Intelligent des Opérations",
+        "pain": "Décisions sans visibilité et KPI en retard",
+        "solution": "Panneau en temps réel + alertes automatiques",
+        "metrics": ["KPIs en temps réel", "+25% prévisibilité", "1 source"],
+        "tags": ["BI", "KPIs", "Alertes", "Données"],
+        "deliverables": [
+          "Panneau avec KPIs critiques en temps réel",
+          "Intégration de multiples sources de données",
+          "Alertes automatiques (anomalies/limites)",
+          "Rapports récurrents automatisés"
+        ],
+        "before": "Données dans des tableurs fragmentés, KPIs calculés manuellement.",
+        "after": "Vision unifiée, métriques actualisées, décisions basées sur des données fiables.",
+        "stack": ["Power BI", "SQL", "Python", "ETL", "Automatisation"]
+      },
+      {
+        "id": 4,
+        "category": "apps",
+        "categoryLabel": "Apps",
+        "title": "App de Gestion pour Services/Cliniques",
+        "pain": "Agenda, paiements et service client déconnectés",
+        "solution": "App avec flux de bout en bout et notifications",
+        "metrics": ["-30% absences", "+20% récurrence", "Moins de chaos"],
+        "tags": ["App", "Agenda", "Paiement", "Notifications"],
+        "deliverables": [
+          "App avec parcours client complet",
+          "Planification et confirmation automatisée",
+          "Notifications de rappel (push/WhatsApp)",
+          "Intégration avec paiements et rapports"
+        ],
+        "before": "Planification manuelle, absences sans préavis et beaucoup de retravail.",
+        "after": "Self-service 24/7, rappels automatiques, meilleure présence et prévisibilité.",
+        "stack": ["App", "Back-end", "Base de données", "Notifications", "Paiements"]
+      },
+      {
+        "id": 5,
+        "category": "sites",
+        "categoryLabel": "Sites",
+        "title": "Site Haute Performance axé sur la Conversion",
+        "pain": "Faible présence numérique et peu de leads",
+        "solution": "Site rapide avec SEO et CTA fort",
+        "metrics": ["+40% leads", "LCP optimisé", "SEO de base"],
+        "tags": ["SEO", "Performance", "Landing", "Conversion"],
+        "deliverables": [
+          "Page rapide et responsive (mobile-first)",
+          "Structure SEO technique et contenu",
+          "CTAs et tracking de conversion",
+          "Optimisation de performance (Core Web Vitals)"
+        ],
+        "before": "Site lent, peu de conversion et sans suivi fiable.",
+        "after": "Chargement rapide, meilleur classement et tunnel clair avec métriques.",
+        "stack": ["HTML", "CSS", "JS", "SEO", "Analytics"]
+      }
+    ],
+    "modal": {
+      "deliverables": "Ce qui a été livré",
+      "beforeAfter": "Avant / Après",
+      "before": "Avant",
+      "after": "Après",
+      "stack": "Stack",
+      "ctaTitle": "Vous voulez un tel résultat ?",
+      "ctaDescription": "Planifiez une analyse stratégique et nous vous montrerons le chemin le plus rapide pour votre cas.",
+      "ctaButton": "Je veux un projet comme celui-ci"
+    },
+    "finalCta": {
+      "title": "Vous voulez voir cela fonctionner dans votre entreprise ?",
+      "description": "Nous analysons votre opération et proposons des automatisations/IA avec un ROI clair — rapide, sûr et sur mesure.",
+      "button": "Je veux une Analyse Stratégique"
+    }
+  },
+  "solutions": {
+    "title": "Comment Nous Transformons Votre Entreprise",
+    "painTitle": "Vos Défis Actuels",
+    "solutionTitle": "Solutions Vertech",
+    "painPoints": [
+      {
+        "title": "Processus Manuels",
+        "description": "Tâches répétitives qui consomment du temps et génèrent des erreurs humaines."
+      },
+      {
+        "title": "Données Désorganisées",
+        "description": "Manque de visibilité sur les métriques réelles pour la prise de décision."
+      },
+      {
+        "title": "Faible Présence Numérique",
+        "description": "Perte d'opportunités faute de canaux numériques efficaces."
+      }
+    ],
+    "solutionPoints": [
+      {
+        "title": "Automatisation Intelligente",
+        "description": "Mise en œuvre de RPA et scripts pour libérer votre équipe."
+      },
+      {
+        "title": "Tableaux de Bord avec IA",
+        "description": "Analyses prédictives et visualisation des données en temps réel."
+      },
+      {
+        "title": "Écosystème Numérique",
+        "description": "Sites et Apps intégrés qui élargissent votre portée sur le marché."
+      }
+    ]
+  },
+  "values": {
+    "title": "Nos Valeurs et Différenciateurs",
+    "items": [
+      {
+        "icon": "fa-tachometer-alt",
+        "title": "Efficacité et Productivité",
+        "description": "Focus sur les résultats rapides et la réduction des coûts opérationnels."
+      },
+      {
+        "icon": "fa-user-shield",
+        "title": "Sécurité et Éthique",
+        "description": "Protection rigoureuse des données et atténuation des vulnérabilités."
+      },
+      {
+        "icon": "fa-medal",
+        "title": "Discipline Militaire",
+        "description": "Exécution précise, ponctuelle et hautement organisée."
+      },
+      {
+        "icon": "fa-lightbulb",
+        "title": "Innovation Appliquée",
+        "description": "Technologie pratique, sans complexité inutile."
+      },
+      {
+        "icon": "fa-check-circle",
+        "title": "Simplicité",
+        "description": "Solutions faciles à utiliser et à mettre en œuvre par votre équipe."
+      },
+      {
+        "icon": "fa-users",
+        "title": "Focus Total sur le Client",
+        "description": "Solutions conçues sur mesure pour votre problème réel."
+      }
+    ]
+  },
+  "team": {
+    "title": "Leadership et Exécution",
+    "subtitle": "Formation d'élite et expérience pratique pour garantir la meilleure livraison technologique pour votre entreprise.",
+    "members": [
+      {
+        "name": "Murilo Miguel Narciso",
+        "role": "Co-Fondateur",
+        "education": "Ingénieur Civil – IME",
+        "educationFull": "(Institut Militaire d'Ingénierie)",
+        "achievements": [
+          "Vainqueur Hackathon IA 2025 (COPPE/UFRJ)",
+          "1ère Place Programme VALE 2025",
+          "4 ans en R&D (CNPq)",
+          "Stage en Webscraping (ITA-SP)"
+        ],
+        "linkedin": "https://www.linkedin.com/in/murilonarciso/",
+        "linkedinText": "Se connecter sur LinkedIn",
+        "photo": "fotolinkedinmurilo.jfif"
+      },
+      {
+        "name": "Jean Kairo Crispim",
+        "role": "Co-Fondateur",
+        "education": "Ingénieur en Télécommunications – IME",
+        "educationFull": "(Institut Militaire d'Ingénierie)",
+        "achievements": [
+          "Vainqueur Hackathon IA 2025 (COPPE/UFRJ)",
+          "Cybersécurité – West Point (USA)",
+          "Spécialiste en Agents IA et RAG",
+          "Certification CCNA (Cisco)"
+        ],
+        "linkedin": "https://www.linkedin.com/in/jean-kairo-crispim-a11312284/",
+        "linkedinText": "Se connecter sur LinkedIn",
+        "photo": "fotolinkedinjean.jfif"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "items": [
+      {
+        "question": "Quels types d'entreprises servez-vous ?",
+        "answer": "Nous servons principalement les Petites et Moyennes Entreprises (PME) qui cherchent à moderniser leurs processus, réduire les coûts et renforcer la sécurité numérique."
+      },
+      {
+        "question": "Comment fonctionne le délai de livraison ?",
+        "answer": "Nous travaillons avec une méthodologie agile et une discipline militaire. Nos projets sont livrés en quelques mois, avec un focus sur la génération de valeur immédiate."
+      },
+      {
+        "question": "Dois-je avoir des connaissances techniques ?",
+        "answer": "Non. Notre mission est la simplicité. Nous livrons des solutions prêtes à l'emploi et faciles à utiliser, en prenant en charge toute la complexité technique pour vous."
+      },
+      {
+        "question": "Offrez-vous un support après la livraison ?",
+        "answer": "Oui ! Nous proposons des plans de support et d'amélioration continue pour garantir que votre technologie évolue avec votre entreprise."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Prêt à développer votre entreprise ?",
+    "description": "Ne laissez pas le manque de technologie freiner la croissance de votre entreprise. Planifiez une conversation et découvrez comment nous pouvons vous aider.",
+    "button": "Parler à un Expert Maintenant"
+  },
+  "footer": {
+    "tagline": "IA appliquée, automatisation et sécurité pour les PME. Transformer les entreprises avec une technologie accessible.",
+    "email": "vertech2026@gmail.com",
+    "phone": "+55 (49) 8916-7594",
+    "copyright": "2025 Vertech Solutions. Tous droits réservés."
+  },
+  "chat": {
+    "title": "Assistant Vertech",
+    "placeholder": "Tapez votre question...",
+    "initialMessage": "Bonjour ! Je suis l'assistant virtuel de Vertech Solutions. Comment puis-je aider votre entreprise à se développer avec la technologie aujourd'hui ?",
+    "typing": "En train d'écrire...",
+    "verahBtn": "Assistant Verah",
+    "systemPrompt": "Vous êtes un assistant virtuel intelligent et serviable de Vertech Solutions. Votre fonction est d'aider les clients potentiels à comprendre comment Vertech peut transformer leurs entreprises. Répondez de manière concise, professionnelle et amicale, toujours en français. Utilisez occasionnellement des emojis pour garder un ton léger.\n\nInformations sur Vertech Solutions :\n- Mission : Transformer les PME avec l'IA et l'automatisation.\n- Services : Apps, Agents IA, Automatisation des Processus, Sites Professionnels.\n- Différenciateurs : Discipline militaire dans l'exécution, livraison rapide (en semaines), focus sur la sécurité et la réduction des coûts.\n- Contact : WhatsApp +55 (49) 8916-7594, Email vertech2026@gmail.com.\n\nS'ils demandent des prix spécifiques, dites que chaque projet est sur mesure et suggérez de planifier une analyse stratégique gratuite via WhatsApp."
+  },
+  "whatsapp": {
+    "ariaLabel": "Parler sur WhatsApp",
+    "message": "Bonjour, je voudrais connaître les solutions de Vertech",
+    "contactMessage": "Je veux parler avec Vertech",
+    "fabText": "Contactez-nous"
+  },
+  "contact": {
+    "heroTitle": "Parlez avec",
+    "heroTitleHighlight": "Vertech",
+    "heroSubtitle": "Réponse rapide. Envoyez un email ou remplissez le formulaire ; WhatsApp est sur le bouton flottant.",
+    "note": "Préférez le formulaire ou l'email ; le bouton flottant mène directement à WhatsApp.",
+    "emailLabel": "Email",
+    "whatsappLabel": "WhatsApp",
+    "muriloTitle": "Murilo (CEO)",
+    "jeanTitle": "Jean (CTO)",
+    "formTitle": "Ou envoyez par le formulaire",
+    "form": {
+      "name": "Votre nom complet",
+      "email": "Votre meilleur email",
+      "phone": "Téléphone/WhatsApp avec indicatif",
+      "company": "Nom de votre entreprise",
+      "revenueLabel": "Chiffre d'affaires mensuel approximatif",
+      "revenueOptions": [
+        { "value": "", "label": "Chiffre d'affaires mensuel approximatif" },
+        { "value": "ate50k", "label": "Jusqu'à 50 000 €" },
+        { "value": "50k-100k", "label": "50 000 € - 100 000 €" },
+        { "value": "100k-500k", "label": "100 000 € - 500 000 €" },
+        { "value": "500k-1m", "label": "500 000 € - 1 million €" },
+        { "value": "acima1m", "label": "Plus de 1 million €" }
+      ],
+      "message": "Parlez-nous de votre plus grand défi opérationnel",
+      "submit": "Demander une consultation",
+      "sending": "Envoi en cours..."
+    },
+    "modal": {
+      "successTitle": "Message envoyé !",
+      "successMessage": "Nous avons reçu votre demande. Confirmez l'email de FormSubmit (premier envoi) pour débloquer les prochains messages.",
+      "errorTitle": "Impossible d'envoyer",
+      "close": "Fermer"
+    },
+    "footerTagline": "Recherche appliquée, automatisation et sécurité pour les PME"
+  }
+}

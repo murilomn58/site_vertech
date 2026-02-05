@@ -1,0 +1,389 @@
+{
+  "lang": "en",
+  "meta": {
+    "title": "Vertech Solutions | AI, Automation and Apps for SMBs",
+    "description": "Vertech Solutions - Transform your SMB with applied AI, automation and custom applications. Delivery with military discipline.",
+    "contactTitle": "Contact | Vertech Consulting"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "intro": {
+    "logoSub": "Solutions",
+    "tagline": "Applied AI, automation and security for SMBs.",
+    "tagline2": "Transforming businesses with accessible technology."
+  },
+  "hero": {
+    "badge": "Technology with Data Security",
+    "title": "Transform your SMB into a",
+    "titleHighlight": "Smart",
+    "titleEnd": "and Competitive Business",
+    "description": "We deliver accessible technology solutions — apps, automations and applied AI — that optimize processes, reduce costs and boost your productivity in weeks.",
+    "cta": "I Want a Strategic Analysis",
+    "imageAlt": "Technology, data and performance for SMBs"
+  },
+  "features": {
+    "title": "Less Manual,",
+    "titleHighlight": "More Digital",
+    "description": "We help companies eliminate manual tasks and increase security through cutting-edge technology. Our focus is solving the lack of automation and disorganized data with fast, custom solutions.",
+    "cards": [
+      {
+        "icon": "fa-mobile-alt",
+        "title": "Apps and Platforms",
+        "description": "Development of on-demand applications and management platforms, such as complete solutions for clinics and services."
+      },
+      {
+        "icon": "fa-robot",
+        "title": "AI and AI Agents",
+        "description": "Intelligent dashboards, document analysis and automated customer service to reduce dependence on large teams.",
+        "chatBtn": "Try AI Chat"
+      },
+      {
+        "icon": "fa-cogs",
+        "title": "Process Automation",
+        "description": "RPA and Low-code solutions to automate repetitive tasks, ensuring immediate productivity."
+      },
+      {
+        "icon": "fa-laptop-code",
+        "title": "Professional Websites",
+        "description": "Creating robust digital presence for companies that need to stand out in the modern market with high performance."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Portfolio that becomes",
+    "titleHighlight": "results",
+    "subtitle": "Real projects that reduce costs and accelerate results in weeks.",
+    "badges": ["Delivery in weeks", "Data security", "ROI focused"],
+    "filters": {
+      "all": "All",
+      "iaAgents": "AI & Agents",
+      "automation": "Automation",
+      "apps": "Apps",
+      "sites": "Websites",
+      "dashboards": "Dashboards"
+    },
+    "showing": "Showing",
+    "projects": "projects",
+    "viewDetails": "View details",
+    "projectsData": [
+      {
+        "id": 0,
+        "category": "ia-agentes",
+        "categoryLabel": "AI & Agents",
+        "title": "AI Customer Service on WhatsApp (Verah Agent)",
+        "pain": "High volume of messages and constant rework",
+        "solution": "Agent that responds, qualifies and routes automatically",
+        "metrics": ["-60% service time", "+35% conversion", "24/7"],
+        "tags": ["WhatsApp", "AI", "Workflows", "CRM"],
+        "deliverables": [
+          "AI agent trained with company knowledge base",
+          "Qualification and automatic routing workflows",
+          "Integrations with customer service and lead registration",
+          "Metrics and conversations dashboard"
+        ],
+        "before": "Overloaded team answering repetitive messages, lead loss due to delay, manual qualification.",
+        "after": "Instant 24/7 service, automatically qualified leads, team focused on conversion.",
+        "stack": ["AI Agents", "WhatsApp", "n8n/Make", "Database", "Dashboards"]
+      },
+      {
+        "id": 1,
+        "category": "ia-agentes",
+        "categoryLabel": "AI & Agents",
+        "title": "Document Portal with Semantic Search (RAG)",
+        "pain": "Scattered documents and hard to find information",
+        "solution": "Smart search + answers with exact reference",
+        "metrics": ["-70% search time", "+20% productivity", "Auditable"],
+        "tags": ["RAG", "OCR", "Security", "Permissions"],
+        "deliverables": [
+          "Document ingestion with OCR",
+          "Semantic search with references to original document",
+          "Permission control by user/group",
+          "Access audit and logs"
+        ],
+        "before": "Disorganized folders, slow manual search, risk of lost information.",
+        "after": "Fast answers with evidence, organization and traceability, security and access control.",
+        "stack": ["RAG", "OCR", "Embeddings", "Storage", "Access Control"]
+      },
+      {
+        "id": 2,
+        "category": "automacao",
+        "categoryLabel": "Automation",
+        "title": "Financial RPA: Reconciliation and Issuance",
+        "pain": "Manual reconciliation and frequent entry errors",
+        "solution": "Robots that cross-reference data and generate automatic reports",
+        "metrics": ["-80% repetitive tasks", "-50% errors", "Week 1"],
+        "tags": ["RPA", "ERP", "Spreadsheets", "Alerts"],
+        "deliverables": [
+          "Automatic reconciliation robot",
+          "Integration with ERP/spreadsheets/systems",
+          "Reports and audit trail",
+          "Divergence alerts via email/WhatsApp"
+        ],
+        "before": "Hours per day in manual reconciliation, frequent errors and blocked processes.",
+        "after": "Reconciliation in minutes, drastic rework reduction, proactive alerts.",
+        "stack": ["Python", "RPA", "Integrations", "ETL", "Alerts"]
+      },
+      {
+        "id": 3,
+        "category": "dashboards",
+        "categoryLabel": "Dashboards",
+        "title": "Intelligent Operations Dashboard",
+        "pain": "Decisions without visibility and delayed KPIs",
+        "solution": "Real-time panel + automatic alerts",
+        "metrics": ["Real-time KPIs", "+25% predictability", "1 source"],
+        "tags": ["BI", "KPIs", "Alerts", "Data"],
+        "deliverables": [
+          "Panel with critical real-time KPIs",
+          "Integration of multiple data sources",
+          "Automatic alerts (anomalies/limits)",
+          "Automated recurring reports"
+        ],
+        "before": "Data in fragmented spreadsheets, manually calculated KPIs.",
+        "after": "Unified vision, updated metrics, decisions based on reliable data.",
+        "stack": ["Power BI", "SQL", "Python", "ETL", "Automation"]
+      },
+      {
+        "id": 4,
+        "category": "apps",
+        "categoryLabel": "Apps",
+        "title": "Management App for Services/Clinics",
+        "pain": "Scheduling, payments and service disconnected",
+        "solution": "App with end-to-end flow and notifications",
+        "metrics": ["-30% no-shows", "+20% recurrence", "Less chaos"],
+        "tags": ["App", "Scheduling", "Payment", "Notifications"],
+        "deliverables": [
+          "App with complete customer journey",
+          "Automated scheduling and confirmation",
+          "Reminder notifications (push/WhatsApp)",
+          "Integration with payments and reports"
+        ],
+        "before": "Manual scheduling, no-shows without notice and lots of rework.",
+        "after": "24/7 self-service, automatic reminders, better attendance and predictability.",
+        "stack": ["App", "Back-end", "Database", "Notifications", "Payments"]
+      },
+      {
+        "id": 5,
+        "category": "sites",
+        "categoryLabel": "Websites",
+        "title": "High Performance Site focused on Conversion",
+        "pain": "Low digital presence and few leads",
+        "solution": "Fast site with SEO and strong CTA",
+        "metrics": ["+40% leads", "Optimized LCP", "Base SEO"],
+        "tags": ["SEO", "Performance", "Landing", "Conversion"],
+        "deliverables": [
+          "Fast and responsive page (mobile-first)",
+          "Technical SEO structure and content",
+          "CTAs and conversion tracking",
+          "Performance optimization (Core Web Vitals)"
+        ],
+        "before": "Slow site, low conversion and no reliable tracking.",
+        "after": "Fast loading, better ranking and clear funnel with metrics.",
+        "stack": ["HTML", "CSS", "JS", "SEO", "Analytics"]
+      }
+    ],
+    "modal": {
+      "deliverables": "What was delivered",
+      "beforeAfter": "Before / After",
+      "before": "Before",
+      "after": "After",
+      "stack": "Stack",
+      "ctaTitle": "Want a result like this?",
+      "ctaDescription": "Schedule a strategic analysis and we'll show you the fastest path for your case.",
+      "ctaButton": "I want a project like this"
+    },
+    "finalCta": {
+      "title": "Want to see this running in your company?",
+      "description": "We analyze your operation and propose automations/AI with clear ROI — fast, secure and custom.",
+      "button": "I Want a Strategic Analysis"
+    }
+  },
+  "solutions": {
+    "title": "How We Transform Your Business",
+    "painTitle": "Your Current Challenges",
+    "solutionTitle": "Vertech Solutions",
+    "painPoints": [
+      {
+        "title": "Manual Processes",
+        "description": "Repetitive tasks that consume time and generate human errors."
+      },
+      {
+        "title": "Disorganized Data",
+        "description": "Lack of visibility on real metrics for decision making."
+      },
+      {
+        "title": "Low Digital Presence",
+        "description": "Lost opportunities due to lack of efficient digital channels."
+      }
+    ],
+    "solutionPoints": [
+      {
+        "title": "Intelligent Automation",
+        "description": "Implementation of RPA and scripts to free your team."
+      },
+      {
+        "title": "Dashboards with AI",
+        "description": "Predictive analytics and real-time data visualization."
+      },
+      {
+        "title": "Digital Ecosystem",
+        "description": "Integrated sites and apps that expand your market reach."
+      }
+    ]
+  },
+  "values": {
+    "title": "Our Values and Differentiators",
+    "items": [
+      {
+        "icon": "fa-tachometer-alt",
+        "title": "Efficiency and Productivity",
+        "description": "Focus on fast results and operational cost reduction."
+      },
+      {
+        "icon": "fa-user-shield",
+        "title": "Security and Ethics",
+        "description": "Rigorous data protection and vulnerability mitigation."
+      },
+      {
+        "icon": "fa-medal",
+        "title": "Military Discipline",
+        "description": "Precise, punctual and highly organized execution."
+      },
+      {
+        "icon": "fa-lightbulb",
+        "title": "Applied Innovation",
+        "description": "Practical technology without unnecessary complexity."
+      },
+      {
+        "icon": "fa-check-circle",
+        "title": "Simplicity",
+        "description": "Solutions easy to use and implement by your team."
+      },
+      {
+        "icon": "fa-users",
+        "title": "Total Customer Focus",
+        "description": "Solutions designed specifically for your real pain point."
+      }
+    ]
+  },
+  "team": {
+    "title": "Leadership and Execution",
+    "subtitle": "Elite training and practical experience to ensure the best technology delivery for your business.",
+    "members": [
+      {
+        "name": "Murilo Miguel Narciso",
+        "role": "Co-Founder",
+        "education": "Civil Engineer – IME",
+        "educationFull": "(Military Engineering Institute)",
+        "achievements": [
+          "Winner AI Hackathon 2025 (COPPE/UFRJ)",
+          "1st Place VALE Program 2025",
+          "4 years in R&D (CNPq)",
+          "Internship in Webscraping (ITA-SP)"
+        ],
+        "linkedin": "https://www.linkedin.com/in/murilonarciso/",
+        "linkedinText": "Connect on LinkedIn",
+        "photo": "fotolinkedinmurilo.jfif"
+      },
+      {
+        "name": "Jean Kairo Crispim",
+        "role": "Co-Founder",
+        "education": "Telecommunications Engineer – IME",
+        "educationFull": "(Military Engineering Institute)",
+        "achievements": [
+          "Winner AI Hackathon 2025 (COPPE/UFRJ)",
+          "Cybersecurity – West Point (USA)",
+          "Specialist in AI Agents and RAG",
+          "CCNA Certification (Cisco)"
+        ],
+        "linkedin": "https://www.linkedin.com/in/jean-kairo-crispim-a11312284/",
+        "linkedinText": "Connect on LinkedIn",
+        "photo": "fotolinkedinjean.jfif"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What types of companies do you serve?",
+        "answer": "We primarily serve Small and Medium Businesses (SMBs) looking to modernize their processes, reduce costs and increase digital security."
+      },
+      {
+        "question": "How does the delivery timeline work?",
+        "answer": "We work with agile methodology and military discipline. Our projects are delivered within a few months, focusing on generating immediate value."
+      },
+      {
+        "question": "Do I need technical knowledge?",
+        "answer": "No. Our mission is simplicity. We deliver ready-to-use and easy-to-use solutions, handling all the technical complexity for you."
+      },
+      {
+        "question": "Do you offer support after delivery?",
+        "answer": "Yes! We offer support and continuous improvement plans to ensure your technology evolves with your business."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to scale your business?",
+    "description": "Don't let lack of technology hold back your company's growth. Schedule a conversation and discover how we can help.",
+    "button": "Talk to an Expert Now"
+  },
+  "footer": {
+    "tagline": "Applied AI, automation and security for SMBs. Transforming businesses with accessible technology.",
+    "email": "vertech2026@gmail.com",
+    "phone": "+55 (49) 8916-7594",
+    "copyright": "2025 Vertech Solutions. All rights reserved."
+  },
+  "chat": {
+    "title": "Vertech Assistant",
+    "placeholder": "Type your question...",
+    "initialMessage": "Hello! I'm the virtual assistant of Vertech Solutions. How can I help your company grow with technology today?",
+    "typing": "Typing...",
+    "verahBtn": "Verah Assistant",
+    "systemPrompt": "You are an intelligent and helpful virtual assistant for Vertech Solutions. Your function is to help potential clients understand how Vertech can transform their businesses. Respond concisely, professionally and friendly, always in English. Use emojis occasionally to keep the tone light.\n\nInformation about Vertech Solutions:\n- Mission: Transform SMBs with AI and automation.\n- Services: Apps, AI Agents, Process Automation, Professional Websites.\n- Differentiators: Military discipline in execution, fast delivery (in weeks), focus on security and cost reduction.\n- Contact: WhatsApp +55 (49) 8916-7594, Email vertech2026@gmail.com.\n\nIf they ask about specific prices, say that each project is custom and suggest scheduling a free strategic analysis via WhatsApp."
+  },
+  "whatsapp": {
+    "ariaLabel": "Talk on WhatsApp",
+    "message": "Hello, I would like to know about Vertech solutions",
+    "contactMessage": "I want to talk with Vertech",
+    "fabText": "Contact us"
+  },
+  "contact": {
+    "heroTitle": "Talk with",
+    "heroTitleHighlight": "Vertech",
+    "heroSubtitle": "Fast response. Send an email or fill out the form; WhatsApp is on the floating button.",
+    "note": "Prefer the form or email; the floating button leads directly to WhatsApp.",
+    "emailLabel": "Email",
+    "whatsappLabel": "WhatsApp",
+    "muriloTitle": "Murilo (CEO)",
+    "jeanTitle": "Jean (CTO)",
+    "formTitle": "Or send via form",
+    "form": {
+      "name": "Your full name",
+      "email": "Your best email",
+      "phone": "Phone/WhatsApp with area code",
+      "company": "Your company name",
+      "revenueLabel": "Approximate monthly revenue",
+      "revenueOptions": [
+        { "value": "", "label": "Approximate monthly revenue" },
+        { "value": "ate50k", "label": "Up to $50,000" },
+        { "value": "50k-100k", "label": "$50,000 - $100,000" },
+        { "value": "100k-500k", "label": "$100,000 - $500,000" },
+        { "value": "500k-1m", "label": "$500,000 - $1 million" },
+        { "value": "acima1m", "label": "Over $1 million" }
+      ],
+      "message": "Tell us about your biggest operational challenge",
+      "submit": "Request consultation",
+      "sending": "Sending..."
+    },
+    "modal": {
+      "successTitle": "Message sent!",
+      "successMessage": "We received your request. Confirm the FormSubmit email (first send) to enable future messages.",
+      "errorTitle": "Could not send",
+      "close": "Close"
+    },
+    "footerTagline": "Applied research, automation and security for SMBs"
+  }
+}
