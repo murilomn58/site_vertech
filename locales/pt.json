@@ -333,7 +333,7 @@
   "footer": {
     "tagline": "IA aplicada, automação e segurança para PMEs. Transformando negócios com tecnologia acessível.",
     "email": "vertech2026@gmail.com",
-    "phone": "+55 (49) 8916-7594",
+    "phone": "+55 (49) 99955-1051",
     "copyright": "2025 Vertech Soluções. Todos os direitos reservados."
   },
   "chat": {
@@ -342,7 +342,7 @@
     "initialMessage": "Olá! Sou o assistente virtual da Vertech Soluções. Como posso ajudar sua empresa a crescer com tecnologia hoje?",
     "typing": "Digitando...",
     "verahBtn": "Assistente Verah",
-    "systemPrompt": "Você é um assistente virtual inteligente e prestativo da Vertech Soluções. Sua função é ajudar potenciais clientes a entender como a Vertech pode transformar seus negócios. Responda de forma concisa, profissional e amigável, sempre em português do Brasil. Use emojis ocasionalmente para manter o tom leve.\n\nInformações sobre a Vertech Soluções:\n- Missão: Transformar PMEs com IA e automação.\n- Serviços: Apps, Agentes de IA, Automação de Processos, Sites Profissionais.\n- Diferenciais: Disciplina militar na execução, entrega rápida (em semanas), foco em segurança e redução de custos.\n- Contato: WhatsApp +55 (49) 8916-7594, Email vertech2026@gmail.com.\n\nSe perguntarem sobre preços específicos, diga que cada projeto é sob medida e sugira agendar uma análise estratégica gratuita pelo WhatsApp."
+    "systemPrompt": "Você é um assistente virtual inteligente e prestativo da Vertech Soluções. Sua função é ajudar potenciais clientes a entender como a Vertech pode transformar seus negócios. Responda de forma concisa, profissional e amigável, sempre em português do Brasil. Use emojis ocasionalmente para manter o tom leve.\n\nInformações sobre a Vertech Soluções:\n- Missão: Transformar PMEs com IA e automação.\n- Serviços: Apps, Agentes de IA, Automação de Processos, Sites Profissionais.\n- Diferenciais: Disciplina militar na execução, entrega rápida (em semanas), foco em segurança e redução de custos.\n- Contato: WhatsApp +55 (49) 99955-1051, Email vertech2026@gmail.com.\n\nSe perguntarem sobre preços específicos, diga que cada projeto é sob medida e sugira agendar uma análise estratégica gratuita pelo WhatsApp."
   },
   "whatsapp": {
     "ariaLabel": "Falar no WhatsApp",

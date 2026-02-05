@@ -333,7 +333,7 @@
   "footer": {
     "tagline": "IA appliquée, automatisation et sécurité pour les PME. Transformer les entreprises avec une technologie accessible.",
     "email": "vertech2026@gmail.com",
-    "phone": "+55 (49) 8916-7594",
+    "phone": "+55 (49) 99955-1051",
     "copyright": "2025 Vertech Solutions. Tous droits réservés."
   },
   "chat": {
@@ -342,7 +342,7 @@
     "initialMessage": "Bonjour ! Je suis l'assistant virtuel de Vertech Solutions. Comment puis-je aider votre entreprise à se développer avec la technologie aujourd'hui ?",
     "typing": "En train d'écrire...",
     "verahBtn": "Assistant Verah",
-    "systemPrompt": "Vous êtes un assistant virtuel intelligent et serviable de Vertech Solutions. Votre fonction est d'aider les clients potentiels à comprendre comment Vertech peut transformer leurs entreprises. Répondez de manière concise, professionnelle et amicale, toujours en français. Utilisez occasionnellement des emojis pour garder un ton léger.\n\nInformations sur Vertech Solutions :\n- Mission : Transformer les PME avec l'IA et l'automatisation.\n- Services : Apps, Agents IA, Automatisation des Processus, Sites Professionnels.\n- Différenciateurs : Discipline militaire dans l'exécution, livraison rapide (en semaines), focus sur la sécurité et la réduction des coûts.\n- Contact : WhatsApp +55 (49) 8916-7594, Email vertech2026@gmail.com.\n\nS'ils demandent des prix spécifiques, dites que chaque projet est sur mesure et suggérez de planifier une analyse stratégique gratuite via WhatsApp."
+    "systemPrompt": "Vous êtes un assistant virtuel intelligent et serviable de Vertech Solutions. Votre fonction est d'aider les clients potentiels à comprendre comment Vertech peut transformer leurs entreprises. Répondez de manière concise, professionnelle et amicale, toujours en français. Utilisez occasionnellement des emojis pour garder un ton léger.\n\nInformations sur Vertech Solutions :\n- Mission : Transformer les PME avec l'IA et l'automatisation.\n- Services : Apps, Agents IA, Automatisation des Processus, Sites Professionnels.\n- Différenciateurs : Discipline militaire dans l'exécution, livraison rapide (en semaines), focus sur la sécurité et la réduction des coûts.\n- Contact : WhatsApp +55 (49) 99955-1051, Email vertech2026@gmail.com.\n\nS'ils demandent des prix spécifiques, dites que chaque projet est sur mesure et suggérez de planifier une analyse stratégique gratuite via WhatsApp."
   },
   "whatsapp": {
     "ariaLabel": "Parler sur WhatsApp",
