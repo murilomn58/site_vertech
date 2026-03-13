@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Space_Grotesk, Montserrat } from "next/font/google";
 import "./globals.css";
 
@@ -13,11 +12,6 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
   display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "Vertech Soluções | IA, Automação e Apps para PMEs",
-  description: "Transforme sua PME com IA aplicada, automação e aplicativos sob medida.",
-};
 
 export default function RootLayout({
   children,
