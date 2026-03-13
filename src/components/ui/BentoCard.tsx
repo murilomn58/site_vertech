@@ -12,7 +12,7 @@ type BentoCardProps = {
   tags: string[];
 };
 
-export default function BentoCard({ size, category, title, pain, solution, metrics, tags }: BentoCardProps) {
+export default function BentoCard({ size, category, title, pain: _pain, solution, metrics, tags }: BentoCardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
