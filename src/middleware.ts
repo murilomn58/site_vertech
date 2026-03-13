@@ -8,9 +8,9 @@ export default function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
 
   // Redirect Railway internal domain to canonical domain
-  if (host === "sitevertech-production.up.railway.app") {
+  if (host === "landing-page-production-b240.up.railway.app") {
     const url = request.nextUrl.clone();
-    url.host = "www.vertechlabs.tech";
+    url.host = "www.vertechlab.tech";
     url.protocol = "https";
     url.port = "";
     return NextResponse.redirect(url, 301);
