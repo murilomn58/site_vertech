@@ -10,7 +10,7 @@ export default function middleware(request: NextRequest) {
   // Redirect Railway internal domain to canonical domain
   if (host === "vertech-site-production.up.railway.app") {
     const url = request.nextUrl.clone();
-    url.host = "www.vertechlab.tech";
+    url.host = "vertechlabs.tech";
     url.protocol = "https";
     url.port = "";
     return NextResponse.redirect(url, 301);
