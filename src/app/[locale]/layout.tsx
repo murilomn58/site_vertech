@@ -2,6 +2,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 
 type Props = {
   children: React.ReactNode;
@@ -27,7 +30,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <Navbar />
       {children}
+      <Footer />
+      <WhatsAppButton />
     </NextIntlClientProvider>
   );
 }

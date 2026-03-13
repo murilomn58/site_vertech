@@ -1,15 +1,21 @@
-import { useTranslations } from "next-intl";
+import Hero from "@/components/sections/Hero";
+import Services from "@/components/sections/Services";
+import Portfolio from "@/components/sections/Portfolio";
+import Transformation from "@/components/sections/Transformation";
+import Team from "@/components/sections/Team";
+import FAQ from "@/components/sections/FAQ";
+import FinalCTA from "@/components/sections/FinalCTA";
 
 export default function Home() {
-  const t = useTranslations("hero");
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-5xl font-heading font-bold">
-          {t("title")} <span className="gradient-text">{t("titleHighlight")}</span> {t("titleEnd")}
-        </h1>
-        <p className="mt-4 text-off-white/70 text-lg">{t("description")}</p>
-      </div>
+    <main>
+      <Hero />
+      <Services />
+      <Portfolio />
+      <Transformation />
+      <Team />
+      <FAQ />
+      <FinalCTA />
     </main>
   );
 }
