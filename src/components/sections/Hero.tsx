@@ -20,13 +20,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg-dark"
+      className="relative min-h-screen flex items-center justify-center bg-bg-dark overflow-clip"
     >
-      <CanvasErrorBoundary fallback={<GradientFallback />}>
-        <Suspense fallback={<GradientFallback />}>
-          <HeroMesh />
-        </Suspense>
-      </CanvasErrorBoundary>
+      <div className="absolute inset-0 z-0">
+        <CanvasErrorBoundary fallback={<GradientFallback />}>
+          <Suspense fallback={<GradientFallback />}>
+            <HeroMesh />
+          </Suspense>
+        </CanvasErrorBoundary>
+      </div>
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

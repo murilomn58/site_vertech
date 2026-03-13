@@ -26,25 +26,25 @@ function MorphingMesh() {
 
   return (
     <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.5}>
-      <mesh ref={meshRef} scale={viewport.width > 10 ? 2.5 : 1.8}>
+      <mesh ref={meshRef} scale={viewport.width > 10 ? 4.5 : 3}>
         <icosahedronGeometry args={[1, 4]} />
         <MeshDistortMaterial
           color="#22D3EE"
           wireframe
-          distort={0.3}
+          distort={0.25}
           speed={2}
           transparent
-          opacity={0.6}
+          opacity={0.5}
         />
       </mesh>
-      <mesh scale={viewport.width > 10 ? 2 : 1.4}>
+      <mesh scale={viewport.width > 10 ? 3.8 : 2.5}>
         <icosahedronGeometry args={[1, 4]} />
         <MeshDistortMaterial
           color="#22D3EE"
           distort={0.2}
           speed={1.5}
           transparent
-          opacity={0.08}
+          opacity={0.06}
         />
       </mesh>
     </Float>
@@ -54,8 +54,8 @@ function MorphingMesh() {
 export default function HeroMesh() {
   return (
     <Canvas
-      camera={{ position: [0, 0, 5], fov: 45 }}
-      className="absolute inset-0"
+      camera={{ position: [0, 0, 6], fov: 60 }}
+      style={{ width: "100%", height: "100%" }}
       dpr={[1, 1.5]}
       gl={{ antialias: true, alpha: true }}
     >
