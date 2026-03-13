@@ -7,14 +7,14 @@ const intlMiddleware = createMiddleware(routing);
 export default function middleware(request: NextRequest) {
   const host = request.headers.get("host") || "";
 
-  // Redirect Railway internal domain to canonical domain
-  if (host === "vertech-site-production.up.railway.app") {
-    const url = request.nextUrl.clone();
-    url.host = "vertechlabs.tech";
-    url.protocol = "https";
-    url.port = "";
-    return NextResponse.redirect(url, 301);
-  }
+  // TODO: re-enable redirect once vertechlabs.tech SSL is provisioned
+  // if (host === "vertech-site-production.up.railway.app") {
+  //   const url = request.nextUrl.clone();
+  //   url.host = "vertechlabs.tech";
+  //   url.protocol = "https";
+  //   url.port = "";
+  //   return NextResponse.redirect(url, 301);
+  // }
 
   return intlMiddleware(request);
 }
