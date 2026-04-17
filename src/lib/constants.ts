@@ -1,5 +1,13 @@
 export const WHATSAPP_NUMBER = "5549999551051";
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+export const getWhatsAppUrl = (message?: string) => {
+  const baseUrl = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+  return message
+    ? `${baseUrl}?text=${encodeURIComponent(message)}`
+    : baseUrl;
+};
+
+export const WHATSAPP_URL = getWhatsAppUrl();
 export const EMAIL = "vertech2026@gmail.com";
 export const PHONE = "+55 (49) 99955-1051";
 

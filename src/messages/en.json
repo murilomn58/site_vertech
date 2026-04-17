@@ -11,7 +11,10 @@
     "portfolio": "Portfolio",
     "team": "Team",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "languageSwitcherAriaLabel": "Select language",
+    "menuAriaLabel": "Open menu",
+    "closeMenuAriaLabel": "Close menu"
   },
   "intro": {
     "logoSub": "Solutions",
@@ -341,6 +344,7 @@
   },
   "whatsapp": {
     "ariaLabel": "Talk on WhatsApp",
+    "ctaLabel": "Chat on WhatsApp",
     "message": "Hello, I would like to know about Vertech solutions",
     "contactMessage": "I want to talk with Vertech",
     "fabText": "Contact us"

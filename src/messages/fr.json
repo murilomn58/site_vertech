@@ -1,0 +1,352 @@
+{
+  "lang": "fr-FR",
+  "meta": {
+    "title": "Vertech Solutions | IA, automatisation et applications pour les PME",
+    "description": "Vertech Solutions - Faites évoluer votre PME grâce à l'IA appliquée, à l'automatisation et à des applications sur mesure. Déploiement mené avec une rigueur militaire.",
+    "contactTitle": "Contact | Vertech Conseil"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "team": "Équipe",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "languageSwitcherAriaLabel": "Choisir la langue",
+    "menuAriaLabel": "Ouvrir le menu",
+    "closeMenuAriaLabel": "Fermer le menu"
+  },
+  "intro": {
+    "logoSub": "Solutions",
+    "tagline": "IA appliquée, automatisation et sécurité pour les PME.",
+    "tagline2": "Faire grandir les entreprises grâce à une technologie accessible."
+  },
+  "hero": {
+    "badge": "Technologie pensée pour la sécurité des données",
+    "title": "Transformez votre PME en une entreprise",
+    "titleHighlight": "plus intelligente",
+    "titleEnd": "et plus compétitive",
+    "description": "Nous concevons des solutions technologiques accessibles, applications, automatisations et IA appliquée, pour fluidifier vos opérations, réduire vos coûts et améliorer votre productivité en quelques semaines.",
+    "cta": "Je veux un diagnostic stratégique",
+    "imageAlt": "Technologie, données et performance pour les PME"
+  },
+  "features": {
+    "title": "Moins de tâches manuelles,",
+    "titleHighlight": "plus de numérique",
+    "description": "Nous aidons les entreprises à éliminer les tâches manuelles et à renforcer leur sécurité grâce à des technologies de pointe. Notre priorité est de résoudre le manque d'automatisation et les données dispersées avec des solutions rapides et sur mesure.",
+    "cards": [
+      {
+        "icon": "fa-mobile-alt",
+        "title": "Applications et plateformes",
+        "description": "Développement d'applications sur mesure et de plateformes de gestion, notamment des solutions complètes pour les cliniques et les activités de services."
+      },
+      {
+        "icon": "fa-robot",
+        "title": "IA et agents IA",
+        "description": "Tableaux de bord intelligents, analyse documentaire et service client automatisé pour réduire la dépendance à de grandes équipes.",
+        "chatBtn": "Tester le chat IA"
+      },
+      {
+        "icon": "fa-cogs",
+        "title": "Automatisation des processus",
+        "description": "Solutions RPA et low-code pour automatiser les tâches répétitives et générer des gains de productivité immédiats."
+      },
+      {
+        "icon": "fa-laptop-code",
+        "title": "Sites web professionnels",
+        "description": "Création d'une présence digitale solide pour les entreprises qui veulent se démarquer sur un marché moderne, avec un haut niveau de performance."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Des projets qui donnent des",
+    "titleHighlight": "résultats",
+    "subtitle": "Des réalisations concrètes qui réduisent les coûts et accélèrent les résultats en quelques semaines.",
+    "badges": ["Livraison en quelques semaines", "Sécurité des données", "Orienté ROI"],
+    "filters": {
+      "all": "Tous",
+      "iaAgents": "IA et agents",
+      "automation": "Automatisation",
+      "apps": "Applications",
+      "sites": "Sites web",
+      "dashboards": "Tableaux de bord"
+    },
+    "showing": "Affichage de",
+    "projects": "projets",
+    "viewDetails": "Voir les détails",
+    "projectsData": [
+      {
+        "id": 0,
+        "category": "ia-agentes",
+        "categoryLabel": "IA et agents",
+        "title": "Assistant IA sur WhatsApp (Agent Verah)",
+        "pain": "Volume élevé de messages et reprises constantes",
+        "solution": "Un agent qui répond, qualifie et oriente automatiquement",
+        "metrics": ["-60 % de temps de traitement", "+35 % de conversion", "24/7"],
+        "tags": ["WhatsApp", "IA", "Workflows", "CRM"],
+        "deliverables": [
+          "Agent IA entraîné sur la base de connaissances de l'entreprise",
+          "Workflows de qualification et d'orientation automatiques",
+          "Intégrations avec le service client et l'enregistrement des prospects",
+          "Tableau de bord des métriques et conversations"
+        ],
+        "before": "Équipe saturée par des messages répétitifs, perte de prospects faute de réactivité, qualification manuelle.",
+        "after": "Prise en charge instantanée 24/7, prospects qualifiés automatiquement, équipe concentrée sur la conversion.",
+        "stack": ["Agents IA", "WhatsApp", "n8n/Make", "Base de données", "Tableaux de bord"]
+      },
+      {
+        "id": 1,
+        "category": "ia-agentes",
+        "categoryLabel": "IA et agents",
+        "title": "Portail documentaire avec recherche sémantique (RAG)",
+        "pain": "Documents dispersés et information difficile à retrouver",
+        "solution": "Recherche intelligente et réponses avec référence précise",
+        "metrics": ["-70 % de temps de recherche", "+20 % de productivité", "Traçable"],
+        "tags": ["RAG", "OCR", "Sécurité", "Permissions"],
+        "deliverables": [
+          "Ingestion documentaire avec OCR",
+          "Recherche sémantique avec références vers le document source",
+          "Gestion des droits par utilisateur/groupe",
+          "Traçabilité des accès et journaux"
+        ],
+        "before": "Dossiers désorganisés, recherche manuelle lente, risque de perte d'information.",
+        "after": "Réponses rapides avec preuves, meilleure organisation et traçabilité, sécurité et maîtrise des accès.",
+        "stack": ["RAG", "OCR", "Embeddings", "Stockage", "Gestion des accès"]
+      },
+      {
+        "id": 2,
+        "category": "automacao",
+        "categoryLabel": "Automatisation",
+        "title": "RPA finance : rapprochement et émission",
+        "pain": "Rapprochements manuels et erreurs de saisie fréquentes",
+        "solution": "Des robots qui croisent les données et génèrent des rapports automatiques",
+        "metrics": ["-80 % de tâches répétitives", "-50 % d'erreurs", "Semaine 1"],
+        "tags": ["RPA", "ERP", "Tableurs", "Alertes"],
+        "deliverables": [
+          "Robot de rapprochement automatique",
+          "Intégration avec ERP, tableurs et autres systèmes",
+          "Rapports et piste d'audit",
+          "Alertes d'écart par e-mail ou WhatsApp"
+        ],
+        "before": "Des heures par jour consacrées au rapprochement manuel, des erreurs fréquentes et des processus bloqués.",
+        "after": "Rapprochements réalisés en quelques minutes, forte baisse des reprises, alertes proactives.",
+        "stack": ["Python", "RPA", "Intégrations", "ETL", "Alertes"]
+      },
+      {
+        "id": 3,
+        "category": "dashboards",
+        "categoryLabel": "Tableaux de bord",
+        "title": "Tableau de bord intelligent des opérations",
+        "pain": "Décisions prises sans visibilité et KPI en retard",
+        "solution": "Pilotage en temps réel et alertes automatiques",
+        "metrics": ["KPI en temps réel", "+25 % de prévisibilité", "1 source"],
+        "tags": ["BI", "KPI", "Alertes", "Données"],
+        "deliverables": [
+          "Tableau de bord avec KPI critiques en temps réel",
+          "Intégration de plusieurs sources de données",
+          "Alertes automatiques (anomalies/seuils)",
+          "Rapports récurrents automatisés"
+        ],
+        "before": "Données fragmentées dans des tableurs, KPI calculés manuellement.",
+        "after": "Vue unifiée, indicateurs à jour, décisions fondées sur des données fiables.",
+        "stack": ["Power BI", "SQL", "Python", "ETL", "Automatisation"]
+      },
+      {
+        "id": 4,
+        "category": "apps",
+        "categoryLabel": "Applications",
+        "title": "Application de gestion pour services et cliniques",
+        "pain": "Agenda, paiements et relation client déconnectés",
+        "solution": "Une application avec parcours de bout en bout et notifications",
+        "metrics": ["-30 % d'absences", "+20 % de récurrence", "Moins de chaos"],
+        "tags": ["Application", "Agenda", "Paiement", "Notifications"],
+        "deliverables": [
+          "Application couvrant tout le parcours client",
+          "Prise de rendez-vous et confirmation automatisées",
+          "Notifications de rappel (push/WhatsApp)",
+          "Intégration avec les paiements et les rapports"
+        ],
+        "before": "Planification manuelle, absences non signalées et beaucoup de reprises.",
+        "after": "Parcours en libre-service 24/7, rappels automatiques, meilleure présence et meilleure prévisibilité.",
+        "stack": ["Application", "Back-end", "Base de données", "Notifications", "Paiements"]
+      },
+      {
+        "id": 5,
+        "category": "sites",
+        "categoryLabel": "Sites web",
+        "title": "Site web haute performance orienté conversion",
+        "pain": "Présence digitale faible et peu de prospects",
+        "solution": "Un site rapide avec SEO et CTA efficaces",
+        "metrics": ["+40 % de prospects", "LCP optimisé", "SEO de base"],
+        "tags": ["SEO", "Performance", "Landing page", "Conversion"],
+        "deliverables": [
+          "Page rapide et responsive (mobile-first)",
+          "Structure SEO technique et contenu",
+          "CTA et suivi de conversion",
+          "Optimisation des performances (Core Web Vitals)"
+        ],
+        "before": "Site lent, faible conversion et absence de suivi fiable.",
+        "after": "Chargement rapide, meilleur référencement et tunnel clair avec des métriques lisibles.",
+        "stack": ["HTML", "CSS", "JS", "SEO", "Analytics"]
+      }
+    ],
+    "modal": {
+      "deliverables": "Ce qui a été livré",
+      "beforeAfter": "Avant / Après",
+      "before": "Avant",
+      "after": "Après",
+      "stack": "Stack",
+      "ctaTitle": "Vous voulez un résultat comme celui-ci ?",
+      "ctaDescription": "Planifiez un diagnostic stratégique et nous vous montrerons le chemin le plus rapide pour votre cas.",
+      "ctaButton": "Je veux un projet comme celui-ci"
+    },
+    "finalCta": {
+      "title": "Vous voulez voir cela fonctionner dans votre entreprise ?",
+      "description": "Nous analysons votre activité et proposons des automatisations et de l'IA avec un ROI clair, rapidement, en toute sécurité et sur mesure.",
+      "button": "Je veux un diagnostic stratégique"
+    }
+  },
+  "solutions": {
+    "title": "Comment nous transformons votre activité",
+    "painTitle": "Vos défis actuels",
+    "solutionTitle": "Les solutions Vertech",
+    "painPoints": [
+      {
+        "title": "Processus manuels",
+        "description": "Des tâches répétitives qui consomment du temps et génèrent des erreurs humaines."
+      },
+      {
+        "title": "Données dispersées",
+        "description": "Un manque de visibilité sur les vrais indicateurs pour prendre les bonnes décisions."
+      },
+      {
+        "title": "Faible présence digitale",
+        "description": "Des opportunités perdues faute de canaux digitaux efficaces."
+      }
+    ],
+    "solutionPoints": [
+      {
+        "title": "Automatisation intelligente",
+        "description": "Mise en place de RPA et de scripts pour libérer votre équipe."
+      },
+      {
+        "title": "Tableaux de bord pilotés par l'IA",
+        "description": "Analyses prédictives et visualisation des données en temps réel."
+      },
+      {
+        "title": "Écosystème digital",
+        "description": "Sites web et applications intégrés pour élargir votre portée commerciale."
+      }
+    ]
+  },
+  "values": {
+    "title": "Nos valeurs et nos différenciateurs",
+    "items": [
+      {
+        "icon": "fa-tachometer-alt",
+        "title": "Efficacité et productivité",
+        "description": "Un focus constant sur des résultats rapides et la baisse des coûts opérationnels."
+      },
+      {
+        "icon": "fa-user-shield",
+        "title": "Sécurité et éthique",
+        "description": "Protection rigoureuse des données et réduction des vulnérabilités."
+      },
+      {
+        "icon": "fa-medal",
+        "title": "Rigueur militaire",
+        "description": "Une exécution précise, ponctuelle et hautement structurée."
+      },
+      {
+        "icon": "fa-lightbulb",
+        "title": "Innovation appliquée",
+        "description": "Une technologie concrète, sans complexité inutile."
+      },
+      {
+        "icon": "fa-check-circle",
+        "title": "Simplicité",
+        "description": "Des solutions faciles à prendre en main et à déployer par votre équipe."
+      },
+      {
+        "icon": "fa-users",
+        "title": "Priorité absolue au client",
+        "description": "Des solutions construites sur mesure à partir de votre enjeu réel."
+      }
+    ]
+  },
+  "team": {
+    "title": "Leadership et exécution",
+    "subtitle": "Une formation d'excellence et une expérience terrain pour garantir la meilleure exécution technologique au service de votre entreprise.",
+    "members": [
+      {
+        "name": "Murilo Miguel Narciso",
+        "role": "Cofondateur",
+        "education": "Ingénieur civil - IME",
+        "educationFull": "(Institut militaire d'ingénierie)",
+        "achievements": [
+          "Lauréat du Hackathon IA 2025 (COPPE/UFRJ)",
+          "1re place au programme VALE 2025",
+          "4 ans en R&D (CNPq)",
+          "Projet de recherche en web scraping (ITA-SP)"
+        ],
+        "linkedin": "https://www.linkedin.com/in/murilonarciso/",
+        "linkedinText": "Se connecter sur LinkedIn",
+        "photo": "fotolinkedinmurilo.jfif"
+      },
+      {
+        "name": "Jean Kairo Crispim",
+        "role": "Cofondateur",
+        "education": "Ingénieur en télécommunications - IME",
+        "educationFull": "(Institut militaire d'ingénierie)",
+        "achievements": [
+          "Lauréat du Hackathon IA 2025 (COPPE/UFRJ)",
+          "Cybersécurité - West Point (États-Unis)",
+          "Spécialiste des agents IA et du RAG",
+          "Certification CCNA (Cisco)"
+        ],
+        "linkedin": "https://www.linkedin.com/in/jean-kairo-crispim-a11312284/",
+        "linkedinText": "Se connecter sur LinkedIn",
+        "photo": "fotolinkedinjean.jfif"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "question": "Quels types d'entreprises accompagnez-vous ?",
+        "answer": "Nous accompagnons principalement les petites et moyennes entreprises (PME) qui veulent moderniser leurs opérations, réduire leurs coûts et renforcer leur sécurité numérique."
+      },
+      {
+        "question": "Comment se déroule le calendrier de livraison ?",
+        "answer": "Nous travaillons avec une méthode agile et une rigueur militaire. Nos projets sont livrés en quelques mois, avec un objectif simple : produire de la valeur rapidement."
+      },
+      {
+        "question": "Faut-il avoir des connaissances techniques ?",
+        "answer": "Non. Notre mission est la simplicité. Nous livrons des solutions prêtes à l'emploi et faciles à utiliser, en prenant en charge toute la complexité technique pour vous."
+      },
+      {
+        "question": "Proposez-vous un accompagnement après la livraison ?",
+        "answer": "Oui. Nous proposons des offres de support et d'amélioration continue pour faire évoluer votre technologie au rythme de votre activité."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Prêt à accélérer la croissance de votre entreprise ?",
+    "description": "Ne laissez pas le manque de technologie freiner la croissance de votre entreprise. Planifiez un échange et découvrez comment nous pouvons vous aider.",
+    "button": "Parler à un expert maintenant"
+  },
+  "footer": {
+    "tagline": "IA appliquée, automatisation et sécurité pour les PME. Faire grandir les entreprises grâce à une technologie accessible.",
+    "email": "vertech2026@gmail.com",
+    "phone": "+55 (49) 99955-1051",
+    "copyright": "2026 Vertech Solutions. Tous droits réservés."
+  },
+  "whatsapp": {
+    "ariaLabel": "Échanger sur WhatsApp",
+    "ctaLabel": "Échanger sur WhatsApp",
+    "message": "Bonjour, je souhaite en savoir plus sur les solutions Vertech pour mon entreprise.",
+    "contactMessage": "Je souhaite échanger avec Vertech",
+    "fabText": "Contactez-nous"
+  }
+}

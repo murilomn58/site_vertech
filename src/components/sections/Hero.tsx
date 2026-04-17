@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { CanvasErrorBoundary } from "@/components/3d/ErrorBoundary";
 import Button from "@/components/ui/Button";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { getWhatsAppUrl } from "@/lib/constants";
 
 const HeroMesh = dynamic(() => import("@/components/3d/HeroMesh"), {
   ssr: false,
@@ -17,6 +17,9 @@ const GradientFallback = () => (
 
 export default function Hero() {
   const t = useTranslations("hero");
+  const whatsapp = useTranslations("whatsapp");
+  const whatsappUrl = getWhatsAppUrl(whatsapp("message"));
+
   return (
     <section
       id="hero"
@@ -47,7 +50,7 @@ export default function Hero() {
             {t("description")}
           </p>
           <div className="mt-8">
-            <Button href={WHATSAPP_URL}>{t("cta")}</Button>
+            <Button href={whatsappUrl}>{t("cta")}</Button>
           </div>
         </motion.div>
       </div>

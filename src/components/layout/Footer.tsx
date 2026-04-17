@@ -6,6 +6,7 @@ import { EMAIL, PHONE, NAV_SECTIONS } from "@/lib/constants";
 export default function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
+  const brand = useTranslations("intro");
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -19,7 +20,7 @@ export default function Footer() {
           {/* Left: Logo + tagline */}
           <div>
             <p className="font-heading font-bold text-2xl text-white">
-              VERTECH <span className="text-cyan">Soluções</span>
+              VERTECH <span className="text-cyan">{brand("logoSub")}</span>
             </p>
             <p className="mt-3 text-off-white/60 text-sm leading-relaxed">
               {t("tagline")}

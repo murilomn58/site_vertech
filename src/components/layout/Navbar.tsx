@@ -5,10 +5,68 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { WHATSAPP_URL, NAV_SECTIONS } from "@/lib/constants";
+import { getWhatsAppUrl, NAV_SECTIONS } from "@/lib/constants";
+
+const LOCALE_OPTIONS = [
+  { value: "pt", label: "PT", name: "Português" },
+  { value: "en", label: "EN", name: "English" },
+  { value: "fr", label: "FR", name: "Français" },
+] as const;
+
+type LocaleOption = (typeof LOCALE_OPTIONS)[number]["value"];
+
+type LocaleSwitcherProps = {
+  currentLocale: string;
+  ariaLabel: string;
+  mobile?: boolean;
+  onSelect: (locale: LocaleOption) => void;
+};
+
+function LocaleSwitcher({
+  currentLocale,
+  ariaLabel,
+  mobile = false,
+  onSelect,
+}: LocaleSwitcherProps) {
+  return (
+    <div
+      role="group"
+      aria-label={ariaLabel}
+      className={cn(
+        "flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1",
+        mobile && "border-white/20"
+      )}
+    >
+      {LOCALE_OPTIONS.map((option) => {
+        const isActive = currentLocale === option.value;
+
+        return (
+          <button
+            key={option.value}
+            type="button"
+            title={option.name}
+            aria-pressed={isActive}
+            onClick={() => onSelect(option.value)}
+            className={cn(
+              "rounded-full font-medium transition-colors",
+              mobile ? "px-4 py-2 text-base" : "px-3 py-1 text-xs",
+              isActive
+                ? "bg-cyan text-bg-dark"
+                : "text-off-white/70 hover:text-cyan"
+            )}
+          >
+            {option.label}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const brand = useTranslations("intro");
+  const whatsapp = useTranslations("whatsapp");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -30,9 +88,11 @@ export default function Navbar() {
     };
   }, [mobileOpen]);
 
-  const toggleLocale = () => {
-    const newLocale = locale === "pt" ? "en" : "pt";
-    router.replace(pathname, { locale: newLocale });
+  const whatsappUrl = getWhatsAppUrl(whatsapp("message"));
+
+  const switchLocale = (nextLocale: LocaleOption) => {
+    setMobileOpen(false);
+    router.replace(pathname, { locale: nextLocale });
   };
 
   const scrollTo = (id: string) => {
@@ -63,15 +123,15 @@ export default function Navbar() {
             }}
             className="font-heading font-bold text-2xl text-white select-none"
           >
-            VERTECH{" "}
-            <span className="text-cyan">Soluções</span>
+            VERTECH <span className="text-cyan">{brand("logoSub")}</span>
           </a>
 
           {/* Desktop nav links */}
-          <ul className="hidden md:flex items-center gap-8">
+          <ul className="hidden md:flex items-center gap-6 lg:gap-8">
             {NAV_SECTIONS.map((section) => (
               <li key={section}>
                 <button
+                  type="button"
                   onClick={() => scrollTo(section)}
                   className="text-off-white/70 hover:text-cyan transition-colors text-sm font-medium"
                 >
@@ -82,31 +142,29 @@ export default function Navbar() {
           </ul>
 
           {/* Desktop right side */}
-          <div className="hidden md:flex items-center gap-4">
-            {/* Language toggle */}
-            <button
-              onClick={toggleLocale}
-              className="text-sm font-medium text-off-white/70 hover:text-cyan transition-colors border border-white/10 rounded-full px-3 py-1"
-            >
-              {locale === "pt" ? "EN" : "PT"}
-            </button>
+          <div className="hidden md:flex items-center gap-3 lg:gap-4">
+            <LocaleSwitcher
+              currentLocale={locale}
+              ariaLabel={t("languageSwitcherAriaLabel")}
+              onSelect={switchLocale}
+            />
 
-            {/* WhatsApp CTA */}
             <a
-              href={WHATSAPP_URL}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-whatsapp hover:bg-whatsapp/90 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+              className="bg-whatsapp hover:bg-whatsapp/90 text-white text-sm font-semibold px-3 lg:px-4 py-2 rounded-lg transition-colors whitespace-nowrap"
             >
-              WhatsApp
+              {whatsapp("ctaLabel")}
             </a>
           </div>
 
           {/* Mobile hamburger */}
           <button
+            type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
-            aria-label="Menu"
+            aria-label={mobileOpen ? t("closeMenuAriaLabel") : t("menuAriaLabel")}
           >
             <span
               className={cn(
@@ -143,6 +201,7 @@ export default function Navbar() {
             {NAV_SECTIONS.map((section) => (
               <button
                 key={section}
+                type="button"
                 onClick={() => scrollTo(section)}
                 className="text-2xl font-heading text-off-white hover:text-cyan transition-colors"
               >
@@ -150,20 +209,20 @@ export default function Navbar() {
               </button>
             ))}
 
-            <button
-              onClick={toggleLocale}
-              className="text-lg font-medium text-off-white/70 hover:text-cyan transition-colors border border-white/10 rounded-full px-4 py-2"
-            >
-              {locale === "pt" ? "EN" : "PT"}
-            </button>
+            <LocaleSwitcher
+              currentLocale={locale}
+              ariaLabel={t("languageSwitcherAriaLabel")}
+              mobile
+              onSelect={switchLocale}
+            />
 
             <a
-              href={WHATSAPP_URL}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-whatsapp hover:bg-whatsapp/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+              className="bg-whatsapp hover:bg-whatsapp/90 text-white font-semibold px-6 py-3 rounded-lg transition-colors whitespace-nowrap"
             >
-              WhatsApp
+              {whatsapp("ctaLabel")}
             </a>
           </motion.div>
         )}

@@ -2,10 +2,12 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
-import { WHATSAPP_URL } from "@/lib/constants";
+import { getWhatsAppUrl } from "@/lib/constants";
 
 export default function FinalCTA() {
   const t = useTranslations("finalCta");
+  const whatsapp = useTranslations("whatsapp");
+  const whatsappUrl = getWhatsAppUrl(whatsapp("message"));
 
   return (
     <section className="py-24 bg-bg-dark relative overflow-hidden">
@@ -21,7 +23,7 @@ export default function FinalCTA() {
           </h2>
           <p className="mt-4 text-off-white/60 text-lg">{t("description")}</p>
           <div className="mt-8">
-            <Button href={WHATSAPP_URL} className="text-lg px-8 py-4">
+            <Button href={whatsappUrl} className="text-lg px-8 py-4">
               {t("button")}
             </Button>
           </div>
