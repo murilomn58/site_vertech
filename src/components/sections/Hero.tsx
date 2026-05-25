@@ -2,10 +2,9 @@
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { CanvasErrorBoundary } from "@/components/3d/ErrorBoundary";
 import Button from "@/components/ui/Button";
-import { getWhatsAppUrl } from "@/lib/constants";
 
 const HeroMesh = dynamic(() => import("@/components/3d/HeroMesh"), {
   ssr: false,
@@ -17,9 +16,7 @@ const GradientFallback = () => (
 
 export default function Hero() {
   const t = useTranslations("hero");
-  const whatsapp = useTranslations("whatsapp");
-  const whatsappUrl = getWhatsAppUrl(whatsapp("message"));
-
+  const locale = useLocale();
   return (
     <section
       id="hero"
@@ -49,8 +46,16 @@ export default function Hero() {
           <p className="mt-6 text-lg text-off-white/70 max-w-2xl mx-auto leading-relaxed">
             {t("description")}
           </p>
-          <div className="mt-8">
-            <Button href={whatsappUrl}>{t("cta")}</Button>
+          <div className="mt-10">
+            <Button
+              href={`/${locale}`}
+              className="!text-lg md:!text-xl !px-10 md:!px-14 !py-5 md:!py-6 !rounded-xl"
+            >
+              {t("cta")} →
+            </Button>
+            <p className="mt-4 text-xs md:text-sm text-off-white/40 font-mono uppercase tracking-widest">
+              2min · descobre o melhor caminho pra você
+            </p>
           </div>
         </motion.div>
       </div>

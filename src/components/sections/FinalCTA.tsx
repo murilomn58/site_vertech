@@ -1,13 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Button from "@/components/ui/Button";
-import { getWhatsAppUrl } from "@/lib/constants";
 
 export default function FinalCTA() {
   const t = useTranslations("finalCta");
-  const whatsapp = useTranslations("whatsapp");
-  const whatsappUrl = getWhatsAppUrl(whatsapp("message"));
+  const locale = useLocale();
 
   return (
     <section className="py-24 bg-bg-dark relative overflow-hidden">
@@ -22,10 +20,16 @@ export default function FinalCTA() {
             <span className="gradient-text">{t("title")}</span>
           </h2>
           <p className="mt-4 text-off-white/60 text-lg">{t("description")}</p>
-          <div className="mt-8">
-            <Button href={whatsappUrl} className="text-lg px-8 py-4">
-              {t("button")}
+          <div className="mt-10">
+            <Button
+              href={`/${locale}`}
+              className="!text-lg md:!text-xl !px-10 md:!px-14 !py-5 md:!py-6 !rounded-xl"
+            >
+              {t("button")} →
             </Button>
+            <p className="mt-4 text-xs md:text-sm text-off-white/40 font-mono uppercase tracking-widest">
+              2min · descobre o melhor caminho pra você
+            </p>
           </div>
         </motion.div>
       </div>

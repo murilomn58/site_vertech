@@ -1,21 +1,12 @@
-import Hero from "@/components/sections/Hero";
-import Services from "@/components/sections/Services";
-import Portfolio from "@/components/sections/Portfolio";
-import Transformation from "@/components/sections/Transformation";
-import Team from "@/components/sections/Team";
-import FAQ from "@/components/sections/FAQ";
-import FinalCTA from "@/components/sections/FinalCTA";
+import type { Metadata } from "next";
+import { Wizard } from "@/components/wizard/Wizard";
 
-export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <Services />
-      <Portfolio />
-      <Transformation />
-      <Team />
-      <FAQ />
-      <FinalCTA />
-    </main>
-  );
+export const metadata: Metadata = {
+  title: "Vertech — Vamos conversar?",
+  description:
+    "Em 2 minutos a gente entende o que faz sentido pra você: atendimento IA, app, site, automação ou registro de marca. No final, agenda uma call de 30min direto pelo Meet.",
+};
+
+export default function WizardPage() {
+  return <Wizard />;
 }
