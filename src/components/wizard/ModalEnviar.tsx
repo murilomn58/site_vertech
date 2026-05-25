@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useLocale } from "next-intl";
 import { useWizard } from "@/stores/wizard-store";
 import {
   findDor,
@@ -67,7 +66,6 @@ function FounderMini({ name, role, edu, photo, achievements }: FounderProps) {
 }
 
 export function ModalEnviar() {
-  const locale = useLocale();
   const closeModal = useWizard((s) => s.closeModal);
   const modalState = useWizard((s) => s.modalState);
   const setModalState = useWizard((s) => s.setModalState);
@@ -318,7 +316,7 @@ export function ModalEnviar() {
 
               <div className="border-t border-white/10 pt-5 mt-2 space-y-3">
                 <Link
-                  href={`/${locale}/sobre`}
+                  href="/pt/sobre"
                   className="block w-full px-5 py-4 bg-gradient-to-r from-cyan via-cyan-bright to-cyan text-bg-dark font-heading font-bold text-base md:text-lg tracking-wide rounded-xl shadow-lg shadow-cyan/30 hover:shadow-xl hover:shadow-cyan/50 hover:scale-[1.02] active:scale-100 transition-all"
                 >
                   Saiba mais sobre a Vertech →
