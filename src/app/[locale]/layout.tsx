@@ -10,9 +10,37 @@ type Props = {
 
 export async function generateMetadata({ params }: Omit<Props, "children">) {
   const t = await getTranslations({ locale: params.locale, namespace: "meta" });
+  const title = t("title");
+  const description = t("description");
+  const ogLocale =
+    params.locale === "pt" ? "pt_BR" : params.locale === "fr" ? "fr_FR" : "en_US";
+
   return {
-    title: t("title"),
-    description: t("description"),
+    metadataBase: new URL("https://vertechsolucoes.com.br"),
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://vertechsolucoes.com.br/${params.locale}`,
+      siteName: "Vertech Soluções",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1080,
+          height: 1080,
+          alt: "Vertech Soluções",
+        },
+      ],
+      locale: ogLocale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og-image.png"],
+    },
   };
 }
 
