@@ -19,7 +19,7 @@ export const agendarSchema = z.object({
   data: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Data invalida (YYYY-MM-DD)"),
   slot: z.string().regex(/^\d{2}:\d{2}$/, "Slot invalido (HH:MM)"),
   nome: z.string().min(3, "Nome muito curto").max(80),
-  telefone: z.string().min(10, "Telefone invalido").max(20),
+  telefone: z.string().optional().default(""),
   email: z
     .string()
     .email("Email invalido")

@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { IMaskInput } from "react-imask";
 import { WizardStepShell } from "./WizardStepShell";
 import { useWizard } from "@/stores/wizard-store";
 import { findDor } from "@/lib/catalogo";
@@ -68,7 +67,6 @@ export function Step4Fechar() {
 
   // Form
   const [nome, setNome] = useState("");
-  const [telefone, setTelefone] = useState("");
   const [email, setEmail] = useState("");
 
   const grid = useMemo(() => {
@@ -142,18 +140,13 @@ export function Step4Fechar() {
     ? "Anotei o contexto que você descreveu."
     : "";
 
-  const digitsTel = telefone.replace(/\D/g, "");
   const canSubmit =
-    !!scheduledDate &&
-    !!scheduledSlot &&
-    nome.trim().length >= 3 &&
-    digitsTel.length >= 10;
+    !!scheduledDate && !!scheduledSlot && nome.trim().length >= 3;
 
   function handleSubmit() {
     if (!canSubmit) return;
     setContact({
       nome: nome.trim(),
-      telefone: telefone.trim(),
       email: email.trim() || undefined,
     });
     openModal();
@@ -330,10 +323,10 @@ export function Step4Fechar() {
         {/* Form mínimo */}
         <div className="bg-bg-mid/40 backdrop-blur-xl border border-white/10 rounded-xl p-4 md:p-5 space-y-3">
           <p className="font-heading font-semibold text-base text-off-white mb-1">
-            Seus dados
+            Como posso te chamar?
           </p>
           <p className="text-xs text-off-white/40 mb-2">
-            Sem endereço. Só nome e WhatsApp pra confirmar.
+            Seu WhatsApp já vem comigo quando você clicar pra enviar. Sem endereço, sem repetir telefone.
           </p>
           <input
             type="text"
@@ -342,18 +335,11 @@ export function Step4Fechar() {
             placeholder="Seu nome"
             className="w-full bg-bg-dark/60 border-2 border-white/10 focus:border-cyan rounded-lg px-4 py-3 text-off-white placeholder-off-white/30 outline-none transition-colors"
           />
-          <IMaskInput
-            mask="(00) 0 0000-0000"
-            value={telefone}
-            onAccept={(v: string) => setTelefone(v)}
-            placeholder="(00) 0 0000-0000"
-            className="w-full bg-bg-dark/60 border-2 border-white/10 focus:border-cyan rounded-lg px-4 py-3 text-off-white placeholder-off-white/30 outline-none transition-colors"
-          />
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email (opcional, recebe convite Meet)"
+            placeholder="Email (opcional, pra receber convite Meet)"
             className="w-full bg-bg-dark/60 border-2 border-white/10 focus:border-cyan rounded-lg px-4 py-3 text-off-white placeholder-off-white/30 outline-none transition-colors"
           />
         </div>

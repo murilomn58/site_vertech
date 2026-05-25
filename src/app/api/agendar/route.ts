@@ -121,9 +121,11 @@ export async function POST(request: Request) {
       ``,
       `Contato:`,
       `Nome: ${data.nome}`,
-      `Telefone: ${data.telefone}`,
+      data.telefone ? `Telefone: ${data.telefone}` : null,
       data.email ? `Email: ${data.email}` : null,
       data.observacao ? `Observacao: ${data.observacao}` : null,
+      ``,
+      `Telefone do WhatsApp chega no chat quando o lead enviar a mensagem.`,
     ]
       .filter(Boolean)
       .join("\n");

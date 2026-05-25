@@ -109,7 +109,7 @@ export function ModalEnviar() {
           data: scheduledDate,
           slot: scheduledSlot,
           nome: contact.nome,
-          telefone: contact.telefone,
+          telefone: contact.telefone ?? "",
           email: contact.email,
         }),
       });
@@ -203,32 +203,45 @@ export function ModalEnviar() {
                 </p>
                 <div className="bg-bg-dark/50 border border-white/10 rounded-xl p-4 space-y-1.5 text-sm">
                   <p className="text-off-white">
-                    📅 <span className="text-cyan-bright font-mono">{formatDateBR(scheduledDate)} às {scheduledSlot}</span>
+                    <span className="text-off-white/50">Quando:</span>{" "}
+                    <span className="text-cyan-bright font-mono">
+                      {formatDateBR(scheduledDate)} às {scheduledSlot}
+                    </span>
                   </p>
                   {interesseObj && (
-                    <p className="text-off-white/80">🎯 {interesseObj.label}</p>
+                    <p className="text-off-white/80">
+                      <span className="text-off-white/50">Interesse:</span> {interesseObj.label}
+                    </p>
                   )}
                   {dorObj && (
-                    <p className="text-off-white/80">😩 {dorObj.label}</p>
+                    <p className="text-off-white/80">
+                      <span className="text-off-white/50">Dor:</span> {dorObj.label}
+                    </p>
                   )}
                   {observacaoLivre && !dorObj && (
-                    <p className="text-off-white/80">😩 {observacaoLivre}</p>
+                    <p className="text-off-white/80">
+                      <span className="text-off-white/50">Contexto:</span> {observacaoLivre}
+                    </p>
                   )}
                   {porteObj && (
-                    <p className="text-off-white/80">🏢 {porteObj.label}</p>
+                    <p className="text-off-white/80">
+                      <span className="text-off-white/50">Porte:</span> {porteObj.label}
+                    </p>
                   )}
                   {urgenciaObj && (
-                    <p className="text-off-white/80">⏰ {urgenciaObj.label}</p>
+                    <p className="text-off-white/80">
+                      <span className="text-off-white/50">Urgência:</span> {urgenciaObj.label}
+                    </p>
                   )}
-                  {contact && (
-                    <>
-                      <p className="text-off-white/80">📞 {contact.telefone}</p>
-                      {contact.email && (
-                        <p className="text-off-white/80">✉️ {contact.email}</p>
-                      )}
-                    </>
+                  {contact?.email && (
+                    <p className="text-off-white/80">
+                      <span className="text-off-white/50">Email:</span> {contact.email}
+                    </p>
                   )}
                 </div>
+                <p className="text-xs text-off-white/40 mt-2 text-center">
+                  Seu número vem comigo direto pelo WhatsApp.
+                </p>
               </div>
 
               {errorMessage && (

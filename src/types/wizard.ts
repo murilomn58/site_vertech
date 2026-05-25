@@ -44,7 +44,7 @@ export type MatchResult = {
 
 export type ContactData = {
   nome: string;
-  telefone: string;
+  telefone?: string;
   email?: string;
   observacao?: string;
 };
