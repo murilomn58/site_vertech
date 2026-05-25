@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Omit<Props, "children">) {
       siteName: "Vertech Soluções",
       images: [
         {
-          url: "/og-image.png",
+          url: "/images/og-image.png",
           width: 1080,
           height: 1080,
           alt: "Vertech Soluções",
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: Omit<Props, "children">) {
       card: "summary_large_image",
       title,
       description,
-      images: ["/og-image.png"],
+      images: ["/images/og-image.png"],
     },
   };
 }
