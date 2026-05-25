@@ -62,8 +62,23 @@ export async function POST(request: Request) {
 
   let meetLink: string | null = null;
   let eventId: string | null = null;
+  let calendarSkipped = false;
+
+  // Se env vars Google nao estao configuradas, pula Calendar e ainda manda WhatsApp.
+  // Murilo cria evento + Meet manualmente quando ver a mensagem.
+  if (
+    !process.env.GOOGLE_OAUTH_CLIENT_ID ||
+    !process.env.GOOGLE_OAUTH_CLIENT_SECRET ||
+    !process.env.GOOGLE_OAUTH_REFRESH_TOKEN
+  ) {
+    calendarSkipped = true;
+    meetLink = "https://meet.google.com/new";
+  }
 
   try {
+    if (calendarSkipped) {
+      throw new Error("calendar-skipped");
+    }
     const calendar = getCalendar();
 
     // Re-verifica race condition: slot ja ocupado?
@@ -135,24 +150,25 @@ export async function POST(request: Request) {
     meetLink = insert.data.hangoutLink ?? null;
     eventId = insert.data.id ?? null;
   } catch (err) {
-    console.error("[/api/agendar] Calendar insert falhou:", err);
-    return NextResponse.json(
-      {
-        error:
-          "Nao consegui criar o evento no Calendar — manda mensagem pelo WhatsApp do site que a gente resolve.",
-      },
-      { status: 502 },
-    );
+    if (!calendarSkipped) {
+      console.error("[/api/agendar] Calendar insert falhou, fallback ativo:", err);
+    }
+    // Fallback gracioso: mesmo sem Calendar, ainda manda WhatsApp pro Murilo
+    // criar a reuniao manualmente. Meet link generico.
+    meetLink = "https://meet.google.com/new";
+    calendarSkipped = true;
   }
 
   if (!meetLink) {
-    return NextResponse.json(
-      { error: "Evento criado mas Meet nao foi gerado. Tenta de novo." },
-      { status: 502 },
-    );
+    meetLink = "https://meet.google.com/new";
   }
 
-  const whatsappMessage = buildWhatsAppMessage({ ...data, meetLink, match });
+  const whatsappMessage = buildWhatsAppMessage({
+    ...data,
+    meetLink,
+    match,
+    pending: calendarSkipped,
+  });
   const waUrl = buildWhatsAppURL(whatsappMessage);
 
   return NextResponse.json({
@@ -161,5 +177,6 @@ export async function POST(request: Request) {
     meetLink,
     waUrl,
     tier: match.tier,
+    calendarSkipped,
   });
 }

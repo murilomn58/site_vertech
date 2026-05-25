@@ -26,7 +26,11 @@ function tierLabel(tier: LeadTier): string {
  * total (data, Meet, telefone), o resto é texto plain.
  */
 export function buildWhatsAppMessage(
-  payload: AgendamentoPayload & { meetLink: string; match: MatchResult | null },
+  payload: AgendamentoPayload & {
+    meetLink: string;
+    match: MatchResult | null;
+    pending?: boolean;
+  },
 ): string {
   const interesse = findInteresse(payload.interesse);
   const dor = findDor(payload.interesse, payload.dor);
@@ -36,6 +40,9 @@ export function buildWhatsAppMessage(
 
   const tierLine = payload.match ? tierLabel(payload.match.tier) : "";
   const matchLine = payload.match ? `Match: ${payload.match.titulo}` : "";
+  const meetLine = payload.pending
+    ? "🎥 Meet a marcar (cria o evento e me manda o link)"
+    : `🎥 ${payload.meetLink}`;
 
   const linhas = [
     "Olá Murilo! Lead novo pelo site.",
@@ -44,7 +51,7 @@ export function buildWhatsAppMessage(
     matchLine,
     "",
     `📅 ${dataBR} às ${payload.slot}`,
-    `🎥 ${payload.meetLink}`,
+    meetLine,
     "",
     `Interesse: ${interesse?.label ?? payload.interesse ?? "-"}`,
     dor
@@ -60,7 +67,6 @@ export function buildWhatsAppMessage(
     payload.observacao ? `Obs: ${payload.observacao}` : "",
   ].filter((l) => l !== "" || true);
 
-  // Join com newlines mantendo separações
   return linhas.join("\n").replace(/\n{3,}/g, "\n\n").trim();
 }
 
