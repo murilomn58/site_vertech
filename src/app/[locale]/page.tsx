@@ -1,12 +1,15 @@
-import type { Metadata } from "next";
-import { Wizard } from "@/components/wizard/Wizard";
-
-export const metadata: Metadata = {
-  title: "Vertech — Vamos conversar?",
-  description:
-    "Em 2 minutos a gente entende o que faz sentido pra você: atendimento IA, app, site, automação ou registro de marca. No final, agenda uma call de 30min direto pelo Meet.",
-};
-
-export default function WizardPage() {
-  return <Wizard />;
+export default function Home() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center gap-4 bg-bg-dark px-6 text-center">
+      <p className="font-mono text-sm uppercase tracking-[0.3em] text-cyan">
+        Vertech Soluções
+      </p>
+      <h1 className="font-display text-5xl font-bold text-ink sm:text-7xl">
+        rebuild <span className="text-gradient">v4</span>
+      </h1>
+      <p className="max-w-md font-body text-ink-muted">
+        Vitrine em construção. Tailwind 4 + Next 16 + next-intl.
+      </p>
+    </main>
+  );
 }

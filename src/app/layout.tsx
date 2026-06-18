@@ -1,4 +1,4 @@
-import { Space_Grotesk, Montserrat } from "next/font/google";
+import { Space_Grotesk, Montserrat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -13,6 +13,12 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -20,7 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
-      <body className={`${spaceGrotesk.variable} ${montserrat.variable}`}>
+      <body
+        className={`${spaceGrotesk.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}
+      >
         {children}
       </body>
     </html>

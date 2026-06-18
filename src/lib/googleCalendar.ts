@@ -1,9 +1,12 @@
 import "server-only";
 
 import { google, type calendar_v3 } from "googleapis";
-import { OAuth2Client } from "google-auth-library";
 
-let cachedClient: OAuth2Client | null = null;
+// Usa o OAuth2 da PROPRIA copia de google-auth-library que o googleapis carrega,
+// evitando o conflito de "duas copias de google-auth-library" no type-check.
+type OAuth2 = InstanceType<typeof google.auth.OAuth2>;
+
+let cachedClient: OAuth2 | null = null;
 
 function requireEnv(name: string): string {
   const v = process.env[name];
@@ -13,9 +16,9 @@ function requireEnv(name: string): string {
   return v;
 }
 
-export function getOAuthClient(): OAuth2Client {
+export function getOAuthClient(): OAuth2 {
   if (cachedClient) return cachedClient;
-  const oauth2 = new OAuth2Client(
+  const oauth2 = new google.auth.OAuth2(
     requireEnv("GOOGLE_OAUTH_CLIENT_ID"),
     requireEnv("GOOGLE_OAUTH_CLIENT_SECRET"),
   );

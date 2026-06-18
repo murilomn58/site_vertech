@@ -1,19 +1,27 @@
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { SmoothScroll } from "@/components/layout/smooth-scroll";
 
 type Props = {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({ params }: Omit<Props, "children">) {
-  const t = await getTranslations({ locale: params.locale, namespace: "meta" });
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: Omit<Props, "children">) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
   const title = t("title");
   const description = t("description");
   const ogLocale =
-    params.locale === "pt" ? "pt_BR" : params.locale === "fr" ? "fr_FR" : "en_US";
+    locale === "pt" ? "pt_BR" : locale === "fr" ? "fr_FR" : "en_US";
 
   return {
     metadataBase: new URL("https://vertechsolucoes.com.br"),
@@ -22,7 +30,7 @@ export async function generateMetadata({ params }: Omit<Props, "children">) {
     openGraph: {
       title,
       description,
-      url: `https://vertechsolucoes.com.br/${params.locale}`,
+      url: `https://vertechsolucoes.com.br/${locale}`,
       siteName: "Vertech Soluções",
       images: [
         {
@@ -45,17 +53,17 @@ export async function generateMetadata({ params }: Omit<Props, "children">) {
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = params;
+  const { locale } = await params;
 
-  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
-  const messages = await getMessages();
+  setRequestLocale(locale);
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      {children}
+    <NextIntlClientProvider>
+      <SmoothScroll>{children}</SmoothScroll>
     </NextIntlClientProvider>
   );
 }

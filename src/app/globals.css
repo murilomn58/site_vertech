@@ -1,24 +1,113 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* ============================================================
+   Vertech Design System — tokens (Tailwind 4 @theme)
+   Navy + Cyan. Dark premium. Nunca Inter.
+   ============================================================ */
+@theme {
+  /* Cores institucionais */
+  --color-bg-dark: #0a0f1c; /* fundo base, mais escuro que o navy */
+  --color-navy: #0f172a; /* navy oficial */
+  --color-navy-deep: #080d1a;
+  --color-surface: #131a2c; /* cartões/superfícies */
+  --color-surface-2: #1b2540; /* superfície elevada */
+  --color-ink: #f8fafc; /* texto principal */
+  --color-ink-muted: #94a3b8; /* texto secundário (slate) */
+  --color-ink-faint: #64748b;
+  --color-cyan: #22d3ee; /* acento principal */
+  --color-cyan-bright: #67e8f9;
+  --color-cyan-dark: #0891b2;
+  --color-line: rgba(148, 163, 184, 0.14); /* bordas sutis */
+  --color-whatsapp: #25d366;
+
+  /* Aliases de compatibilidade (usados pela pagina /privacidade) */
+  --color-off-white: #f1f5f9;
+  --color-bg-mid: #111827;
+
+  /* Tipografia (as variáveis --font-* vêm do next/font no layout) */
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-montserrat), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "JetBrains Mono", monospace;
+  /* alias usado pela pagina /privacidade */
+  --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
+
+  /* Sombra/glow assinatura */
+  --shadow-glow: 0 0 0 1px rgba(34, 211, 238, 0.18),
+    0 8px 40px -8px rgba(34, 211, 238, 0.28);
+
+  /* Easing premium (curva usada em todos os reveals) */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
 @layer base {
   html {
-    scroll-behavior: smooth;
+    /* Lenis cuida do smooth scroll — NÃO usar scroll-behavior: smooth aqui
+       (os dois juntos causam jitter). */
+    scroll-behavior: auto;
+    -webkit-tap-highlight-color: transparent;
   }
   body {
-    @apply font-body text-off-white bg-bg-dark antialiased;
+    background-color: var(--color-bg-dark);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: var(--color-cyan);
+    color: var(--color-navy-deep);
   }
 }
 
-@layer components {
-  .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
-  }
-  .gradient-text {
-    @apply bg-gradient-to-r from-cyan to-cyan-bright bg-clip-text text-transparent;
+/* ============================================================
+   Utilities de marca
+   ============================================================ */
+@utility glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-line);
+}
+
+@utility text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-cyan-bright),
+    var(--color-cyan)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Grão sutil de fundo (textura premium, sem peso de imagem) */
+@utility grain {
+  position: relative;
+}
+
+/* ============================================================
+   Acessibilidade — reduced motion desliga tudo
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
