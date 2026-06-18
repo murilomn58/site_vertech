@@ -30,6 +30,15 @@ export async function generateMetadata({
     metadataBase: new URL("https://vertechsolucoes.com.br"),
     title,
     description,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        "pt-BR": "/pt",
+        en: "/en",
+        "fr-FR": "/fr",
+        "x-default": "/pt",
+      },
+    },
     openGraph: {
       title,
       description,
@@ -38,8 +47,8 @@ export async function generateMetadata({
       images: [
         {
           url: "/images/og-image.png",
-          width: 1080,
-          height: 1080,
+          width: 1200,
+          height: 630,
           alt: "Vertech Soluções",
         },
       ],
@@ -64,8 +73,44 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   setRequestLocale(locale);
 
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Vertech Soluções",
+    legalName: "Vertech Soluções Inova Simples (I.S.)",
+    alternateName: "Vertech",
+    url: "https://vertechsolucoes.com.br",
+    logo: "https://vertechsolucoes.com.br/icon.png",
+    image: "https://vertechsolucoes.com.br/images/og-image.png",
+    description:
+      "A Vertech cria assistentes de IA, aplicativos e sites que atendem e vendem pela sua empresa no WhatsApp.",
+    email: "admin@vertechsolucoes.com.br",
+    telephone: "+5549999551051",
+    taxID: "65.062.423/0001-81",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Rua Gedeão Ratto Silveira, 2475, Industrial I",
+      addressLocality: "Bagé",
+      addressRegion: "RS",
+      postalCode: "96413-080",
+      addressCountry: "BR",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+5549999551051",
+      contactType: "sales",
+      areaServed: "BR",
+      availableLanguage: ["Portuguese", "English", "French"],
+    },
+    areaServed: ["BR", "FR"],
+  };
+
   return (
     <NextIntlClientProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
       <SmoothScroll>
         <SiteHeader />
         {children}
