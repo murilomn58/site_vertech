@@ -8,7 +8,7 @@ export const getWhatsAppUrl = (message?: string) => {
 };
 
 export const WHATSAPP_URL = getWhatsAppUrl();
-export const EMAIL = "vertech2026@gmail.com";
+export const EMAIL = "admin@vertechsolucoes.com.br";
 export const PHONE = "+55 (49) 99955-1051";
 
 export const LINKEDIN = {
