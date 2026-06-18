@@ -3,6 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { FloatingWa } from "@/components/layout/floating-wa";
 
 type Props = {
   children: React.ReactNode;
@@ -63,7 +66,12 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider>
-      <SmoothScroll>{children}</SmoothScroll>
+      <SmoothScroll>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+        <FloatingWa />
+      </SmoothScroll>
     </NextIntlClientProvider>
   );
 }
