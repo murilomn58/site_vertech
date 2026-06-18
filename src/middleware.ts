@@ -6,5 +6,8 @@ const intlMiddleware = createMiddleware(routing);
 export default intlMiddleware;
 
 export const config = {
-  matcher: ["/((?!api|_next|images|fonts|favicon.ico).*)"],
+  // Intercepta paginas de locale, mas NAO arquivos estaticos (qualquer path com
+  // ponto: sitemap.xml, robots.txt, favicon.ico, icon.png, /images/*.jpg, etc.)
+  // nem /api e /_next.
+  matcher: ["/((?!api|_next|.*\\..*).*)"],
 };
