@@ -1,17 +1,13 @@
 import { Hero } from "@/components/sections/hero";
+import { VitrineIntro } from "@/components/sections/vitrine-intro";
+import { DemoChat } from "@/components/sections/demo-chat";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <section
-        id="vitrine"
-        className="flex min-h-screen items-center justify-center bg-bg-dark"
-      >
-        <p className="font-mono text-sm uppercase tracking-[0.3em] text-ink-faint">
-          vitrine — em construção
-        </p>
-      </section>
+      <VitrineIntro />
+      <DemoChat />
     </main>
   );
 }
