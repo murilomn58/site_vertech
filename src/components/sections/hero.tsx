@@ -104,7 +104,7 @@ export function Hero() {
           animate="visible"
           className="mt-10 font-mono text-xs uppercase tracking-[0.15em] text-ink-faint"
         >
-          Já em produção · Leila IA · OdontoConnect · Messiê Forró · VertechNews
+          Já em produção · Leila IA · OdontoConnect · Messiê Forró · VertechNews · Padaria Dona Rosa
         </motion.p>
       </div>
 

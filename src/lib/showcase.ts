@@ -2,8 +2,9 @@ import type { Intent } from "@/lib/whatsappIntents";
 
 /**
  * Fonte única dos cases reais EXIBÍVEIS no site.
- * Regra (vault): só Leila IA, OdontoConnect, Messiê Forró e VertechNews podem
- * ser divulgados nominalmente. Maracujá, Berlim, Arte Trigo etc. são VETADOS.
+ * Regra (vault): só Leila IA, OdontoConnect, Messiê Forró, VertechNews e
+ * Padaria Dona Rosa podem ser divulgados nominalmente (todos com contrato
+ * assinado). Maracujá, Berlim, Arte Trigo etc. são VETADOS.
  * Métricas: só o que é verdadeiro/defensável — nunca inventar número.
  */
 export type Caso = {
@@ -64,6 +65,18 @@ export const CASES: Caso[] = [
     destaques: ["Conteúdo por IA", "Multicanal", "Produto próprio"],
     url: "https://vertechnews.com",
     urlLabel: "vertechnews.com",
+  },
+  {
+    id: "dona-rosa",
+    nome: "Padaria Dona Rosa",
+    tipo: "site",
+    categoria: "Site + sistema de pedidos",
+    tagline: "Padaria de Floripa vendendo marmita pelo próprio site.",
+    descricao:
+      "Site em domínio próprio com montador de marmita, agendamento de retirada e painel da cozinha (KDS) em tempo real. Cliente recorrente.",
+    destaques: ["Marmita montável online", "Painel da cozinha (KDS)", "Cliente recorrente"],
+    url: "https://padariadonarosa.com.br",
+    urlLabel: "padariadonarosa.com.br",
   },
 ];
 

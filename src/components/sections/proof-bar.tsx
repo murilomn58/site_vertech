@@ -11,10 +11,10 @@ type Stat = {
 };
 
 const STATS: Stat[] = [
-  { value: 4, label: "produtos em produção" },
+  { value: 5, label: "projetos no ar" },
+  { value: 4, label: "clientes com mensalidade recorrente" },
   { value: 2, label: "países atendidos (Brasil e França)" },
   { value: null, display: "24/7", label: "atendimento que não para" },
-  { value: 100, suffix: "%", label: "dos projetos entregues" },
 ];
 
 export function ProofBar() {

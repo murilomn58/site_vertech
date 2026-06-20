@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useInView } from "motion/react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { ChatLine } from "./script";
 
@@ -73,8 +74,14 @@ export function ChatWindow({
 
       {/* header */}
       <div className="flex items-center gap-3 border-b border-line bg-surface/60 px-4 py-3 backdrop-blur">
-        <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-cyan to-cyan-dark font-display text-sm font-bold text-navy-deep">
-          L
+        <div className="relative h-9 w-9 flex-none">
+          <Image
+            src="/images/leila-avatar.jpg"
+            alt="Leila IA"
+            fill
+            sizes="36px"
+            className="rounded-full object-cover"
+          />
           <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-navy-deep bg-whatsapp" />
         </div>
         <div className="min-w-0">
