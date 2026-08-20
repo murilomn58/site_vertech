@@ -2,7 +2,11 @@ import type { MetadataRoute } from "next";
 
 const BASE = "https://vertechsolucoes.com.br";
 const LOCALES = ["pt", "en", "fr"] as const;
-const ROUTES = ["", "/privacidade"] as const;
+const ROUTES = [
+  "",
+  "/privacidade",
+  "/politica-de-privacidade-internacional-pax",
+] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
