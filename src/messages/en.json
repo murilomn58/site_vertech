@@ -62,7 +62,11 @@
     "title": "Portfolio that becomes",
     "titleHighlight": "results",
     "subtitle": "Real projects that reduce costs and accelerate results in weeks.",
-    "badges": ["Delivery in weeks", "Data security", "ROI focused"],
+    "badges": [
+      "Delivery in weeks",
+      "Data security",
+      "ROI focused"
+    ],
     "filters": {
       "all": "All",
       "iaAgents": "AI & Agents",
@@ -82,8 +86,17 @@
         "title": "AI Customer Service on WhatsApp (Verah Agent)",
         "pain": "High volume of messages and constant rework",
         "solution": "Agent that responds, qualifies and routes automatically",
-        "metrics": ["-60% service time", "+35% conversion", "24/7"],
-        "tags": ["WhatsApp", "AI", "Workflows", "CRM"],
+        "metrics": [
+          "-60% service time",
+          "+35% conversion",
+          "24/7"
+        ],
+        "tags": [
+          "WhatsApp",
+          "AI",
+          "Workflows",
+          "CRM"
+        ],
         "deliverables": [
           "AI agent trained with company knowledge base",
           "Qualification and automatic routing workflows",
@@ -92,7 +105,13 @@
         ],
         "before": "Overloaded team answering repetitive messages, lead loss due to delay, manual qualification.",
         "after": "Instant 24/7 service, automatically qualified leads, team focused on conversion.",
-        "stack": ["AI Agents", "WhatsApp", "n8n/Make", "Database", "Dashboards"]
+        "stack": [
+          "AI Agents",
+          "WhatsApp",
+          "n8n/Make",
+          "Database",
+          "Dashboards"
+        ]
       },
       {
         "id": 1,
@@ -101,8 +120,17 @@
         "title": "Document Portal with Semantic Search (RAG)",
         "pain": "Scattered documents and hard to find information",
         "solution": "Smart search + answers with exact reference",
-        "metrics": ["-70% search time", "+20% productivity", "Auditable"],
-        "tags": ["RAG", "OCR", "Security", "Permissions"],
+        "metrics": [
+          "-70% search time",
+          "+20% productivity",
+          "Auditable"
+        ],
+        "tags": [
+          "RAG",
+          "OCR",
+          "Security",
+          "Permissions"
+        ],
         "deliverables": [
           "Document ingestion with OCR",
           "Semantic search with references to original document",
@@ -111,7 +139,13 @@
         ],
         "before": "Disorganized folders, slow manual search, risk of lost information.",
         "after": "Fast answers with evidence, organization and traceability, security and access control.",
-        "stack": ["RAG", "OCR", "Embeddings", "Storage", "Access Control"]
+        "stack": [
+          "RAG",
+          "OCR",
+          "Embeddings",
+          "Storage",
+          "Access Control"
+        ]
       },
       {
         "id": 2,
@@ -120,8 +154,17 @@
         "title": "Financial RPA: Reconciliation and Issuance",
         "pain": "Manual reconciliation and frequent entry errors",
         "solution": "Robots that cross-reference data and generate automatic reports",
-        "metrics": ["-80% repetitive tasks", "-50% errors", "Week 1"],
-        "tags": ["RPA", "ERP", "Spreadsheets", "Alerts"],
+        "metrics": [
+          "-80% repetitive tasks",
+          "-50% errors",
+          "Week 1"
+        ],
+        "tags": [
+          "RPA",
+          "ERP",
+          "Spreadsheets",
+          "Alerts"
+        ],
         "deliverables": [
           "Automatic reconciliation robot",
           "Integration with ERP/spreadsheets/systems",
@@ -130,7 +173,13 @@
         ],
         "before": "Hours per day in manual reconciliation, frequent errors and blocked processes.",
         "after": "Reconciliation in minutes, drastic rework reduction, proactive alerts.",
-        "stack": ["Python", "RPA", "Integrations", "ETL", "Alerts"]
+        "stack": [
+          "Python",
+          "RPA",
+          "Integrations",
+          "ETL",
+          "Alerts"
+        ]
       },
       {
         "id": 3,
@@ -139,8 +188,17 @@
         "title": "Intelligent Operations Dashboard",
         "pain": "Decisions without visibility and delayed KPIs",
         "solution": "Real-time panel + automatic alerts",
-        "metrics": ["Real-time KPIs", "+25% predictability", "1 source"],
-        "tags": ["BI", "KPIs", "Alerts", "Data"],
+        "metrics": [
+          "Real-time KPIs",
+          "+25% predictability",
+          "1 source"
+        ],
+        "tags": [
+          "BI",
+          "KPIs",
+          "Alerts",
+          "Data"
+        ],
         "deliverables": [
           "Panel with critical real-time KPIs",
           "Integration of multiple data sources",
@@ -149,7 +207,13 @@
         ],
         "before": "Data in fragmented spreadsheets, manually calculated KPIs.",
         "after": "Unified vision, updated metrics, decisions based on reliable data.",
-        "stack": ["Power BI", "SQL", "Python", "ETL", "Automation"]
+        "stack": [
+          "Power BI",
+          "SQL",
+          "Python",
+          "ETL",
+          "Automation"
+        ]
       },
       {
         "id": 4,
@@ -158,8 +222,17 @@
         "title": "Management App for Services/Clinics",
         "pain": "Scheduling, payments and service disconnected",
         "solution": "App with end-to-end flow and notifications",
-        "metrics": ["-30% no-shows", "+20% recurrence", "Less chaos"],
-        "tags": ["App", "Scheduling", "Payment", "Notifications"],
+        "metrics": [
+          "-30% no-shows",
+          "+20% recurrence",
+          "Less chaos"
+        ],
+        "tags": [
+          "App",
+          "Scheduling",
+          "Payment",
+          "Notifications"
+        ],
         "deliverables": [
           "App with complete customer journey",
           "Automated scheduling and confirmation",
@@ -168,7 +241,13 @@
         ],
         "before": "Manual scheduling, no-shows without notice and lots of rework.",
         "after": "24/7 self-service, automatic reminders, better attendance and predictability.",
-        "stack": ["App", "Back-end", "Database", "Notifications", "Payments"]
+        "stack": [
+          "App",
+          "Back-end",
+          "Database",
+          "Notifications",
+          "Payments"
+        ]
       },
       {
         "id": 5,
@@ -177,8 +256,17 @@
         "title": "High Performance Site focused on Conversion",
         "pain": "Low digital presence and few leads",
         "solution": "Fast site with SEO and strong CTA",
-        "metrics": ["+40% leads", "Optimized LCP", "Base SEO"],
-        "tags": ["SEO", "Performance", "Landing", "Conversion"],
+        "metrics": [
+          "+40% leads",
+          "Optimized LCP",
+          "Base SEO"
+        ],
+        "tags": [
+          "SEO",
+          "Performance",
+          "Landing",
+          "Conversion"
+        ],
         "deliverables": [
           "Fast and responsive page (mobile-first)",
           "Technical SEO structure and content",
@@ -187,7 +275,13 @@
         ],
         "before": "Slow site, low conversion and no reliable tracking.",
         "after": "Fast loading, better ranking and clear funnel with metrics.",
-        "stack": ["HTML", "CSS", "JS", "SEO", "Analytics"]
+        "stack": [
+          "HTML",
+          "CSS",
+          "JS",
+          "SEO",
+          "Analytics"
+        ]
       }
     ],
     "modal": {
@@ -348,5 +442,287 @@
     "message": "Hello, I would like to know about Vertech solutions",
     "contactMessage": "I want to talk with Vertech",
     "fabText": "Contact us"
+  },
+  "website": {
+    "casesGallery": {
+      "realProjects": "Real projects",
+      "builtForRealBusinesses": "Built for real businesses. ",
+      "alreadyLive": "Already live.",
+      "softwareVertechHasBuiltForReal": "Software Vertech has built for real clients in Brazil and France, running in production today.",
+      "buildSomethingLikeThis": "Build something like this"
+    },
+    "demoApp": {
+      "bookAndManageAppointmentsOnYour": "Book and manage appointments on your phone, without a call.",
+      "automaticWhatsappConfirmationsAndRemindersSave": "Automatic WhatsApp confirmations and reminders save your team time.",
+      "designedAroundYourWorkflowWithThe": "Designed around your workflow, with the features your business needs.",
+      "customMobileApps": "Custom mobile apps",
+      "yourBusinessIn": "Your business in",
+      "thePalm": "the palm",
+      "ofYourCustomersHand": " of your customer's hand.",
+      "thisIsOdontoconnectAnAppWe": "This is OdontoConnect, an app we built to connect patients and dentists. Watch the demo screens. Your app gets the same attention to detail, built around what your business needs.",
+      "idLikeAnAppLikeThis": "I'd like an app like this"
+    },
+    "demoChat": {
+      "instantReplies24HoursADay": "Instant replies, 24 hours a day, on the WhatsApp your customers already use.",
+      "usesYourBusinessKnowledgeAndSpeaks": "Uses your business knowledge and speaks in your brand's voice.",
+      "handlesRoutineQuestionsAndHandsThe": "Handles routine questions and hands the conversation over when your team is needed.",
+      "aiAssistants": "AI assistants",
+      "anAssistantThatStaysAvailable": "An assistant that stays available,",
+      "aroundTheClock": "around the clock",
+      "andRespondsStraightAway": " and responds straight away.",
+      "watchTheConversationInTheDemo": "Watch the conversation in the demo. It shows the kind of assistant we built for Leila IA on WhatsApp. Imagine it helping your own customers.",
+      "idLikeAnAssistantLikeThis": "I'd like an assistant like this"
+    },
+    "demoSite": {
+      "aVisualConceptDesignedForYour": "A visual concept designed for your business and your audience.",
+      "fastOnMobileAndPolishedOn": "Fast on mobile and polished on every screen.",
+      "aClearPathFromAWebsite": "A clear path from a website visit to a WhatsApp conversation.",
+      "aWebsiteThatTurnsVisitorsInto": "A website that turns visitors into",
+      "customers": "customers.",
+      "thisWebsiteIsOneExampleOf": "This website is one example of our work. In France, you can see it in action on the Messiê Forró website. Each business gets its own visual identity and a clear way for customers to get in touch.",
+      "idLikeAWebsiteLikeThis": "I'd like a website like this",
+      "category": "Immersive website"
+    },
+    "finalCta": {
+      "tellUsWhatYouHaveIn": "Tell us what you have in mind.",
+      "wellBuildItWithYou": "We'll build it with you.",
+      "bringYourIdeaWellHelpTurn": "Bring your idea. We'll help turn it into working software, with clear communication and no indefinite commitment.",
+      "chatOnWhatsapp": "Chat on WhatsApp",
+      "exploreTheDemosAgain": "Explore the demos again"
+    },
+    "hero": {
+      "aiWebsitesAppsAnalytics": "AI · Websites · Apps · Analytics",
+      "keepYourBusinessServingCustomers": "Keep your business serving customers",
+      "andSellingAroundTheClock": "and selling around the clock.",
+      "vertechBuildsAiSystemsWebsitesMobile": "Vertech builds AI systems, websites, mobile apps and data tools that work for your business. Explore the live demos, then tell us what you'd like to build.",
+      "exploreLiveDemos": "Explore live demos",
+      "chatOnWhatsapp": "Chat on WhatsApp",
+      "inProductionLeilaIaOdontoconnectMessi": "In production · Leila IA · OdontoConnect · Messiê Forró · VertechNews · Padaria Dona Rosa",
+      "scrollToTheDemos": "Scroll to the demos"
+    },
+    "pasAncoragem": {
+      "theProblem": "The problem",
+      "slowRepliesCanCostYouCustomers": "Slow replies can cost you customers.",
+      "theCost": "The cost",
+      "aMessageLeftUnansweredOvernightOr": "A message left unanswered overnight or at the weekend can become a sale for someone else. Covering every hour with staff is expensive.",
+      "theSolution": "The solution",
+      "vertechsAiRespondsPromptlyEveryDay": "Vertech's AI responds promptly, every day, and hands interested customers over to your team.",
+      "whyNow": "Why now",
+      "keepTheConversationGoing": "Keep the conversation going",
+      "whileYourCustomersAreReadyTo": "while your customers are ready to buy.",
+      "aReceptionist": "A receptionist",
+      "fromBrl1800PerMonth": "From BRL 1,800 per month",
+      "plusEmploymentCostsHolidaysAndTime": "Plus employment costs, holidays and time off. Overnight coverage still needs a separate plan.",
+      "aVertechAiAssistant": "A Vertech AI assistant",
+      "available24HoursADayEvery": "Available 24 hours a day, every day",
+      "projectScopeAndIntegrationsDetermineThe": "Project scope and integrations determine the final quote.",
+      "letsTalkAboutMyProject": "Let's talk about my project"
+    },
+    "proofBar": {
+      "projectsLive": "projects live",
+      "clientsWithRecurringServicePlans": "clients with recurring service plans",
+      "countriesServedBrazilAndFrance": "countries served (Brazil and France)",
+      "customerSupportThatKeepsGoing": "customer support that keeps going"
+    },
+    "securityLgpd": {
+      "brazilianDataProtection": "Brazilian data protection",
+      "infrastructureAndDataHandlingFollowBrazils": "Infrastructure and data handling follow Brazil's LGPD (Law 13,709/2018).",
+      "youreInControl": "You're in control",
+      "yourDataBelongsToYouYou": "Your data belongs to you. You can request access, correction or deletion at any time.",
+      "clearTerms": "Clear terms",
+      "weBuildItYouTestIt": "We build it, you test it, and we move forward when it makes sense. No indefinite contracts.",
+      "confidentialConversations": "Confidential conversations",
+      "weHandleConversationsWithTheCare": "We handle conversations with the care your business requires.",
+      "securityAndDataProtection": "Security and data protection",
+      "yourAiWithYourData": "Your AI, with your data",
+      "protected": "protected.",
+      "privacyPolicy": "Privacy Policy",
+      "askAQuestion": "Ask a question"
+    },
+    "team": {
+      "ceoCofounder": "CEO · Co-founder",
+      "leadsProductStrategyAndClientRelationships": "Leads product, strategy and client relationships. Murilo is your main contact on WhatsApp.",
+      "ctoCofounder": "CTO · Co-founder",
+      "leadsEngineeringAndProductArchitectureMaking": "Leads engineering and product architecture, making sure your AI works reliably in practice.",
+      "thePeopleBehindTheWork": "The people behind the work",
+      "realPeople": "Real people",
+      "youCanTalkTo": "you can talk to.",
+      "yourMainWhatsappContactIsA": "Your main WhatsApp contact is a company founder. You can also speak with Bruno, our sales representative in France.",
+      "photo": "Photo of {name}"
+    },
+    "vitrineIntro": {
+      "aiAssistants": "AI assistants",
+      "customerSupportAndSalesOnWhatsapp": "Customer support and sales on WhatsApp, 24 hours a day, even when you're offline.",
+      "customMobileApps": "Custom mobile apps",
+      "yourBusinessInYourCustomersPocket": "Your business in your customer's pocket: booking, management and everyday tools.",
+      "websitesThatMakeAnImpression": "Websites that make an impression",
+      "aTailoredExperienceThatHelpsVisitors": "A tailored experience that helps visitors become customers.",
+      "exploreOurServices": "Explore our services",
+      "fourWaysToPutTechnology": "Four ways to put technology",
+      "toWork": "to work",
+      "forYourBusiness": " for your business.",
+      "exploreWhatWeBuildThenTry": "Explore what we build, then try the interactive demos below. When something catches your eye, get in touch and tell us about your project.",
+      "viewDemo": "View demo"
+    },
+    "siteHeader": {
+      "services": "Services",
+      "projects": "Projects",
+      "security": "Security",
+      "contact": "Contact",
+      "letsTalk": "Let's talk",
+      "chatOnWhatsapp": "Chat on WhatsApp",
+      "menu": "Menu"
+    },
+    "siteFooter": {
+      "technologyThatKeepsYouAheadAi": "Technology that keeps you ahead. AI, websites, apps and data tools that work for your business.",
+      "talkToVertech": "Talk to Vertech",
+      "explore": "Explore",
+      "servicesAndDemos": "Services and demos",
+      "realProjects": "Real projects",
+      "securityAndDataProtection": "Security and data protection",
+      "privacyPolicy": "Privacy Policy",
+      "contact": "Contact",
+      "muriloOnLinkedin": "Murilo on LinkedIn",
+      "jeanOnLinkedin": "Jean on LinkedIn",
+      "vertechSoluesCnpj65062423000181BagBrazil": " Vertech Soluções · CNPJ 65.062.423/0001-81 · Bagé, Brazil",
+      "builtWithOurOwnTechnology": "Built with our own technology."
+    },
+    "floatingWa": {
+      "chatOnWhatsapp": "Chat on WhatsApp"
+    },
+    "phoneDemo": {
+      "home": "Home",
+      "bookings": "Bookings",
+      "profile": "Profile",
+      "goodMorning": "Good morning,",
+      "findASpecialty": "Find a specialty",
+      "specialties": "Specialties",
+      "general": "General",
+      "orthodontics": "Orthodontics",
+      "cleaning": "Cleaning",
+      "dentistsNearYou": "Dentists near you",
+      "drHelenaReis": "Dr. Helena Reis",
+      "generalDentistry": "General dentistry",
+      "drPauloAntunes": "Dr. Paulo Antunes",
+      "appointmentConfirmed": "Appointment confirmed",
+      "youllReceiveAReminderOnWhatsapp": "You'll receive a reminder on WhatsApp",
+      "thursday26June": "Thursday, 26 June",
+      "1430RoutineCheckup": "14:30 · Routine check-up",
+      "automaticReminderEnabled": "Automatic reminder enabled",
+      "myAppointments": "My appointments",
+      "26Jun": "26 Jun",
+      "confirmed": "Confirmed",
+      "10Jul": "10 Jul",
+      "booked": "Booked",
+      "02May": "02 May",
+      "completed": "Completed"
+    },
+    "browserDemo": {
+      "lunchBox700g": "Lunch box 700g",
+      "brl2990": "BRL 29.90",
+      "breakfast": "Breakfast",
+      "inStore": "in store",
+      "savouryPastries": "Savoury pastries",
+      "cakesAndSweets": "Cakes and sweets",
+      "freshBreadAtPadariaDonaRosa": "Fresh bread at Padaria Dona Rosa",
+      "since2004Florianpolis": "Since 2004 · Florianópolis",
+      "bakery": "Bakery",
+      "buildYourOwnLunchBox500g": "Build your own lunch box, 500g or 700g. Pick it up without the queue.",
+      "buildYourLunchBox": "Build your lunch box",
+      "onTheMenu": "On the menu",
+      "scheduleYourPickup": "Schedule your pickup",
+      "chooseYourLunchAndCollectIt": "Choose your lunch and collect it without waiting in line.",
+      "orderNow": "Order now",
+      "aDistinctIdentityForEveryBusiness": "A distinct identity for every business"
+    },
+    "chatWindow": {
+      "askAQuestion": "Ask a question...",
+      "status": "online · instant replies"
+    },
+    "script": {
+      "hiCanIStillBidOn": "Hi! Can I still bid on the apartment in lot 47?",
+      "hiYesBiddingOnLot47": "Hi! Yes, bidding on lot 47, the two-bedroom apartment in the city centre, is open until 24 June at 14:00.",
+      "isFinancingAvailableOrDoI": "Is financing available, or do I need to pay in full?",
+      "bankFinancingAndDirectInstalmentsAre": "Bank financing and direct instalments are both available. The starting bid is BRL 182,000. Would you like the list of required documents?",
+      "yesPlease": "Yes, please!",
+      "ofCourseIllSendTheDocuments": "Of course. I'll send the documents and remind you 30 minutes before the auction starts. Just ask if you have any questions about the auction terms."
+    },
+    "showcase": {
+      "aiAssistant": "AI assistant",
+      "helpsAuctionBuyers24HoursA": "Helps auction buyers 24 hours a day.",
+      "aWhatsappAiAssistantForAuctioneers": "A WhatsApp AI assistant for auctioneers. Trained on each auctioneer's data, it answers questions about auction terms, lots, documents and deadlines.",
+      "onWhatsapp247": "On WhatsApp, 24/7",
+      "trainedForEachAuctioneer": "Trained for each auctioneer",
+      "inProduction": "In production",
+      "mobileApp": "Mobile app",
+      "connectingPatientsAndDentistsOnMobile": "Connecting patients and dentists on mobile.",
+      "aPatientdentistBookingAppBookWithout": "A patient-dentist booking app: book without calling, confirm on WhatsApp, and organise patient records and reviews. In production with a real client.",
+      "bookingWithoutCalls": "Booking without calls",
+      "whatsappConfirmations": "WhatsApp confirmations",
+      "appInProduction": "App in production",
+      "ourFirstInternationalProjectInLille": "Our first international project, in Lille, France.",
+      "aWebsiteForABrazilianMusic": "A website for a Brazilian music association in Lille, with a cinematic redesign, dedicated deployment and ongoing maintenance. A continuing Vertech client.",
+      "france": "France",
+      "cinematicRedesign": "Cinematic redesign",
+      "ongoingClient": "Ongoing client",
+      "aiNewsPlatform": "AI news platform",
+      "aiNewsWithAutomatedContentProduction": "AI news with automated content production and distribution.",
+      "anArtificialIntelligenceNewsPlatformWith": "An artificial intelligence news platform with content generation and distribution across multiple channels. A live product built and owned by Vertech.",
+      "aigeneratedContent": "AI-generated content",
+      "multipleChannels": "Multiple channels",
+      "ourOwnProduct": "Our own product",
+      "websiteOrderingSystem": "Website + ordering system",
+      "aBakeryInFlorianpolisSellingLunch": "A bakery in Florianópolis selling lunch boxes through its own website.",
+      "aWebsiteOnTheBakerysOwn": "A website on the bakery's own domain, with a custom lunch box builder, scheduled pickups and a real-time kitchen display system (KDS). An ongoing client.",
+      "onlineLunchBoxBuilder": "Online lunch box builder",
+      "kitchenDisplaySystem": "Kitchen display system"
+    },
+    "privacy": {
+      "privacy": "Privacy ",
+      "policy": "Policy",
+      "lastUpdated": "Last updated: ",
+      "thisPrivacyPolicyExplainsHowVertech": "This Privacy Policy explains how Vertech Soluções processes the personal data of people who visit our website, contact us through our channels or interact with our social media pages. We take your privacy seriously and follow Brazil's General Personal Data Protection Law, the LGPD (Law No. 13,709/2018).",
+      "1WhoControlsYourData": "1. Who controls your data",
+      "theDataControllerIs": "The data controller is ",
+      "RegisteredUnderCnpjNo65062423000181": ", registered under CNPJ No. 65.062.423/0001-81, based in Bagé, Rio Grande do Sul, Brazil.",
+      "dataProtectionOfficerDpoAndContact": "Data Protection Officer (DPO) and contact for exercising your rights:",
+      "2WhatDataWeCollect": "2. What data we collect",
+      "weCollectOnlyTheDataNeeded": "We collect only the data needed to interact with you:",
+      "contactDetailsYouProvide": "Contact details you provide",
+      "inFormsThroughOurSchedulingAssistant": " in forms, through our scheduling assistant or in messages: name, email address, phone/WhatsApp number, company name and the content of your message.",
+      "browsingData": "Browsing data",
+      "PagesVisitedDeviceAndBrowser": ": pages visited, device and browser type, and cookie identifiers, to understand and improve how the website is used.",
+      "communicationData": "Communication data",
+      "whenYouContactUsOnWhatsapp": " when you contact us on WhatsApp, by email or on social media: your number/identifier, conversation history and any files you share.",
+      "socialMediaInteractionData": "Social media interaction data",
+      "WhenYouLikeCommentOn": ": when you like, comment on or interact with our pages and posts (for example, on LinkedIn), we may view and process public profile information associated with that interaction, such as your name, photo and comment, provided by the platform through its official APIs.",
+      "3HowWeUseYourData": "3. How we use your data",
+      "toRespondToYourRequestsQuestions": "to respond to your requests, questions and enquiries for quotes;",
+      "toProvideAndAdministerTheServices": "to provide and administer the services you contract;",
+      "toManageOurSocialMediaPresence": "to manage our social media presence, including publishing content, moderating and responding to comments, and measuring engagement with our posts;",
+      "toImproveOurWebsiteProductsAnd": "to improve our website, products and communication;",
+      "toFulfilLegalContractualAndRegulatory": "to fulfil legal, contractual and regulatory obligations.",
+      "4LegalBasisLgpd": "4. Legal basis (LGPD)",
+      "weProcessPersonalDataOnThe": "We process personal data on the basis of consent, performance of a contract and preliminary steps at your request, compliance with legal obligations, and legitimate interests, always respecting your rights and freedoms under Article 7 of the LGPD.",
+      "5WhoWeShareDataWith": "5. Who we share data with",
+      "weDoNotSellYourData": "We do not sell your data. We may share it with service providers acting on our behalf and under our instructions, such as hosting, email, calendar, messaging and social media providers (including Google, Railway, Meta/WhatsApp and LinkedIn), only as needed to operate our services, and with authorities when required by law.",
+      "6Cookies": "6. Cookies",
+      "weUseCookiesEssentialToThe": "We use cookies essential to the website's operation and, where applicable, audience measurement cookies. You can manage or block cookies in your browser settings; some features may not work correctly without them.",
+      "7HowLongWeKeepData": "7. How long we keep data",
+      "weKeepDataForAsLong": "We keep data for as long as needed for the purposes above or to comply with legal obligations. Once the purpose has ended, data is deleted or anonymised, except where retention is permitted by the LGPD.",
+      "8YourRights": "8. Your rights",
+      "youMayRequestAtAnyTime": "You may request at any time: confirmation that your data is being processed; access to your data; correction of incomplete or outdated data; anonymisation, blocking or deletion of unnecessary data; portability; information about data sharing; and withdrawal of consent. To exercise these rights, contact our Data Protection Officer at",
+      "9Security": "9. Security",
+      "weTakeReasonableTechnicalAndOrganisational": "We take reasonable technical and organisational measures to protect data against unauthorised access, loss or alteration. No system is completely infallible, but we work continuously to reduce risks.",
+      "10InternationalTransfers": "10. International transfers",
+      "someOfOurServiceProvidersMay": "Some of our service providers may process data on servers outside Brazil. In those cases, we adopt the safeguards required by the LGPD to protect your data.",
+      "11ChangesToThisPolicy": "11. Changes to this policy",
+      "weMayUpdateThisPolicyPeriodically": "We may update this Policy periodically. The current version will always be available on this page, with the date of the latest update shown at the top.",
+      "12Contact": "12. Contact",
+      "questionsAboutThisPolicyOrHow": "Questions about this Policy or how your data is processed? Contact Vertech Soluções at",
+      "updatedDate": "17 June 2026",
+      "metaTitle": "Privacy Policy | Vertech Solutions",
+      "metaDescription": "How Vertech Soluções collects, uses, shares and protects personal data under Brazil’s LGPD (Law 13,709/2018)."
+    }
   }
 }

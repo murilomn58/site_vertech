@@ -1,4 +1,6 @@
 "use client";
+import { useTranslations } from "next-intl";
+
 
 import { motion } from "motion/react";
 import { MeshBg } from "@/components/primitives/mesh-bg";
@@ -17,6 +19,7 @@ const fadeUp = {
 };
 
 export function Hero() {
+  const t = useTranslations("website");
   return (
     <section
       id="top"
@@ -45,14 +48,12 @@ export function Hero() {
           <span className="relative flex h-1.5 w-1.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-75" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan" />
-          </span>
-          Assistentes de IA · Apps · Sites
-        </motion.span>
+          </span>{t("hero.aiWebsitesAppsAnalytics")}</motion.span>
 
         <h1 className="font-display text-[2.6rem] font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[4.5rem]">
           <SplitReveal
             as="span"
-            text="Sua empresa atendendo e vendendo"
+            text={t("hero.keepYourBusinessServingCustomers")}
             delay={0.15}
             className="block"
           />
@@ -61,9 +62,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="mt-1 block text-gradient"
-          >
-            no piloto automático.
-          </motion.span>
+          >{t("hero.andSellingAroundTheClock")}</motion.span>
         </h1>
 
         <motion.p
@@ -72,11 +71,7 @@ export function Hero() {
           initial="hidden"
           animate="visible"
           className="mt-7 max-w-2xl text-balance text-base leading-relaxed text-ink-muted sm:text-lg"
-        >
-          A Vertech constrói assistentes de IA, aplicativos e sites que trabalham
-          pela sua empresa. Role e veja os exemplos funcionando de verdade.
-          Gostou de um? Chama no WhatsApp que a gente faz o seu.
-        </motion.p>
+        >{t("hero.vertechBuildsAiSystemsWebsitesMobile")}</motion.p>
 
         <motion.div
           custom={2}
@@ -88,13 +83,9 @@ export function Hero() {
           <a
             href="#vitrine"
             className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-cyan px-7 py-3.5 font-display text-base font-semibold tracking-tight text-navy-deep shadow-[0_8px_30px_-6px_rgba(34,211,238,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-bright hover:shadow-[0_12px_44px_-4px_rgba(34,211,238,0.75)]"
-          >
-            Ver os exemplos ao vivo
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          >{t("hero.exploreLiveDemos")}<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
-          <WaCta intent="outro" variant="whatsapp" size="lg">
-            Chamar no WhatsApp
-          </WaCta>
+          <WaCta intent="outro" variant="whatsapp" size="lg">{t("hero.chatOnWhatsapp")}</WaCta>
         </motion.div>
 
         <motion.p
@@ -103,15 +94,13 @@ export function Hero() {
           initial="hidden"
           animate="visible"
           className="mt-10 font-mono text-xs uppercase tracking-[0.15em] text-ink-faint"
-        >
-          Já em produção · Leila IA · OdontoConnect · Messiê Forró · VertechNews · Padaria Dona Rosa
-        </motion.p>
+        >{t("hero.inProductionLeilaIaOdontoconnectMessi")}</motion.p>
       </div>
 
       {/* indicador de scroll */}
       <motion.a
         href="#vitrine"
-        aria-label="Rolar para os exemplos"
+        aria-label={t("hero.scrollToTheDemos")}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1 }}

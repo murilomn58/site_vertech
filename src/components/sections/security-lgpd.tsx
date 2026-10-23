@@ -1,3 +1,5 @@
+
+import { useLocale, useTranslations } from "next-intl";
 import { Section, Eyebrow } from "@/components/primitives/section";
 import { Reveal } from "@/components/primitives/reveal";
 import { WaCta } from "@/components/primitives/wa-cta";
@@ -7,38 +9,40 @@ type Card = {
   texto: string;
 };
 
-const CARDS: Card[] = [
-  {
-    titulo: "Dados no Brasil",
-    texto:
-      "Infraestrutura e dados tratados conforme a LGPD (Lei 13.709/2018).",
-  },
-  {
-    titulo: "Você no controle",
-    texto:
-      "Seus dados são seus. Pode pedir acesso, correção ou exclusão quando quiser.",
-  },
-  {
-    titulo: "Sem letra miúda",
-    texto:
-      "A gente monta, você testa, e só segue se fizer sentido. Sem contrato eterno.",
-  },
-  {
-    titulo: "Conversas sob sigilo",
-    texto:
-      "Tratamos as conversas com o cuidado que a sua operação exige.",
-  },
-];
+
 
 export function SecurityLgpd() {
+  const t = useTranslations("website");
+  const locale = useLocale();
+  const CARDS: Card[] = [
+    {
+      titulo: t("securityLgpd.brazilianDataProtection"),
+      texto:
+        t("securityLgpd.infrastructureAndDataHandlingFollowBrazils"),
+    },
+    {
+      titulo: t("securityLgpd.youreInControl"),
+      texto:
+        t("securityLgpd.yourDataBelongsToYouYou"),
+    },
+    {
+      titulo: t("securityLgpd.clearTerms"),
+      texto:
+        t("securityLgpd.weBuildItYouTestIt"),
+    },
+    {
+      titulo: t("securityLgpd.confidentialConversations"),
+      texto:
+        t("securityLgpd.weHandleConversationsWithTheCare"),
+    },
+  ];
   return (
     <Section id="seguranca" width="wide">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
-          <Eyebrow className="justify-center">Segurança e LGPD</Eyebrow>
-          <h2 className="mt-5 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-[2.8rem]">
-            A sua IA, com os seus dados{" "}
-            <span className="text-gradient">protegidos.</span>
+          <Eyebrow className="justify-center">{t("securityLgpd.securityAndDataProtection")}</Eyebrow>
+          <h2 className="mt-5 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-[2.8rem]">{t("securityLgpd.yourAiWithYourData")}{" "}
+            <span className="text-gradient">{t("securityLgpd.protected")}</span>
           </h2>
         </Reveal>
       </div>
@@ -60,12 +64,8 @@ export function SecurityLgpd() {
       </div>
 
       <Reveal delay={0.1} className="mt-10 flex flex-col items-center gap-5 text-center">
-        <a href="/pt/privacidade" className="text-sm text-cyan hover:underline">
-          Política de Privacidade
-        </a>
-        <WaCta intent="outro" variant="ghost">
-          Tirar uma dúvida
-        </WaCta>
+        <a href={`/${locale}/privacidade`} className="text-sm text-cyan hover:underline">{t("securityLgpd.privacyPolicy")}</a>
+        <WaCta intent="outro" variant="ghost">{t("securityLgpd.askAQuestion")}</WaCta>
       </Reveal>
     </Section>
   );

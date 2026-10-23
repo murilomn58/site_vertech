@@ -1,11 +1,15 @@
+
+import { useLocale, useTranslations } from "next-intl";
 import { EMAIL, PHONE, LINKEDIN } from "@/lib/constants";
 import { VertechMark } from "@/components/primitives/icons";
 import { WaCta } from "@/components/primitives/wa-cta";
 
 export function SiteFooter() {
+  const t = useTranslations("website");
+  const locale = useLocale();
   return (
     <footer
-      id="contato"
+      id="footer"
       className="relative border-t border-line bg-navy-deep px-5 py-16 sm:px-8"
     >
       <div className="mx-auto max-w-6xl">
@@ -18,28 +22,21 @@ export function SiteFooter() {
                 Vertech<span className="text-cyan">.</span>
               </span>
             </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
-              Tecnologia que mantém você à frente. Assistentes de IA, apps e
-              sites que trabalham pela sua empresa.
-            </p>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">{t("siteFooter.technologyThatKeepsYouAheadAi")}</p>
             <div className="mt-6">
-              <WaCta intent="outro" size="md" icon>
-                Falar com a Vertech
-              </WaCta>
+              <WaCta intent="outro" size="md" icon>{t("siteFooter.talkToVertech")}</WaCta>
             </div>
           </div>
 
           {/* Navegação */}
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">
-              Navegar
-            </p>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">{t("siteFooter.explore")}</p>
             <ul className="mt-4 space-y-2.5 text-sm">
               {[
-                { href: "#vitrine", label: "Exemplos ao vivo" },
-                { href: "#cases", label: "Cases reais" },
-                { href: "#seguranca", label: "Segurança e LGPD" },
-                { href: "/pt/privacidade", label: "Política de Privacidade" },
+                { href: `/${locale}#vitrine`, label: t("siteFooter.servicesAndDemos") },
+                { href: `/${locale}#cases`, label: t("siteFooter.realProjects") },
+                { href: `/${locale}#seguranca`, label: t("siteFooter.securityAndDataProtection") },
+                { href: `/${locale}/privacidade`, label: t("siteFooter.privacyPolicy") },
               ].map((l) => (
                 <li key={l.href}>
                   <a
@@ -55,9 +52,7 @@ export function SiteFooter() {
 
           {/* Contato */}
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">
-              Contato
-            </p>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">{t("siteFooter.contact")}</p>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <a
@@ -77,23 +72,19 @@ export function SiteFooter() {
                   {EMAIL}
                 </a>
               </li>
-              <li className="flex gap-3 pt-1">
+              {locale === "en" && <li className="space-y-2 border-t border-line pt-4"><p className="font-semibold text-ink">Bruno Zanella</p><p>Sales representative in France</p><a className="block text-cyan" href="tel:+33656680164">+33 6 56 68 01 64</a><a className="block text-cyan hover:underline" href={"https://wa.me/33656680164?text="+encodeURIComponent("Hi Bruno! I found Vertech’s website and would like to discuss a project.")} target="_blank" rel="noopener noreferrer">Chat with Bruno on WhatsApp</a></li>}<li className="flex gap-3 pt-1">
                 <a
                   href={LINKEDIN.murilo}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-ink-muted transition-colors hover:text-cyan"
-                >
-                  LinkedIn Murilo
-                </a>
+                >{t("siteFooter.muriloOnLinkedin")}</a>
                 <a
                   href={LINKEDIN.jean}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-ink-muted transition-colors hover:text-cyan"
-                >
-                  LinkedIn Jean
-                </a>
+                >{t("siteFooter.jeanOnLinkedin")}</a>
               </li>
             </ul>
           </div>
@@ -101,10 +92,8 @@ export function SiteFooter() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-line pt-6 text-xs text-ink-faint sm:flex-row sm:items-center">
           <p>
-            © {new Date().getFullYear()} Vertech Soluções · CNPJ
-            65.062.423/0001-81 · Bagé/RS
-          </p>
-          <p>Feito com tecnologia própria.</p>
+            © {new Date().getFullYear()}{t("siteFooter.vertechSoluesCnpj65062423000181BagBrazil")}</p>
+          <p>{t("siteFooter.builtWithOurOwnTechnology")}</p>
         </div>
       </div>
     </footer>

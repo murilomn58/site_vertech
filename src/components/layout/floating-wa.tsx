@@ -1,12 +1,17 @@
 "use client";
+import { useTranslations } from "next-intl";
+
 
 import { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
 import { buildIntentURL } from "@/lib/whatsappIntents";
 import { WhatsAppIcon } from "@/components/primitives/icons";
 import { cn } from "@/lib/utils";
 
 /** Botão flutuante de WhatsApp, persistente. Aparece depois do primeiro scroll. */
 export function FloatingWa() {
+  const locale = useLocale();
+  const t = useTranslations("website");
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -17,10 +22,10 @@ export function FloatingWa() {
 
   return (
     <a
-      href={buildIntentURL("outro")}
+      href={buildIntentURL("outro", undefined, locale)}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Falar no WhatsApp"
+      aria-label={t("floatingWa.chatOnWhatsapp")}
       className={cn(
         "fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-white shadow-[0_10px_40px_-6px_rgba(37,211,102,0.6)] transition-all duration-500 hover:scale-110",
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-16 opacity-0",

@@ -1,3 +1,5 @@
+
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Section, Eyebrow } from "@/components/primitives/section";
 import { Reveal } from "@/components/primitives/reveal";
@@ -12,22 +14,7 @@ type Membro = {
   linkedin: string;
 };
 
-const MEMBROS: Membro[] = [
-  {
-    nome: "Murilo Narciso",
-    foto: "/images/team/murilo.png",
-    cargo: "CEO · Cofundador",
-    desc: "Cuida de produto, estratégia e do atendimento direto aos clientes. É com ele que você fala no WhatsApp.",
-    linkedin: LINKEDIN.murilo,
-  },
-  {
-    nome: "Jean Kairo Crispim",
-    foto: "/images/team/jean.png",
-    cargo: "CTO · Cofundador",
-    desc: "Lidera a engenharia e a arquitetura dos produtos. Quem garante que a IA funciona de verdade.",
-    linkedin: LINKEDIN.jean,
-  },
-];
+
 
 function LinkedInIcon() {
   return (
@@ -38,19 +25,32 @@ function LinkedInIcon() {
 }
 
 export function Team() {
+  const t = useTranslations("website");
+  const MEMBROS: Membro[] = [
+    {
+      nome: "Murilo Narciso",
+      foto: "/images/team/murilo.png",
+      cargo: t("team.ceoCofounder"),
+      desc: t("team.leadsProductStrategyAndClientRelationships"),
+      linkedin: LINKEDIN.murilo,
+    },
+    {
+      nome: "Jean Kairo Crispim",
+      foto: "/images/team/jean.png",
+      cargo: t("team.ctoCofounder"),
+      desc: t("team.leadsEngineeringAndProductArchitectureMaking"),
+      linkedin: LINKEDIN.jean,
+    },
+  ];
   return (
     <Section id="team" width="wide">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
-          <Eyebrow className="justify-center">Quem faz</Eyebrow>
-          <h2 className="mt-5 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-[2.8rem]">
-            Gente de verdade{" "}
-            <span className="text-gradient">do outro lado.</span>
+          <Eyebrow className="justify-center">{t("team.thePeopleBehindTheWork")}</Eyebrow>
+          <h2 className="mt-5 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-[2.8rem]">{t("team.realPeople")}{" "}
+            <span className="text-gradient">{t("team.youCanTalkTo")}</span>
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-ink-muted">
-            Quando você chama no WhatsApp, quem responde é sócio da empresa, não
-            um call center.
-          </p>
+          <p className="mt-5 text-base leading-relaxed text-ink-muted">{t("team.yourMainWhatsappContactIsA")}</p>
         </Reveal>
       </div>
 
@@ -65,7 +65,7 @@ export function Team() {
                     <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-cyan/30 bg-surface-2">
                       <Image
                         src={m.foto}
-                        alt={`Foto de ${m.nome}`}
+                        alt={t("team.photo", {name: m.nome})}
                         fill
                         sizes="80px"
                         className="object-cover"

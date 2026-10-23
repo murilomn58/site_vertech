@@ -1,18 +1,24 @@
 "use client";
+import { useLocale, useTranslations } from "next-intl";
+
 
 import { useEffect, useState } from "react";
+import { LanguageSwitcher } from "./language-switcher";
 import { cn } from "@/lib/utils";
 import { VertechMark } from "@/components/primitives/icons";
 import { WaCta } from "@/components/primitives/wa-cta";
 
-const LINKS = [
-  { href: "#vitrine", label: "Exemplos" },
-  { href: "#cases", label: "Cases" },
-  { href: "#seguranca", label: "Segurança" },
-  { href: "#contato", label: "Contato" },
-];
+
 
 export function SiteHeader() {
+  const t = useTranslations("website");
+  const locale = useLocale();
+  const LINKS = [
+    { href: `/${locale}#vitrine`, label: t("siteHeader.services") },
+    { href: `/${locale}#cases`, label: t("siteHeader.projects") },
+    { href: `/${locale}#seguranca`, label: t("siteHeader.security") },
+    { href: `/${locale}#contato`, label: t("siteHeader.contact") },
+  ];
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -37,7 +43,7 @@ export function SiteHeader() {
             scrolled ? "glass shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]" : "border border-transparent",
           )}
         >
-          <a href="#top" className="flex items-center gap-2.5">
+          <a href={`/${locale}#top`} className="flex items-center gap-2.5">
             <VertechMark className="h-7 w-7" />
             <span className="font-display text-base font-bold tracking-tight text-ink">
               Vertech<span className="text-cyan">.</span>
@@ -56,10 +62,8 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
-            <WaCta intent="outro" size="md" className="hidden sm:inline-flex" icon>
-              Falar agora
-            </WaCta>
+          <div className="flex items-center gap-2"><LanguageSwitcher />
+            <WaCta intent="outro" size="md" className="hidden sm:inline-flex" icon>{t("siteHeader.letsTalk")}</WaCta>
             <button
               type="button"
               aria-label="Menu"
@@ -108,9 +112,7 @@ export function SiteHeader() {
                 {l.label}
               </a>
             ))}
-            <WaCta intent="outro" size="lg" className="mt-1 w-full" icon>
-              Chamar no WhatsApp
-            </WaCta>
+            <WaCta intent="outro" size="lg" className="mt-1 w-full" icon>{t("siteHeader.chatOnWhatsapp")}</WaCta>
           </div>
         </div>
       </div>

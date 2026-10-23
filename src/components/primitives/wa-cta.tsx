@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useLocale } from "next-intl";
 import { buildIntentURL, type Intent } from "@/lib/whatsappIntents";
 import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "./icons";
@@ -49,9 +50,10 @@ export function WaCta({
   className,
   icon = true,
 }: Props) {
+  const locale = useLocale();
   return (
     <a
-      href={buildIntentURL(intent, from)}
+      href={buildIntentURL(intent, from, locale)}
       target="_blank"
       rel="noopener noreferrer"
       className={cn(base, sizes[size], variants[variant], className)}
