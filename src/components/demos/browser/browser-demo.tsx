@@ -1,4 +1,6 @@
 "use client";
+import { useTranslations } from "next-intl";
+
 
 import Image from "next/image";
 import { motion, useInView } from "motion/react";
@@ -6,22 +8,24 @@ import { useRef } from "react";
 
 const serif = { fontFamily: "Georgia, 'Times New Roman', serif" } as const;
 
-const PRODUTOS = [
-  { img: "/images/mock/dona-rosa/buffet.jpg", n: "Marmita 700g", p: "R$ 29,90" },
-  { img: "/images/mock/dona-rosa/cafe.jpg", n: "Café da manhã", p: "no balcão" },
-  { img: "/images/mock/dona-rosa/coxinha.jpg", n: "Salgados assados", p: "no balcão" },
-  { img: "/images/mock/dona-rosa/confeitaria.jpg", n: "Doces e bolos", p: "no balcão" },
-];
+
 
 /* Mini-site de padaria com fotos reais (case Padaria Dona Rosa) — o conteúdo que rola dentro do browser */
 function MiniSitePadaria() {
+  const t = useTranslations("website");
+  const PRODUTOS = [
+    { img: "/images/mock/dona-rosa/buffet.jpg", n: t("browserDemo.lunchBox700g"), p: t("browserDemo.brl2990") },
+    { img: "/images/mock/dona-rosa/cafe.jpg", n: t("browserDemo.breakfast"), p: t("browserDemo.inStore") },
+    { img: "/images/mock/dona-rosa/coxinha.jpg", n: t("browserDemo.savouryPastries"), p: t("browserDemo.inStore") },
+    { img: "/images/mock/dona-rosa/confeitaria.jpg", n: t("browserDemo.cakesAndSweets"), p: t("browserDemo.inStore") },
+  ];
   return (
     <div className="text-[#f3e7d3]" style={{ background: "#180f08" }}>
       {/* hero com foto */}
       <div className="relative h-[23rem] overflow-hidden">
         <Image
           src="/images/mock/dona-rosa/hero-forno.jpg"
-          alt="Pães saindo do forno na Padaria Dona Rosa"
+          alt={t("browserDemo.freshBreadAtPadariaDonaRosa")}
           fill
           sizes="500px"
           className="object-cover"
@@ -35,28 +39,18 @@ function MiniSitePadaria() {
           }}
         />
         <div className="absolute inset-x-0 bottom-0 p-6">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#e0a23c]">
-            Desde 2004 · Florianópolis
-          </p>
-          <h3 className="mt-2 text-4xl font-bold leading-[0.95] text-[#f8ecd8]" style={serif}>
-            Padaria
-            <br />
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#e0a23c]">{t("browserDemo.since2004Florianpolis")}</p>
+          <h3 className="mt-2 text-4xl font-bold leading-[0.95] text-[#f8ecd8]" style={serif}>{t("browserDemo.bakery")}<br />
             Dona Rosa
           </h3>
-          <p className="mt-2 text-xs text-[#e7d4b4]">
-            Marmita montada do seu jeito — 500g ou 700g, retirada sem fila.
-          </p>
-          <span className="mt-4 inline-block rounded-full bg-[#e0a23c] px-5 py-2 text-xs font-semibold text-[#180f08]">
-            Montar marmita
-          </span>
+          <p className="mt-2 text-xs text-[#e7d4b4]">{t("browserDemo.buildYourOwnLunchBox500g")}</p>
+          <span className="mt-4 inline-block rounded-full bg-[#e0a23c] px-5 py-2 text-xs font-semibold text-[#180f08]">{t("browserDemo.buildYourLunchBox")}</span>
         </div>
       </div>
 
       {/* produtos com foto */}
       <div className="px-5 pb-8 pt-7">
-        <p className="text-center font-mono text-[10px] uppercase tracking-[0.25em] text-[#e0a23c]">
-          No cardápio
-        </p>
+        <p className="text-center font-mono text-[10px] uppercase tracking-[0.25em] text-[#e0a23c]">{t("browserDemo.onTheMenu")}</p>
         <div className="mt-4 grid grid-cols-2 gap-3">
           {PRODUTOS.map((p) => (
             <div key={p.n} className="overflow-hidden rounded-2xl bg-[#21140a]">
@@ -75,15 +69,9 @@ function MiniSitePadaria() {
       {/* cta */}
       <div className="px-5 pb-10">
         <div className="rounded-3xl border border-[#e0a23c]/30 bg-[#21140a] p-6 text-center">
-          <p className="text-lg font-bold text-[#f8ecd8]" style={serif}>
-            Agende sua retirada
-          </p>
-          <p className="mt-1 text-[11px] text-[#e7d4b4]">
-            Monte sua marmita e retire sem pegar fila.
-          </p>
-          <span className="mt-4 inline-block rounded-full bg-[#25D366] px-5 py-2 text-xs font-semibold text-white">
-            Pedir agora
-          </span>
+          <p className="text-lg font-bold text-[#f8ecd8]" style={serif}>{t("browserDemo.scheduleYourPickup")}</p>
+          <p className="mt-1 text-[11px] text-[#e7d4b4]">{t("browserDemo.chooseYourLunchAndCollectIt")}</p>
+          <span className="mt-4 inline-block rounded-full bg-[#25D366] px-5 py-2 text-xs font-semibold text-white">{t("browserDemo.orderNow")}</span>
         </div>
       </div>
     </div>
@@ -91,6 +79,7 @@ function MiniSitePadaria() {
 }
 
 export function BrowserDemo() {
+  const t = useTranslations("website");
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { amount: 0.4 });
   const reduced =
@@ -133,9 +122,7 @@ export function BrowserDemo() {
         </div>
       </div>
 
-      <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-[0.2em] text-ink-faint">
-        Cada nicho ganha a sua própria cara
-      </p>
+      <p className="mt-4 text-center font-mono text-[11px] uppercase tracking-[0.2em] text-ink-faint">{t("browserDemo.aDistinctIdentityForEveryBusiness")}</p>
     </div>
   );
 }

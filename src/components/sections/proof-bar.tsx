@@ -1,3 +1,5 @@
+
+import { useTranslations } from "next-intl";
 import { Section } from "@/components/primitives/section";
 import { Reveal } from "@/components/primitives/reveal";
 import { Counter } from "@/components/primitives/counter";
@@ -10,14 +12,16 @@ type Stat = {
   label: string;
 };
 
-const STATS: Stat[] = [
-  { value: 5, label: "projetos no ar" },
-  { value: 4, label: "clientes com mensalidade recorrente" },
-  { value: 2, label: "países atendidos (Brasil e França)" },
-  { value: null, display: "24/7", label: "atendimento que não para" },
-];
+
 
 export function ProofBar() {
+  const t = useTranslations("website");
+  const STATS: Stat[] = [
+    { value: 5, label: t("proofBar.projectsLive") },
+    { value: 4, label: t("proofBar.clientsWithRecurringServicePlans") },
+    { value: 2, label: t("proofBar.countriesServedBrazilAndFrance") },
+    { value: null, display: "24/7", label: t("proofBar.customerSupportThatKeepsGoing") },
+  ];
   return (
     <Section width="wide" className="border-y border-line bg-navy-deep/40 py-14 sm:py-16">
       <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">

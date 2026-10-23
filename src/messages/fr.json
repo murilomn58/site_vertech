@@ -62,7 +62,11 @@
     "title": "Des projets qui donnent des",
     "titleHighlight": "résultats",
     "subtitle": "Des réalisations concrètes qui réduisent les coûts et accélèrent les résultats en quelques semaines.",
-    "badges": ["Livraison en quelques semaines", "Sécurité des données", "Orienté ROI"],
+    "badges": [
+      "Livraison en quelques semaines",
+      "Sécurité des données",
+      "Orienté ROI"
+    ],
     "filters": {
       "all": "Tous",
       "iaAgents": "IA et agents",
@@ -82,8 +86,17 @@
         "title": "Assistant IA sur WhatsApp (Agent Verah)",
         "pain": "Volume élevé de messages et reprises constantes",
         "solution": "Un agent qui répond, qualifie et oriente automatiquement",
-        "metrics": ["-60 % de temps de traitement", "+35 % de conversion", "24/7"],
-        "tags": ["WhatsApp", "IA", "Workflows", "CRM"],
+        "metrics": [
+          "-60 % de temps de traitement",
+          "+35 % de conversion",
+          "24/7"
+        ],
+        "tags": [
+          "WhatsApp",
+          "IA",
+          "Workflows",
+          "CRM"
+        ],
         "deliverables": [
           "Agent IA entraîné sur la base de connaissances de l'entreprise",
           "Workflows de qualification et d'orientation automatiques",
@@ -92,7 +105,13 @@
         ],
         "before": "Équipe saturée par des messages répétitifs, perte de prospects faute de réactivité, qualification manuelle.",
         "after": "Prise en charge instantanée 24/7, prospects qualifiés automatiquement, équipe concentrée sur la conversion.",
-        "stack": ["Agents IA", "WhatsApp", "n8n/Make", "Base de données", "Tableaux de bord"]
+        "stack": [
+          "Agents IA",
+          "WhatsApp",
+          "n8n/Make",
+          "Base de données",
+          "Tableaux de bord"
+        ]
       },
       {
         "id": 1,
@@ -101,8 +120,17 @@
         "title": "Portail documentaire avec recherche sémantique (RAG)",
         "pain": "Documents dispersés et information difficile à retrouver",
         "solution": "Recherche intelligente et réponses avec référence précise",
-        "metrics": ["-70 % de temps de recherche", "+20 % de productivité", "Traçable"],
-        "tags": ["RAG", "OCR", "Sécurité", "Permissions"],
+        "metrics": [
+          "-70 % de temps de recherche",
+          "+20 % de productivité",
+          "Traçable"
+        ],
+        "tags": [
+          "RAG",
+          "OCR",
+          "Sécurité",
+          "Permissions"
+        ],
         "deliverables": [
           "Ingestion documentaire avec OCR",
           "Recherche sémantique avec références vers le document source",
@@ -111,7 +139,13 @@
         ],
         "before": "Dossiers désorganisés, recherche manuelle lente, risque de perte d'information.",
         "after": "Réponses rapides avec preuves, meilleure organisation et traçabilité, sécurité et maîtrise des accès.",
-        "stack": ["RAG", "OCR", "Embeddings", "Stockage", "Gestion des accès"]
+        "stack": [
+          "RAG",
+          "OCR",
+          "Embeddings",
+          "Stockage",
+          "Gestion des accès"
+        ]
       },
       {
         "id": 2,
@@ -120,8 +154,17 @@
         "title": "RPA finance : rapprochement et émission",
         "pain": "Rapprochements manuels et erreurs de saisie fréquentes",
         "solution": "Des robots qui croisent les données et génèrent des rapports automatiques",
-        "metrics": ["-80 % de tâches répétitives", "-50 % d'erreurs", "Semaine 1"],
-        "tags": ["RPA", "ERP", "Tableurs", "Alertes"],
+        "metrics": [
+          "-80 % de tâches répétitives",
+          "-50 % d'erreurs",
+          "Semaine 1"
+        ],
+        "tags": [
+          "RPA",
+          "ERP",
+          "Tableurs",
+          "Alertes"
+        ],
         "deliverables": [
           "Robot de rapprochement automatique",
           "Intégration avec ERP, tableurs et autres systèmes",
@@ -130,7 +173,13 @@
         ],
         "before": "Des heures par jour consacrées au rapprochement manuel, des erreurs fréquentes et des processus bloqués.",
         "after": "Rapprochements réalisés en quelques minutes, forte baisse des reprises, alertes proactives.",
-        "stack": ["Python", "RPA", "Intégrations", "ETL", "Alertes"]
+        "stack": [
+          "Python",
+          "RPA",
+          "Intégrations",
+          "ETL",
+          "Alertes"
+        ]
       },
       {
         "id": 3,
@@ -139,8 +188,17 @@
         "title": "Tableau de bord intelligent des opérations",
         "pain": "Décisions prises sans visibilité et KPI en retard",
         "solution": "Pilotage en temps réel et alertes automatiques",
-        "metrics": ["KPI en temps réel", "+25 % de prévisibilité", "1 source"],
-        "tags": ["BI", "KPI", "Alertes", "Données"],
+        "metrics": [
+          "KPI en temps réel",
+          "+25 % de prévisibilité",
+          "1 source"
+        ],
+        "tags": [
+          "BI",
+          "KPI",
+          "Alertes",
+          "Données"
+        ],
         "deliverables": [
           "Tableau de bord avec KPI critiques en temps réel",
           "Intégration de plusieurs sources de données",
@@ -149,7 +207,13 @@
         ],
         "before": "Données fragmentées dans des tableurs, KPI calculés manuellement.",
         "after": "Vue unifiée, indicateurs à jour, décisions fondées sur des données fiables.",
-        "stack": ["Power BI", "SQL", "Python", "ETL", "Automatisation"]
+        "stack": [
+          "Power BI",
+          "SQL",
+          "Python",
+          "ETL",
+          "Automatisation"
+        ]
       },
       {
         "id": 4,
@@ -158,8 +222,17 @@
         "title": "Application de gestion pour services et cliniques",
         "pain": "Agenda, paiements et relation client déconnectés",
         "solution": "Une application avec parcours de bout en bout et notifications",
-        "metrics": ["-30 % d'absences", "+20 % de récurrence", "Moins de chaos"],
-        "tags": ["Application", "Agenda", "Paiement", "Notifications"],
+        "metrics": [
+          "-30 % d'absences",
+          "+20 % de récurrence",
+          "Moins de chaos"
+        ],
+        "tags": [
+          "Application",
+          "Agenda",
+          "Paiement",
+          "Notifications"
+        ],
         "deliverables": [
           "Application couvrant tout le parcours client",
           "Prise de rendez-vous et confirmation automatisées",
@@ -168,7 +241,13 @@
         ],
         "before": "Planification manuelle, absences non signalées et beaucoup de reprises.",
         "after": "Parcours en libre-service 24/7, rappels automatiques, meilleure présence et meilleure prévisibilité.",
-        "stack": ["Application", "Back-end", "Base de données", "Notifications", "Paiements"]
+        "stack": [
+          "Application",
+          "Back-end",
+          "Base de données",
+          "Notifications",
+          "Paiements"
+        ]
       },
       {
         "id": 5,
@@ -177,8 +256,17 @@
         "title": "Site web haute performance orienté conversion",
         "pain": "Présence digitale faible et peu de prospects",
         "solution": "Un site rapide avec SEO et CTA efficaces",
-        "metrics": ["+40 % de prospects", "LCP optimisé", "SEO de base"],
-        "tags": ["SEO", "Performance", "Landing page", "Conversion"],
+        "metrics": [
+          "+40 % de prospects",
+          "LCP optimisé",
+          "SEO de base"
+        ],
+        "tags": [
+          "SEO",
+          "Performance",
+          "Landing page",
+          "Conversion"
+        ],
         "deliverables": [
           "Page rapide et responsive (mobile-first)",
           "Structure SEO technique et contenu",
@@ -187,7 +275,13 @@
         ],
         "before": "Site lent, faible conversion et absence de suivi fiable.",
         "after": "Chargement rapide, meilleur référencement et tunnel clair avec des métriques lisibles.",
-        "stack": ["HTML", "CSS", "JS", "SEO", "Analytics"]
+        "stack": [
+          "HTML",
+          "CSS",
+          "JS",
+          "SEO",
+          "Analytics"
+        ]
       }
     ],
     "modal": {
@@ -348,5 +442,287 @@
     "message": "Bonjour, je souhaite en savoir plus sur les solutions Vertech pour mon entreprise.",
     "contactMessage": "Je souhaite échanger avec Vertech",
     "fabText": "Contactez-nous"
+  },
+  "website": {
+    "casesGallery": {
+      "realProjects": "Cases reais",
+      "builtForRealBusinesses": "Não é promessa. ",
+      "alreadyLive": "Já está no ar.",
+      "softwareVertechHasBuiltForReal": "Coisas que a Vertech construiu e que funcionam de verdade, com clientes de verdade, no Brasil e na França.",
+      "buildSomethingLikeThis": "Quero algo assim"
+    },
+    "demoApp": {
+      "bookAndManageAppointmentsOnYour": "Agendamento e gestão direto no celular, sem precisar de telefonema.",
+      "automaticWhatsappConfirmationsAndRemindersSave": "Confirmação e lembrete automáticos no WhatsApp, sem ninguém ligando.",
+      "designedAroundYourWorkflowWithThe": "Feito sob medida pro seu fluxo, não um template engessado.",
+      "customMobileApps": "Aplicativo sob medida",
+      "yourBusinessIn": "O seu negócio na",
+      "thePalm": "palma da mão",
+      "ofYourCustomersHand": " do cliente.",
+      "thisIsOdontoconnectAnAppWe": "Este é o OdontoConnect, um app que a gente construiu pra conectar paciente e dentista. Toque ao lado e veja as telas. O seu app faz o que o seu negócio precisa, do mesmo jeito caprichado.",
+      "idLikeAnAppLikeThis": "Quero um app assim"
+    },
+    "demoChat": {
+      "instantReplies24HoursADay": "Responde na hora, 24 horas por dia, no WhatsApp que o cliente já usa.",
+      "usesYourBusinessKnowledgeAndSpeaks": "Aprende os seus dados e fala do seu jeito, não respostas genéricas.",
+      "handlesRoutineQuestionsAndHandsThe": "Resolve o que dá pra resolver e te passa a conversa quando precisa de você.",
+      "aiAssistants": "Assistente de IA",
+      "anAssistantThatStaysAvailable": "Um atendente que nunca dorme,",
+      "aroundTheClock": "nunca falta",
+      "andRespondsStraightAway": " e responde na hora.",
+      "watchTheConversationInTheDemo": "Esta conversa está acontecendo ao lado, agora. É o mesmo tipo de assistente que a gente colocou pra atender no WhatsApp da Leila IA. Experimente imaginar ele atendendo o seu cliente.",
+      "idLikeAnAssistantLikeThis": "Quero um assistente assim"
+    },
+    "demoSite": {
+      "aVisualConceptDesignedForYour": "Conceito visual sob medida pro seu nicho, não um tema pronto.",
+      "fastOnMobileAndPolishedOn": "Rápido no celular e bonito em qualquer tela.",
+      "aClearPathFromAWebsite": "Pensado pra transformar visita em mensagem no seu WhatsApp.",
+      "aWebsiteThatTurnsVisitorsInto": "Um site que faz o visitante parar e",
+      "customers": "virar cliente.",
+      "thisWebsiteIsOneExampleOf": "O site que você está navegando agora já é um exemplo do que a gente faz. Lá fora, o nosso trabalho está no ar até na França, no site da Messiê Forró. Cada nicho ganha um conceito próprio e um caminho claro pro WhatsApp.",
+      "idLikeAWebsiteLikeThis": "Quero um site assim",
+      "category": "Site imersivo"
+    },
+    "finalCta": {
+      "tellUsWhatYouHaveIn": "Me conta o que você quer.",
+      "wellBuildItWithYou": "A gente faz o seu.",
+      "bringYourIdeaWellHelpTurn": "Você chega com a ideia, a gente devolve funcionando. Sem enrolação, sem contrato eterno.",
+      "chatOnWhatsapp": "Chamar no WhatsApp",
+      "exploreTheDemosAgain": "Ver os exemplos de novo"
+    },
+    "hero": {
+      "aiWebsitesAppsAnalytics": "Assistentes de IA · Apps · Sites",
+      "keepYourBusinessServingCustomers": "Sua empresa atendendo e vendendo",
+      "andSellingAroundTheClock": "no piloto automático.",
+      "vertechBuildsAiSystemsWebsitesMobile": "A Vertech constrói assistentes de IA, aplicativos e sites que trabalham pela sua empresa. Role e veja os exemplos funcionando de verdade. Gostou de um? Chama no WhatsApp que a gente faz o seu.",
+      "exploreLiveDemos": "Ver os exemplos ao vivo",
+      "chatOnWhatsapp": "Chamar no WhatsApp",
+      "inProductionLeilaIaOdontoconnectMessi": "Já em produção · Leila IA · OdontoConnect · Messiê Forró · VertechNews · Padaria Dona Rosa",
+      "scrollToTheDemos": "Rolar para os exemplos"
+    },
+    "pasAncoragem": {
+      "theProblem": "O problema",
+      "slowRepliesCanCostYouCustomers": "Você perde cliente toda vez que não responde na hora.",
+      "theCost": "O que isso custa",
+      "aMessageLeftUnansweredOvernightOr": "Cada mensagem sem resposta no fim de semana ou de madrugada é um orçamento que foi pra outro. E contratar gente pra isso custa caro.",
+      "theSolution": "A saída",
+      "vertechsAiRespondsPromptlyEveryDay": "A IA da Vertech atende na hora, todo dia, e te entrega o cliente já aquecido.",
+      "whyNow": "Por que agora",
+      "keepTheConversationGoing": "Todo cliente que você não responde na hora",
+      "whileYourCustomersAreReadyTo": "vira venda do concorrente.",
+      "aReceptionist": "Uma recepcionista",
+      "fromBrl1800PerMonth": "A partir de R$ 1.800 por mês",
+      "plusEmploymentCostsHolidaysAndTime": "Mais encargos, férias e folga. E mesmo assim ninguém atende de madrugada.",
+      "aVertechAiAssistant": "Um assistente de IA da Vertech",
+      "available24HoursADayEvery": "Trabalha 24 horas, todos os dias",
+      "projectScopeAndIntegrationsDetermineThe": "Por uma fração disso. Menos do que você gasta com um cafezinho por dia. E sites profissionais começam em R$ 1.000.",
+      "letsTalkAboutMyProject": "Quero parar de perder cliente"
+    },
+    "proofBar": {
+      "projectsLive": "projetos no ar",
+      "clientsWithRecurringServicePlans": "clientes com mensalidade recorrente",
+      "countriesServedBrazilAndFrance": "países atendidos (Brasil e França)",
+      "customerSupportThatKeepsGoing": "atendimento que não para"
+    },
+    "securityLgpd": {
+      "brazilianDataProtection": "Dados no Brasil",
+      "infrastructureAndDataHandlingFollowBrazils": "Infraestrutura e dados tratados conforme a LGPD (Lei 13.709/2018).",
+      "youreInControl": "Você no controle",
+      "yourDataBelongsToYouYou": "Seus dados são seus. Pode pedir acesso, correção ou exclusão quando quiser.",
+      "clearTerms": "Sem letra miúda",
+      "weBuildItYouTestIt": "A gente monta, você testa, e só segue se fizer sentido. Sem contrato eterno.",
+      "confidentialConversations": "Conversas sob sigilo",
+      "weHandleConversationsWithTheCare": "Tratamos as conversas com o cuidado que a sua operação exige.",
+      "securityAndDataProtection": "Segurança e LGPD",
+      "yourAiWithYourData": "A sua IA, com os seus dados",
+      "protected": "protegidos.",
+      "privacyPolicy": "Política de Privacidade",
+      "askAQuestion": "Tirar uma dúvida"
+    },
+    "team": {
+      "ceoCofounder": "CEO · Cofundador",
+      "leadsProductStrategyAndClientRelationships": "Cuida de produto, estratégia e do atendimento direto aos clientes. É com ele que você fala no WhatsApp.",
+      "ctoCofounder": "CTO · Cofundador",
+      "leadsEngineeringAndProductArchitectureMaking": "Lidera a engenharia e a arquitetura dos produtos. Quem garante que a IA funciona de verdade.",
+      "thePeopleBehindTheWork": "Quem faz",
+      "realPeople": "Gente de verdade",
+      "youCanTalkTo": "do outro lado.",
+      "yourMainWhatsappContactIsA": "Quando você chama no WhatsApp, quem responde é sócio da empresa, não um call center.",
+      "photo": "Foto de {name}"
+    },
+    "vitrineIntro": {
+      "aiAssistants": "Assistente de IA",
+      "customerSupportAndSalesOnWhatsapp": "Atende e vende no WhatsApp, 24 horas por dia, sem você precisar estar online.",
+      "customMobileApps": "Aplicativo sob medida",
+      "yourBusinessInYourCustomersPocket": "Seu negócio na mão do cliente: agendamento, gestão e controle no celular.",
+      "websitesThatMakeAnImpression": "Site que impressiona",
+      "aTailoredExperienceThatHelpsVisitors": "Não é site de modelo. É uma experiência que faz o visitante virar cliente.",
+      "exploreOurServices": "Veja funcionando, ao vivo",
+      "fourWaysToPutTechnology": "Três jeitos de pôr a IA",
+      "toWork": "pra trabalhar",
+      "forYourBusiness": " pra você.",
+      "exploreWhatWeBuildThenTry": "Tudo aqui embaixo é de verdade, rodando agora nesta página. Mexa, role, experimente. Quando gostar de um, é só chamar no WhatsApp que a gente faz o seu.",
+      "viewDemo": "Ver demonstração"
+    },
+    "siteHeader": {
+      "services": "Exemplos",
+      "projects": "Cases",
+      "security": "Segurança",
+      "contact": "Contato",
+      "letsTalk": "Falar agora",
+      "chatOnWhatsapp": "Chamar no WhatsApp",
+      "menu": "Menu"
+    },
+    "siteFooter": {
+      "technologyThatKeepsYouAheadAi": "Tecnologia que mantém você à frente. Assistentes de IA, apps e sites que trabalham pela sua empresa.",
+      "talkToVertech": "Falar com a Vertech",
+      "explore": "Navegar",
+      "servicesAndDemos": "Exemplos ao vivo",
+      "realProjects": "Cases reais",
+      "securityAndDataProtection": "Segurança e LGPD",
+      "privacyPolicy": "Política de Privacidade",
+      "contact": "Contato",
+      "muriloOnLinkedin": "LinkedIn Murilo",
+      "jeanOnLinkedin": "LinkedIn Jean",
+      "vertechSoluesCnpj65062423000181BagBrazil": " Vertech Soluções · CNPJ 65.062.423/0001-81 · Bagé/RS",
+      "builtWithOurOwnTechnology": "Feito com tecnologia própria."
+    },
+    "floatingWa": {
+      "chatOnWhatsapp": "Falar no WhatsApp"
+    },
+    "phoneDemo": {
+      "home": "Início",
+      "bookings": "Agenda",
+      "profile": "Perfil",
+      "goodMorning": "Bom dia,",
+      "findASpecialty": "Buscar especialidade",
+      "specialties": "Especialidades",
+      "general": "Clínico",
+      "orthodontics": "Ortodontia",
+      "cleaning": "Limpeza",
+      "dentistsNearYou": "Dentistas perto de você",
+      "drHelenaReis": "Dra. Helena Reis",
+      "generalDentistry": "Clínico geral",
+      "drPauloAntunes": "Dr. Paulo Antunes",
+      "appointmentConfirmed": "Consulta confirmada",
+      "youllReceiveAReminderOnWhatsapp": "Você vai receber o lembrete no WhatsApp",
+      "thursday26June": "Quinta, 26 de junho",
+      "1430RoutineCheckup": "14:30 · Consulta de rotina",
+      "automaticReminderEnabled": "Lembrete automático ativado",
+      "myAppointments": "Minhas consultas",
+      "26Jun": "26 jun",
+      "confirmed": "Confirmada",
+      "10Jul": "10 jul",
+      "booked": "Agendada",
+      "02May": "02 mai",
+      "completed": "Concluída"
+    },
+    "browserDemo": {
+      "lunchBox700g": "Marmita 700g",
+      "brl2990": "R$ 29,90",
+      "breakfast": "Café da manhã",
+      "inStore": "no balcão",
+      "savouryPastries": "Salgados assados",
+      "cakesAndSweets": "Doces e bolos",
+      "freshBreadAtPadariaDonaRosa": "Pães saindo do forno na Padaria Dona Rosa",
+      "since2004Florianpolis": "Desde 2004 · Florianópolis",
+      "bakery": "Padaria",
+      "buildYourOwnLunchBox500g": "Marmita montada do seu jeito — 500g ou 700g, retirada sem fila.",
+      "buildYourLunchBox": "Montar marmita",
+      "onTheMenu": "No cardápio",
+      "scheduleYourPickup": "Agende sua retirada",
+      "chooseYourLunchAndCollectIt": "Monte sua marmita e retire sem pegar fila.",
+      "orderNow": "Pedir agora",
+      "aDistinctIdentityForEveryBusiness": "Cada nicho ganha a sua própria cara"
+    },
+    "chatWindow": {
+      "askAQuestion": "Pergunte alguma coisa...",
+      "status": "online · responde na hora"
+    },
+    "script": {
+      "hiCanIStillBidOn": "Oi! O apartamento do lote 47 ainda dá pra dar lance?",
+      "hiYesBiddingOnLot47": "Oi! Dá sim. O lote 47 (apartamento de 2 quartos no centro) está com lances abertos até dia 24/06, às 14h.",
+      "isFinancingAvailableOrDoI": "E aceita financiamento ou só à vista?",
+      "bankFinancingAndDirectInstalmentsAre": "Aceita financiamento bancário e também parcelamento direto. O lance inicial está em R$ 182.000. Quer que eu te mande a lista de documentos?",
+      "yesPlease": "Quero sim, por favor",
+      "ofCourseIllSendTheDocuments": "Perfeito. Já te envio a documentação e te aviso 30 minutos antes do leilão começar. Qualquer dúvida sobre o edital, é só me chamar."
+    },
+    "showcase": {
+      "aiAssistant": "Assistente de IA",
+      "helpsAuctionBuyers24HoursA": "Atende compradores de leilão 24 horas por dia.",
+      "aWhatsappAiAssistantForAuctioneers": "Assistente de IA no WhatsApp para leiloeiros. Responde dúvidas sobre editais, lotes, documentação e prazos sozinha, treinada nos dados de cada leiloeiro.",
+      "onWhatsapp247": "No WhatsApp, 24/7",
+      "trainedForEachAuctioneer": "Treinada por leiloeiro",
+      "inProduction": "Já em produção",
+      "mobileApp": "Aplicativo",
+      "connectingPatientsAndDentistsOnMobile": "Paciente e dentista conectados no celular.",
+      "aPatientdentistBookingAppBookWithout": "Aplicativo de agendamento paciente-dentista: marca consulta sem ligação, confirma pelo WhatsApp, organiza prontuário e avaliações. Em produção com cliente real.",
+      "bookingWithoutCalls": "Agendamento sem ligação",
+      "whatsappConfirmations": "Confirmação no WhatsApp",
+      "appInProduction": "App em produção",
+      "ourFirstInternationalProjectInLille": "Nosso primeiro case internacional, em Lille (França).",
+      "aWebsiteForABrazilianMusic": "Site da associação de música brasileira em Lille. Redesign cinematográfico, deploy próprio e manutenção recorrente. Cliente que continua com a Vertech.",
+      "france": "França",
+      "cinematicRedesign": "Redesign cinematográfico",
+      "ongoingClient": "Cliente recorrente",
+      "aiNewsPlatform": "Portal de IA",
+      "aiNewsWithAutomatedContentProduction": "Notícias de IA com produção e distribuição automatizadas.",
+      "anArtificialIntelligenceNewsPlatformWith": "Portal de notícias de inteligência artificial, com geração de conteúdo e distribuição multicanal. Produto próprio da Vertech, no ar.",
+      "aigeneratedContent": "Conteúdo por IA",
+      "multipleChannels": "Multicanal",
+      "ourOwnProduct": "Produto próprio",
+      "websiteOrderingSystem": "Site + sistema de pedidos",
+      "aBakeryInFlorianpolisSellingLunch": "Padaria de Floripa vendendo marmita pelo próprio site.",
+      "aWebsiteOnTheBakerysOwn": "Site em domínio próprio com montador de marmita, agendamento de retirada e painel da cozinha (KDS) em tempo real. Cliente recorrente.",
+      "onlineLunchBoxBuilder": "Marmita montável online",
+      "kitchenDisplaySystem": "Painel da cozinha (KDS)"
+    },
+    "privacy": {
+      "privacy": "Política de ",
+      "policy": "Privacidade",
+      "lastUpdated": "Última atualização: ",
+      "thisPrivacyPolicyExplainsHowVertech": "Esta Política de Privacidade explica como a Vertech Soluções trata os dados pessoais de quem visita nosso site, fala conosco pelos nossos canais ou interage com nossas páginas em redes sociais. Levamos a sério a sua privacidade e seguimos a Lei Geral de Proteção de Dados Pessoais — LGPD (Lei nº 13.709/2018).",
+      "1WhoControlsYourData": "1. Quem é o controlador dos dados",
+      "theDataControllerIs": "O controlador dos dados é a ",
+      "RegisteredUnderCnpjNo65062423000181": ", inscrita no CNPJ sob o nº 65.062.423/0001-81, com sede em Bagé/RS, Brasil.",
+      "dataProtectionOfficerDpoAndContact": "Encarregado pelo Tratamento de Dados (DPO) e canal para exercício de direitos:",
+      "2WhatDataWeCollect": "2. Quais dados coletamos",
+      "weCollectOnlyTheDataNeeded": "Coletamos apenas os dados necessários para nos relacionar com você:",
+      "contactDetailsYouProvide": "Dados de contato que você nos fornece",
+      "inFormsThroughOurSchedulingAssistant": " em formulários, no nosso assistente de agendamento ou por mensagem: nome, e-mail, telefone/WhatsApp, nome da empresa e o conteúdo da sua mensagem.",
+      "browsingData": "Dados de navegação",
+      "PagesVisitedDeviceAndBrowser": ": páginas visitadas, tipo de dispositivo e navegador, e identificadores de cookies, para entender o uso do site e melhorá-lo.",
+      "communicationData": "Dados de comunicação",
+      "whenYouContactUsOnWhatsapp": " quando você fala conosco por WhatsApp, e-mail ou redes sociais: número/identificador, histórico da conversa e arquivos que você compartilhar.",
+      "socialMediaInteractionData": "Dados de interação em redes sociais",
+      "WhenYouLikeCommentOn": ": quando você curte, comenta ou interage com as nossas páginas e publicações (por exemplo, no LinkedIn), nós podemos ver e tratar as informações públicas do seu perfil associadas a essa interação — como nome, foto e o conteúdo do comentário — fornecidas a nós pela própria plataforma por meio das APIs oficiais dela.",
+      "3HowWeUseYourData": "3. Para que usamos os seus dados",
+      "toRespondToYourRequestsQuestions": "responder às suas solicitações, dúvidas e pedidos de orçamento;",
+      "toProvideAndAdministerTheServices": "prestar e administrar os serviços contratados;",
+      "toManageOurSocialMediaPresence": "gerenciar nossa presença em redes sociais — publicar conteúdo, moderar e responder comentários e medir o engajamento das nossas publicações;",
+      "toImproveOurWebsiteProductsAnd": "melhorar o site, os nossos produtos e a comunicação;",
+      "toFulfilLegalContractualAndRegulatory": "cumprir obrigações legais, contratuais e regulatórias.",
+      "4LegalBasisLgpd": "4. Base legal (LGPD)",
+      "weProcessPersonalDataOnThe": "Tratamos dados pessoais com fundamento no consentimento, na execução de contrato e de procedimentos preliminares a seu pedido, no cumprimento de obrigação legal e no legítimo interesse — sempre respeitando os seus direitos e liberdades, conforme o art. 7º da LGPD.",
+      "5WhoWeShareDataWith": "5. Com quem compartilhamos",
+      "weDoNotSellYourData": "Não vendemos os seus dados. Podemos compartilhá-los com prestadores de serviço que atuam em nosso nome e sob nossas instruções — por exemplo, provedores de hospedagem, e-mail, agenda, mensageria e plataformas de redes sociais (como Google, Railway, Meta/WhatsApp e LinkedIn) — apenas na medida necessária para operar nossos serviços, e com autoridades quando exigido por lei.",
+      "6Cookies": "6. Cookies",
+      "weUseCookiesEssentialToThe": "Utilizamos cookies essenciais ao funcionamento do site e, quando aplicável, cookies de medição de audiência. Você pode gerenciar ou bloquear cookies nas configurações do seu navegador; alguns recursos podem deixar de funcionar corretamente sem eles.",
+      "7HowLongWeKeepData": "7. Por quanto tempo guardamos",
+      "weKeepDataForAsLong": "Mantemos os dados pelo tempo necessário às finalidades acima ou ao cumprimento de obrigações legais. Encerrada a finalidade, os dados são eliminados ou anonimizados, salvo hipóteses de guarda permitidas pela LGPD.",
+      "8YourRights": "8. Seus direitos",
+      "youMayRequestAtAnyTime": "Você pode, a qualquer momento, solicitar: confirmação da existência de tratamento; acesso aos seus dados; correção de dados incompletos ou desatualizados; anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade; informação sobre compartilhamentos; e revogação do consentimento. Para exercer esses direitos, fale com o nosso encarregado em",
+      "9Security": "9. Segurança",
+      "weTakeReasonableTechnicalAndOrganisational": "Adotamos medidas técnicas e organizacionais razoáveis para proteger os dados contra acesso não autorizado, perda ou alteração. Nenhum sistema é 100% infalível, mas trabalhamos continuamente para reduzir riscos.",
+      "10InternationalTransfers": "10. Transferência internacional",
+      "someOfOurServiceProvidersMay": "Alguns dos nossos prestadores de serviço podem processar dados em servidores localizados fora do Brasil. Nesses casos, adotamos as salvaguardas exigidas pela LGPD para garantir a proteção dos seus dados.",
+      "11ChangesToThisPolicy": "11. Alterações desta política",
+      "weMayUpdateThisPolicyPeriodically": "Podemos atualizar esta Política periodicamente. A versão vigente estará sempre disponível nesta página, com a data da última atualização indicada no topo.",
+      "12Contact": "12. Contato",
+      "questionsAboutThisPolicyOrHow": "Dúvidas sobre esta Política ou sobre o tratamento dos seus dados? Fale com a Vertech Soluções em",
+      "updatedDate": "17 de junho de 2026",
+      "metaTitle": "Política de Privacidade | Vertech Soluções",
+      "metaDescription": "Como a Vertech Soluções coleta, usa, compartilha e protege dados pessoais, em conformidade com a LGPD (Lei 13.709/2018)."
+    }
   }
 }

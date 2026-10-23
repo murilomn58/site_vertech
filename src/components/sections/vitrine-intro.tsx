@@ -1,3 +1,6 @@
+
+import { useLocale, useTranslations } from "next-intl";
+import { SERVICES } from "./investment";
 import type { ReactNode } from "react";
 import { Section, Eyebrow } from "@/components/primitives/section";
 import { Reveal } from "@/components/primitives/reveal";
@@ -30,50 +33,48 @@ const SiteGlyph = (
   </svg>
 );
 
-const CARDS: Card[] = [
-  {
-    n: "01",
-    href: "#demo-chat",
-    titulo: "Assistente de IA",
-    desc: "Atende e vende no WhatsApp, 24 horas por dia, sem você precisar estar online.",
-    icon: ChatGlyph,
-  },
-  {
-    n: "02",
-    href: "#demo-app",
-    titulo: "Aplicativo sob medida",
-    desc: "Seu negócio na mão do cliente: agendamento, gestão e controle no celular.",
-    icon: PhoneGlyph,
-  },
-  {
-    n: "03",
-    href: "#demo-site",
-    titulo: "Site que impressiona",
-    desc: "Não é site de modelo. É uma experiência que faz o visitante virar cliente.",
-    icon: SiteGlyph,
-  },
-];
+
 
 export function VitrineIntro() {
+  const t = useTranslations("website");
+  const CARDS: Card[] = [
+    {
+      n: "01",
+      href: "#demo-chat",
+      titulo: t("vitrineIntro.aiAssistants"),
+      desc: t("vitrineIntro.customerSupportAndSalesOnWhatsapp"),
+      icon: ChatGlyph,
+    },
+    {
+      n: "02",
+      href: "#demo-app",
+      titulo: t("vitrineIntro.customMobileApps"),
+      desc: t("vitrineIntro.yourBusinessInYourCustomersPocket"),
+      icon: PhoneGlyph,
+    },
+    {
+      n: "03",
+      href: "#demo-site",
+      titulo: t("vitrineIntro.websitesThatMakeAnImpression"),
+      desc: t("vitrineIntro.aTailoredExperienceThatHelpsVisitors"),
+      icon: SiteGlyph,
+    },
+  ];
+  const english = useLocale() === "en";
+  const cards = english ? SERVICES.map((s,i)=>({n:String(i+1).padStart(2,"0"),href:s.href,titulo:s.name,desc:s.description,icon:i===0?ChatGlyph:i===2?PhoneGlyph:SiteGlyph})) : CARDS;
   return (
     <Section id="vitrine" width="wide" className="pt-28">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
-          <Eyebrow className="justify-center">Veja funcionando, ao vivo</Eyebrow>
-          <h2 className="mt-5 font-display text-3xl font-bold leading-tight text-ink sm:text-5xl">
-            Três jeitos de pôr a IA{" "}
-            <span className="text-gradient">pra trabalhar</span> pra você.
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-ink-muted">
-            Tudo aqui embaixo é de verdade, rodando agora nesta página. Mexa,
-            role, experimente. Quando gostar de um, é só chamar no WhatsApp que a
-            gente faz o seu.
-          </p>
+          <Eyebrow className="justify-center">{t("vitrineIntro.exploreOurServices")}</Eyebrow>
+          <h2 className="mt-5 font-display text-3xl font-bold leading-tight text-ink sm:text-5xl">{t("vitrineIntro.fourWaysToPutTechnology")}{" "}
+            <span className="text-gradient">{t("vitrineIntro.toWork")}</span>{t("vitrineIntro.forYourBusiness")}</h2>
+          <p className="mt-5 text-base leading-relaxed text-ink-muted">{t("vitrineIntro.exploreWhatWeBuildThenTry")}</p>
         </Reveal>
       </div>
 
-      <div className="mt-14 grid gap-5 md:grid-cols-3">
-        {CARDS.map((c, i) => (
+      <div className={english ? "mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4" : "mt-14 grid gap-5 md:grid-cols-3"}>
+        {cards.map((c, i) => (
           <Reveal key={c.n} delay={i * 0.1}>
             <a href={c.href} className="block h-full">
               <TiltCard className="h-full rounded-3xl" max={5}>
@@ -90,9 +91,7 @@ export function VitrineIntro() {
                   <p className="mt-2.5 text-sm leading-relaxed text-ink-muted">
                     {c.desc}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-cyan">
-                    Ver demonstração
-                    <ArrowRight className="h-3.5 w-3.5" />
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-cyan">{english && i === 3 ? "Explore this service" : t("vitrineIntro.viewDemo")}<ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
               </TiltCard>

@@ -19,16 +19,17 @@ export type Caso = {
   urlLabel?: string;
 };
 
-export const CASES: Caso[] = [
+export function getCases(t: (key: string) => string): Caso[] {
+return [
   {
     id: "leila",
     nome: "Leila IA",
     tipo: "assistente-ia",
-    categoria: "Assistente de IA",
-    tagline: "Atende compradores de leilão 24 horas por dia.",
+    categoria: t("showcase.aiAssistant"),
+    tagline: t("showcase.helpsAuctionBuyers24HoursA"),
     descricao:
-      "Assistente de IA no WhatsApp para leiloeiros. Responde dúvidas sobre editais, lotes, documentação e prazos sozinha, treinada nos dados de cada leiloeiro.",
-    destaques: ["No WhatsApp, 24/7", "Treinada por leiloeiro", "Já em produção"],
+      t("showcase.aWhatsappAiAssistantForAuctioneers"),
+    destaques: [t("showcase.onWhatsapp247"), t("showcase.trainedForEachAuctioneer"), t("showcase.inProduction")],
     url: "https://assistenteleilao.com.br",
     urlLabel: "assistenteleilao.com.br",
   },
@@ -36,21 +37,21 @@ export const CASES: Caso[] = [
     id: "odontoconnect",
     nome: "OdontoConnect",
     tipo: "app",
-    categoria: "Aplicativo",
-    tagline: "Paciente e dentista conectados no celular.",
+    categoria: t("showcase.mobileApp"),
+    tagline: t("showcase.connectingPatientsAndDentistsOnMobile"),
     descricao:
-      "Aplicativo de agendamento paciente-dentista: marca consulta sem ligação, confirma pelo WhatsApp, organiza prontuário e avaliações. Em produção com cliente real.",
-    destaques: ["Agendamento sem ligação", "Confirmação no WhatsApp", "App em produção"],
+      t("showcase.aPatientdentistBookingAppBookWithout"),
+    destaques: [t("showcase.bookingWithoutCalls"), t("showcase.whatsappConfirmations"), t("showcase.appInProduction")],
   },
   {
     id: "messie",
     nome: "Messiê Forró",
     tipo: "site",
-    categoria: "Site imersivo",
-    tagline: "Nosso primeiro case internacional, em Lille (França).",
+    categoria: t("demoSite.category"),
+    tagline: t("showcase.ourFirstInternationalProjectInLille"),
     descricao:
-      "Site da associação de música brasileira em Lille. Redesign cinematográfico, deploy próprio e manutenção recorrente. Cliente que continua com a Vertech.",
-    destaques: ["França", "Redesign cinematográfico", "Cliente recorrente"],
+      t("showcase.aWebsiteForABrazilianMusic"),
+    destaques: [t("showcase.france"), t("showcase.cinematicRedesign"), t("showcase.ongoingClient")],
     url: "https://messieforro.fr",
     urlLabel: "messieforro.fr",
   },
@@ -58,11 +59,11 @@ export const CASES: Caso[] = [
     id: "vertechnews",
     nome: "VertechNews",
     tipo: "outro",
-    categoria: "Portal de IA",
-    tagline: "Notícias de IA com produção e distribuição automatizadas.",
+    categoria: t("showcase.aiNewsPlatform"),
+    tagline: t("showcase.aiNewsWithAutomatedContentProduction"),
     descricao:
-      "Portal de notícias de inteligência artificial, com geração de conteúdo e distribuição multicanal. Produto próprio da Vertech, no ar.",
-    destaques: ["Conteúdo por IA", "Multicanal", "Produto próprio"],
+      t("showcase.anArtificialIntelligenceNewsPlatformWith"),
+    destaques: [t("showcase.aigeneratedContent"), t("showcase.multipleChannels"), t("showcase.ourOwnProduct")],
     url: "https://vertechnews.com",
     urlLabel: "vertechnews.com",
   },
@@ -70,15 +71,16 @@ export const CASES: Caso[] = [
     id: "dona-rosa",
     nome: "Padaria Dona Rosa",
     tipo: "site",
-    categoria: "Site + sistema de pedidos",
-    tagline: "Padaria de Floripa vendendo marmita pelo próprio site.",
+    categoria: t("showcase.websiteOrderingSystem"),
+    tagline: t("showcase.aBakeryInFlorianpolisSellingLunch"),
     descricao:
-      "Site em domínio próprio com montador de marmita, agendamento de retirada e painel da cozinha (KDS) em tempo real. Cliente recorrente.",
-    destaques: ["Marmita montável online", "Painel da cozinha (KDS)", "Cliente recorrente"],
+      t("showcase.aWebsiteOnTheBakerysOwn"),
+    destaques: [t("showcase.onlineLunchBoxBuilder"), t("showcase.kitchenDisplaySystem"), t("showcase.ongoingClient")],
     url: "https://padariadonarosa.com.br",
     urlLabel: "padariadonarosa.com.br",
   },
 ];
+}
 
 /**
  * Slot do vídeo hero (Higgsfield/Kling). Enquanto null, o hero usa o mesh

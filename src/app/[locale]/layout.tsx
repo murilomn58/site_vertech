@@ -83,7 +83,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     logo: "https://vertechsolucoes.com.br/icon.png",
     image: "https://vertechsolucoes.com.br/images/og-image.png",
     description:
-      "A Vertech cria assistentes de IA, aplicativos e sites que atendem e vendem pela sua empresa no WhatsApp.",
+      locale === "en" ? "Vertech builds AI systems, websites, mobile apps and data tools for businesses." : "A Vertech cria assistentes de IA, aplicativos e sites que atendem e vendem pela sua empresa no WhatsApp.",
     email: "admin@vertechsolucoes.com.br",
     telephone: "+5549999551051",
     taxID: "65.062.423/0001-81",

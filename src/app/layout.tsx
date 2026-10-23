@@ -1,3 +1,4 @@
+import { getLocale } from "next-intl/server";
 import { Space_Grotesk, Montserrat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,13 +20,14 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
   return (
-    <html suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={`${spaceGrotesk.variable} ${montserrat.variable} ${jetbrainsMono.variable}`}
       >

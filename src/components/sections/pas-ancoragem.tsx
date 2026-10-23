@@ -1,3 +1,6 @@
+
+import { useLocale, useTranslations } from "next-intl";
+import { Investment } from "./investment";
 import { Section, Eyebrow } from "@/components/primitives/section";
 import { Reveal } from "@/components/primitives/reveal";
 import { WaCta } from "@/components/primitives/wa-cta";
@@ -8,35 +11,38 @@ type Passo = {
   texto: string;
 };
 
-const PASSOS: Passo[] = [
-  {
-    n: "01",
-    rotulo: "O problema",
-    texto: "Você perde cliente toda vez que não responde na hora.",
-  },
-  {
-    n: "02",
-    rotulo: "O que isso custa",
-    texto:
-      "Cada mensagem sem resposta no fim de semana ou de madrugada é um orçamento que foi pra outro. E contratar gente pra isso custa caro.",
-  },
-  {
-    n: "03",
-    rotulo: "A saída",
-    texto:
-      "A IA da Vertech atende na hora, todo dia, e te entrega o cliente já aquecido.",
-  },
-];
+
 
 export function PasAncoragem() {
+  const t = useTranslations("website");
+  const PASSOS: Passo[] = [
+    {
+      n: "01",
+      rotulo: t("pasAncoragem.theProblem"),
+      texto: t("pasAncoragem.slowRepliesCanCostYouCustomers"),
+    },
+    {
+      n: "02",
+      rotulo: t("pasAncoragem.theCost"),
+      texto:
+        t("pasAncoragem.aMessageLeftUnansweredOvernightOr"),
+    },
+    {
+      n: "03",
+      rotulo: t("pasAncoragem.theSolution"),
+      texto:
+        t("pasAncoragem.vertechsAiRespondsPromptlyEveryDay"),
+    },
+  ];
+  const locale = useLocale();
+  if (locale === "en") return <Investment />;
   return (
     <Section id="por-que-agora" width="wide">
       <div className="mx-auto max-w-2xl text-center">
         <Reveal>
-          <Eyebrow className="justify-center">Por que agora</Eyebrow>
-          <h2 className="mt-5 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-[2.8rem]">
-            Todo cliente que você não responde na hora{" "}
-            <span className="text-gradient">vira venda do concorrente.</span>
+          <Eyebrow className="justify-center">{t("pasAncoragem.whyNow")}</Eyebrow>
+          <h2 className="mt-5 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl lg:text-[2.8rem]">{t("pasAncoragem.keepTheConversationGoing")}{" "}
+            <span className="text-gradient">{t("pasAncoragem.whileYourCustomersAreReadyTo")}</span>
           </h2>
         </Reveal>
       </div>
@@ -61,37 +67,23 @@ export function PasAncoragem() {
         <div className="glass overflow-hidden rounded-3xl p-8 sm:p-10">
           <div className="grid items-center gap-8 md:grid-cols-2">
             <div>
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">
-                Uma recepcionista
-              </span>
-              <p className="mt-3 font-display text-2xl font-bold text-ink sm:text-3xl">
-                A partir de R$ 1.800 por mês
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                Mais encargos, férias e folga. E mesmo assim ninguém atende de
-                madrugada.
-              </p>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-ink-faint">{t("pasAncoragem.aReceptionist")}</span>
+              <p className="mt-3 font-display text-2xl font-bold text-ink sm:text-3xl">{t("pasAncoragem.fromBrl1800PerMonth")}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-muted">{t("pasAncoragem.plusEmploymentCostsHolidaysAndTime")}</p>
             </div>
             <div className="md:border-l md:border-line md:pl-8">
-              <span className="font-mono text-xs uppercase tracking-[0.2em] text-cyan">
-                Um assistente de IA da Vertech
-              </span>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-cyan">{t("pasAncoragem.aVertechAiAssistant")}</span>
               <p className="mt-3 font-display text-2xl font-bold text-ink sm:text-3xl">
-                <span className="text-gradient">Trabalha 24 horas, todos os dias</span>
+                <span className="text-gradient">{t("pasAncoragem.available24HoursADayEvery")}</span>
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                Por uma fração disso. Menos do que você gasta com um cafezinho por
-                dia. E sites profissionais começam em R$ 1.000.
-              </p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-muted">{t("pasAncoragem.projectScopeAndIntegrationsDetermineThe")}</p>
             </div>
           </div>
         </div>
       </Reveal>
 
       <Reveal delay={0.2} className="mt-10 text-center">
-        <WaCta intent="outro" size="lg">
-          Quero parar de perder cliente
-        </WaCta>
+        <WaCta intent="outro" size="lg">{t("pasAncoragem.letsTalkAboutMyProject")}</WaCta>
       </Reveal>
     </Section>
   );

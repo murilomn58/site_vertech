@@ -1,13 +1,16 @@
+
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Política de Privacidade | Vertech Soluções",
-  description:
-    "Como a Vertech Soluções coleta, usa, compartilha e protege dados pessoais, em conformidade com a LGPD (Lei 13.709/2018).",
-};
 
-const ATUALIZADO_EM = "17 de junho de 2026";
 
+
+
+export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
+ const {locale}=await params;const t=await getTranslations({locale,namespace:"website.privacy"});
+ return {title:t("metaTitle"),description:t("metaDescription"),alternates:{canonical:"/"+locale+"/privacidade",languages:{"pt-BR":"/pt/privacidade",en:"/en/privacidade","fr-FR":"/fr/privacidade","x-default":"/pt/privacidade"}},openGraph:{url:"https://vertechsolucoes.com.br/"+locale+"/privacidade",title:t("metaTitle"),description:t("metaDescription")}};
+}
 function Secao({ titulo, children }: { titulo: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
@@ -18,31 +21,22 @@ function Secao({ titulo, children }: { titulo: string; children: React.ReactNode
 }
 
 export default function Privacidade() {
+  const t = useTranslations("website");
   return (
     <main className="bg-bg-dark min-h-screen text-off-white">
       <div className="max-w-3xl mx-auto px-6 py-24">
         <p className="font-body text-cyan text-sm tracking-widest uppercase mb-3">
           Vertech Soluções
         </p>
-        <h1 className="font-heading font-bold text-4xl sm:text-5xl text-white">
-          Política de <span className="text-cyan">Privacidade</span>
+        <h1 className="font-heading font-bold text-4xl sm:text-5xl text-white">{t("privacy.privacy")}<span className="text-cyan">{t("privacy.policy")}</span>
         </h1>
-        <p className="mt-4 text-off-white/60">Última atualização: {ATUALIZADO_EM}</p>
+        <p className="mt-4 text-off-white/60">{t("privacy.lastUpdated")}{t("privacy.updatedDate")}</p>
 
-        <p className="mt-8 text-off-white/70 leading-relaxed">
-          Esta Política de Privacidade explica como a Vertech Soluções trata os dados pessoais
-          de quem visita nosso site, fala conosco pelos nossos canais ou interage com nossas
-          páginas em redes sociais. Levamos a sério a sua privacidade e seguimos a Lei Geral de
-          Proteção de Dados Pessoais — LGPD (Lei nº 13.709/2018).
-        </p>
+        <p className="mt-8 text-off-white/70 leading-relaxed">{t("privacy.thisPrivacyPolicyExplainsHowVertech")}</p>
 
-        <Secao titulo="1. Quem é o controlador dos dados">
-          <p>
-            O controlador dos dados é a <strong>Vertech Soluções Inova Simples (I.S.)</strong>,
-            inscrita no CNPJ sob o nº 65.062.423/0001-81, com sede em Bagé/RS, Brasil.
-          </p>
-          <p>
-            Encarregado pelo Tratamento de Dados (DPO) e canal para exercício de direitos:{" "}
+        <Secao titulo={t("privacy.1WhoControlsYourData")}>
+          <p>{t("privacy.theDataControllerIs")}<strong>Vertech Soluções Inova Simples (I.S.)</strong>{t("privacy.RegisteredUnderCnpjNo65062423000181")}</p>
+          <p>{t("privacy.dataProtectionOfficerDpoAndContact")}{" "}
             <a href="mailto:admin@vertechsolucoes.com.br" className="text-cyan hover:underline">
               admin@vertechsolucoes.com.br
             </a>
@@ -50,88 +44,48 @@ export default function Privacidade() {
           </p>
         </Secao>
 
-        <Secao titulo="2. Quais dados coletamos">
-          <p>Coletamos apenas os dados necessários para nos relacionar com você:</p>
+        <Secao titulo={t("privacy.2WhatDataWeCollect")}>
+          <p>{t("privacy.weCollectOnlyTheDataNeeded")}</p>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong>Dados de contato que você nos fornece</strong> em formulários, no nosso
-              assistente de agendamento ou por mensagem: nome, e-mail, telefone/WhatsApp, nome
-              da empresa e o conteúdo da sua mensagem.
-            </li>
+              <strong>{t("privacy.contactDetailsYouProvide")}</strong>{t("privacy.inFormsThroughOurSchedulingAssistant")}</li>
             <li>
-              <strong>Dados de navegação</strong>: páginas visitadas, tipo de dispositivo e
-              navegador, e identificadores de cookies, para entender o uso do site e melhorá-lo.
-            </li>
+              <strong>{t("privacy.browsingData")}</strong>{t("privacy.PagesVisitedDeviceAndBrowser")}</li>
             <li>
-              <strong>Dados de comunicação</strong> quando você fala conosco por WhatsApp,
-              e-mail ou redes sociais: número/identificador, histórico da conversa e arquivos
-              que você compartilhar.
-            </li>
+              <strong>{t("privacy.communicationData")}</strong>{t("privacy.whenYouContactUsOnWhatsapp")}</li>
             <li>
-              <strong>Dados de interação em redes sociais</strong>: quando você curte, comenta
-              ou interage com as nossas páginas e publicações (por exemplo, no LinkedIn), nós
-              podemos ver e tratar as informações públicas do seu perfil associadas a essa
-              interação — como nome, foto e o conteúdo do comentário — fornecidas a nós pela
-              própria plataforma por meio das APIs oficiais dela.
-            </li>
+              <strong>{t("privacy.socialMediaInteractionData")}</strong>{t("privacy.WhenYouLikeCommentOn")}</li>
           </ul>
         </Secao>
 
-        <Secao titulo="3. Para que usamos os seus dados">
+        <Secao titulo={t("privacy.3HowWeUseYourData")}>
           <ul className="list-disc pl-6 space-y-2">
-            <li>responder às suas solicitações, dúvidas e pedidos de orçamento;</li>
-            <li>prestar e administrar os serviços contratados;</li>
-            <li>
-              gerenciar nossa presença em redes sociais — publicar conteúdo, moderar e responder
-              comentários e medir o engajamento das nossas publicações;
-            </li>
-            <li>melhorar o site, os nossos produtos e a comunicação;</li>
-            <li>cumprir obrigações legais, contratuais e regulatórias.</li>
+            <li>{t("privacy.toRespondToYourRequestsQuestions")}</li>
+            <li>{t("privacy.toProvideAndAdministerTheServices")}</li>
+            <li>{t("privacy.toManageOurSocialMediaPresence")}</li>
+            <li>{t("privacy.toImproveOurWebsiteProductsAnd")}</li>
+            <li>{t("privacy.toFulfilLegalContractualAndRegulatory")}</li>
           </ul>
         </Secao>
 
-        <Secao titulo="4. Base legal (LGPD)">
-          <p>
-            Tratamos dados pessoais com fundamento no consentimento, na execução de contrato e
-            de procedimentos preliminares a seu pedido, no cumprimento de obrigação legal e no
-            legítimo interesse — sempre respeitando os seus direitos e liberdades, conforme o
-            art. 7º da LGPD.
-          </p>
+        <Secao titulo={t("privacy.4LegalBasisLgpd")}>
+          <p>{t("privacy.weProcessPersonalDataOnThe")}</p>
         </Secao>
 
-        <Secao titulo="5. Com quem compartilhamos">
-          <p>
-            Não vendemos os seus dados. Podemos compartilhá-los com prestadores de serviço que
-            atuam em nosso nome e sob nossas instruções — por exemplo, provedores de
-            hospedagem, e-mail, agenda, mensageria e plataformas de redes sociais (como Google,
-            Railway, Meta/WhatsApp e LinkedIn) — apenas na medida necessária para operar nossos
-            serviços, e com autoridades quando exigido por lei.
-          </p>
+        <Secao titulo={t("privacy.5WhoWeShareDataWith")}>
+          <p>{t("privacy.weDoNotSellYourData")}</p>
         </Secao>
 
-        <Secao titulo="6. Cookies">
-          <p>
-            Utilizamos cookies essenciais ao funcionamento do site e, quando aplicável, cookies
-            de medição de audiência. Você pode gerenciar ou bloquear cookies nas configurações
-            do seu navegador; alguns recursos podem deixar de funcionar corretamente sem eles.
-          </p>
+        <Secao titulo={t("privacy.6Cookies")}>
+          <p>{t("privacy.weUseCookiesEssentialToThe")}</p>
         </Secao>
 
-        <Secao titulo="7. Por quanto tempo guardamos">
-          <p>
-            Mantemos os dados pelo tempo necessário às finalidades acima ou ao cumprimento de
-            obrigações legais. Encerrada a finalidade, os dados são eliminados ou anonimizados,
-            salvo hipóteses de guarda permitidas pela LGPD.
-          </p>
+        <Secao titulo={t("privacy.7HowLongWeKeepData")}>
+          <p>{t("privacy.weKeepDataForAsLong")}</p>
         </Secao>
 
-        <Secao titulo="8. Seus direitos">
-          <p>
-            Você pode, a qualquer momento, solicitar: confirmação da existência de tratamento;
-            acesso aos seus dados; correção de dados incompletos ou desatualizados;
-            anonimização, bloqueio ou eliminação de dados desnecessários; portabilidade;
-            informação sobre compartilhamentos; e revogação do consentimento. Para exercer esses
-            direitos, fale com o nosso encarregado em{" "}
+        <Secao titulo={t("privacy.8YourRights")}>
+          <p>{t("privacy.youMayRequestAtAnyTime")}{" "}
             <a href="mailto:admin@vertechsolucoes.com.br" className="text-cyan hover:underline">
               admin@vertechsolucoes.com.br
             </a>
@@ -139,33 +93,20 @@ export default function Privacidade() {
           </p>
         </Secao>
 
-        <Secao titulo="9. Segurança">
-          <p>
-            Adotamos medidas técnicas e organizacionais razoáveis para proteger os dados contra
-            acesso não autorizado, perda ou alteração. Nenhum sistema é 100% infalível, mas
-            trabalhamos continuamente para reduzir riscos.
-          </p>
+        <Secao titulo={t("privacy.9Security")}>
+          <p>{t("privacy.weTakeReasonableTechnicalAndOrganisational")}</p>
         </Secao>
 
-        <Secao titulo="10. Transferência internacional">
-          <p>
-            Alguns dos nossos prestadores de serviço podem processar dados em servidores
-            localizados fora do Brasil. Nesses casos, adotamos as salvaguardas exigidas pela
-            LGPD para garantir a proteção dos seus dados.
-          </p>
+        <Secao titulo={t("privacy.10InternationalTransfers")}>
+          <p>{t("privacy.someOfOurServiceProvidersMay")}</p>
         </Secao>
 
-        <Secao titulo="11. Alterações desta política">
-          <p>
-            Podemos atualizar esta Política periodicamente. A versão vigente estará sempre
-            disponível nesta página, com a data da última atualização indicada no topo.
-          </p>
+        <Secao titulo={t("privacy.11ChangesToThisPolicy")}>
+          <p>{t("privacy.weMayUpdateThisPolicyPeriodically")}</p>
         </Secao>
 
-        <Secao titulo="12. Contato">
-          <p>
-            Dúvidas sobre esta Política ou sobre o tratamento dos seus dados? Fale com a Vertech
-            Soluções em{" "}
+        <Secao titulo={t("privacy.12Contact")}>
+          <p>{t("privacy.questionsAboutThisPolicyOrHow")}{" "}
             <a href="mailto:admin@vertechsolucoes.com.br" className="text-cyan hover:underline">
               admin@vertechsolucoes.com.br
             </a>

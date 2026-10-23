@@ -33,7 +33,16 @@ const MESSAGES: Record<Intent, string> = {
  * Monta a URL wa.me com a mensagem da intenção. `ref` opcional adiciona o nome
  * do case de origem ("vim pelo case Leila IA").
  */
-export function buildIntentURL(intent: Intent, ref?: string): string {
+const EN: Record<Intent, string> = {
+ "assistente-ia": "Hi Murilo! I saw Vertech’s AI assistant demo and would like one for my business. How does it work?",
+ app: "Hi Murilo! I saw Vertech’s app demo and would like to discuss a mobile app for my business.",
+ site: "Hi Murilo! I saw Vertech’s websites and would like to discuss a website for my business.",
+ automacao: "Hi Murilo! I would like to discuss automation and data tools for my business.",
+ outro: "Hi Murilo! I found Vertech’s website and would like to discuss a project."
+};
+
+export function buildIntentURL(intent: Intent, ref?: string, locale = "pt"): string {
+  if (locale === "en") return buildWhatsAppURL((EN[intent] ?? EN.outro) + (ref ? ` (from the ${ref} project)` : ""));
   const base = MESSAGES[intent] ?? MESSAGES.outro;
   const msg = ref ? `${base} (vim pelo case ${ref})` : base;
   return buildWhatsAppURL(msg);

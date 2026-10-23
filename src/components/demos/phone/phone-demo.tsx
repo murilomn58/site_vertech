@@ -1,4 +1,6 @@
 "use client";
+import { useTranslations } from "next-intl";
+
 
 import { AnimatePresence, motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
@@ -30,10 +32,11 @@ function StatusBar() {
 }
 
 function BottomNav({ active }: { active: number }) {
+  const t = useTranslations("website");
   const items = [
-    { d: "M3 11l9-8 9 8v8a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z", label: "Início" },
-    { d: "M7 2v3M17 2v3M4 8h16M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z", label: "Agenda" },
-    { d: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0", label: "Perfil" },
+    { d: "M3 11l9-8 9 8v8a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z", label: t("phoneDemo.home") },
+    { d: "M7 2v3M17 2v3M4 8h16M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z", label: t("phoneDemo.bookings") },
+    { d: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0", label: t("phoneDemo.profile") },
   ];
   return (
     <div className="mt-auto flex items-center justify-around border-t border-slate-100 bg-white px-2 py-2.5">
@@ -60,24 +63,25 @@ function BottomNav({ active }: { active: number }) {
 }
 
 function ScreenAgendar() {
+  const t = useTranslations("website");
   return (
     <div className="flex h-full flex-col bg-slate-50">
       <StatusBar />
       <div className="px-5 pt-3">
-        <p className="text-[11px] text-slate-400">Bom dia,</p>
+        <p className="text-[11px] text-slate-400">{t("phoneDemo.goodMorning")}</p>
         <p className="font-display text-lg font-bold text-slate-800">Marina Souza</p>
         <div className="mt-3 flex items-center gap-2 rounded-2xl bg-white px-3 py-2.5 shadow-sm">
           <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-slate-400" strokeWidth="2">
             <circle cx="11" cy="11" r="7" />
             <path d="M21 21l-4-4" strokeLinecap="round" />
           </svg>
-          <span className="text-[11px] text-slate-400">Buscar especialidade</span>
+          <span className="text-[11px] text-slate-400">{t("phoneDemo.findASpecialty")}</span>
         </div>
       </div>
       <div className="mt-4 px-5">
-        <p className="text-[11px] font-semibold text-slate-500">Especialidades</p>
+        <p className="text-[11px] font-semibold text-slate-500">{t("phoneDemo.specialties")}</p>
         <div className="mt-2 grid grid-cols-3 gap-2">
-          {["Clínico", "Ortodontia", "Limpeza"].map((e, i) => (
+          {[t("phoneDemo.general"), t("phoneDemo.orthodontics"), t("phoneDemo.cleaning")].map((e, i) => (
             <div
               key={e}
               className={`flex flex-col items-center gap-1.5 rounded-2xl px-2 py-3 ${
@@ -91,11 +95,11 @@ function ScreenAgendar() {
         </div>
       </div>
       <div className="mt-4 px-5">
-        <p className="text-[11px] font-semibold text-slate-500">Dentistas perto de você</p>
+        <p className="text-[11px] font-semibold text-slate-500">{t("phoneDemo.dentistsNearYou")}</p>
         <div className="mt-2 space-y-2">
           {[
-            { n: "Dra. Helena Reis", e: "Clínico geral", r: "4.9" },
-            { n: "Dr. Paulo Antunes", e: "Ortodontia", r: "4.8" },
+            { n: t("phoneDemo.drHelenaReis"), e: t("phoneDemo.generalDentistry"), r: "4.9" },
+            { n: t("phoneDemo.drPauloAntunes"), e: t("phoneDemo.orthodontics"), r: "4.8" },
           ].map((d) => (
             <div key={d.n} className="flex items-center gap-3 rounded-2xl bg-white p-2.5 shadow-sm">
               <div className="h-9 w-9 flex-none rounded-full bg-gradient-to-br from-cyan to-cyan-dark" />
@@ -116,6 +120,7 @@ function ScreenAgendar() {
 }
 
 function ScreenConfirmacao() {
+  const t = useTranslations("website");
   return (
     <div className="flex h-full flex-col bg-slate-50">
       <StatusBar />
@@ -130,24 +135,24 @@ function ScreenConfirmacao() {
             <path d="M5 12l5 5L20 7" />
           </svg>
         </motion.div>
-        <p className="mt-4 font-display text-base font-bold text-slate-800">Consulta confirmada</p>
-        <p className="mt-1 text-[11px] text-slate-400">Você vai receber o lembrete no WhatsApp</p>
+        <p className="mt-4 font-display text-base font-bold text-slate-800">{t("phoneDemo.appointmentConfirmed")}</p>
+        <p className="mt-1 text-[11px] text-slate-400">{t("phoneDemo.youllReceiveAReminderOnWhatsapp")}</p>
         <div className="mt-5 w-full rounded-2xl bg-white p-4 text-left shadow-sm">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 flex-none rounded-full bg-gradient-to-br from-cyan to-cyan-dark" />
             <div>
-              <p className="text-[11px] font-semibold text-slate-800">Dra. Helena Reis</p>
-              <p className="text-[9px] text-slate-400">Clínico geral</p>
+              <p className="text-[11px] font-semibold text-slate-800">{t("phoneDemo.drHelenaReis")}</p>
+              <p className="text-[9px] text-slate-400">{t("phoneDemo.generalDentistry")}</p>
             </div>
           </div>
           <div className="mt-3 space-y-1.5 border-t border-slate-100 pt-3 text-[10px] text-slate-500">
-            <p>Quinta, 26 de junho</p>
-            <p className="font-semibold text-slate-800">14:30 · Consulta de rotina</p>
+            <p>{t("phoneDemo.thursday26June")}</p>
+            <p className="font-semibold text-slate-800">{t("phoneDemo.1430RoutineCheckup")}</p>
           </div>
         </div>
         <div className="mt-3 flex w-full items-center gap-2 rounded-2xl bg-whatsapp/10 px-3 py-2.5">
           <span className="flex h-5 w-5 items-center justify-center rounded-full bg-whatsapp text-white text-[9px]">✓</span>
-          <span className="text-[10px] font-medium text-emerald-700">Lembrete automático ativado</span>
+          <span className="text-[10px] font-medium text-emerald-700">{t("phoneDemo.automaticReminderEnabled")}</span>
         </div>
       </div>
       <BottomNav active={1} />
@@ -156,17 +161,18 @@ function ScreenConfirmacao() {
 }
 
 function ScreenAgenda() {
+  const t = useTranslations("website");
   return (
     <div className="flex h-full flex-col bg-slate-50">
       <StatusBar />
       <div className="px-5 pt-3">
-        <p className="font-display text-lg font-bold text-slate-800">Minhas consultas</p>
+        <p className="font-display text-lg font-bold text-slate-800">{t("phoneDemo.myAppointments")}</p>
       </div>
       <div className="mt-3 space-y-2 px-5">
         {[
-          { d: "26 jun", h: "14:30", n: "Dra. Helena Reis", s: "Confirmada", c: "text-cyan-dark bg-cyan/10" },
-          { d: "10 jul", h: "09:00", n: "Dr. Paulo Antunes", s: "Agendada", c: "text-amber-600 bg-amber-50" },
-          { d: "02 mai", h: "16:00", n: "Dra. Helena Reis", s: "Concluída", c: "text-slate-400 bg-slate-100" },
+          { d: t("phoneDemo.26Jun"), h: "14:30", n: t("phoneDemo.drHelenaReis"), s: t("phoneDemo.confirmed"), c: "text-cyan-dark bg-cyan/10" },
+          { d: t("phoneDemo.10Jul"), h: "09:00", n: t("phoneDemo.drPauloAntunes"), s: t("phoneDemo.booked"), c: "text-amber-600 bg-amber-50" },
+          { d: t("phoneDemo.02May"), h: "16:00", n: t("phoneDemo.drHelenaReis"), s: t("phoneDemo.completed"), c: "text-slate-400 bg-slate-100" },
         ].map((c) => (
           <div key={c.d + c.h} className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm">
             <div className="flex h-12 w-12 flex-none flex-col items-center justify-center rounded-xl bg-slate-50">

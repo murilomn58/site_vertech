@@ -1,4 +1,6 @@
 "use client";
+import { useTranslations } from "next-intl";
+
 
 import { AnimatePresence, motion, useInView } from "motion/react";
 import Image from "next/image";
@@ -21,8 +23,9 @@ type Props = {
 export function ChatWindow({
   script,
   name = "Leila IA",
-  status = "online · responde na hora",
+  status,
 }: Props) {
+  const t = useTranslations("website");
   const ref = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.35 });
@@ -86,7 +89,7 @@ export function ChatWindow({
         </div>
         <div className="min-w-0">
           <p className="truncate font-display text-sm font-semibold text-ink">{name}</p>
-          <p className="truncate text-[11px] text-cyan-bright">{status}</p>
+          <p className="truncate text-[11px] text-cyan-bright">{status ?? t("chatWindow.status")}</p>
         </div>
       </div>
 
@@ -147,9 +150,7 @@ export function ChatWindow({
 
       {/* input decorativo */}
       <div className="flex items-center gap-2 border-t border-line bg-surface/40 px-3 py-2.5">
-        <div className="flex-1 rounded-full bg-surface-2 px-4 py-2 text-xs text-ink-faint">
-          Pergunte alguma coisa...
-        </div>
+        <div className="flex-1 rounded-full bg-surface-2 px-4 py-2 text-xs text-ink-faint">{t("chatWindow.askAQuestion")}</div>
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan text-navy-deep">
           <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden>
             <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
