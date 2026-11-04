@@ -1,6 +1,6 @@
 
 import { useLocale, useTranslations } from "next-intl";
-import { SERVICES } from "./investment";
+import { getServices } from "./investment";
 import type { ReactNode } from "react";
 import { Section, Eyebrow } from "@/components/primitives/section";
 import { Reveal } from "@/components/primitives/reveal";
@@ -60,8 +60,10 @@ export function VitrineIntro() {
       icon: SiteGlyph,
     },
   ];
-  const english = useLocale() === "en";
-  const cards = english ? SERVICES.map((s,i)=>({n:String(i+1).padStart(2,"0"),href:s.href,titulo:s.name,desc:s.description,icon:i===0?ChatGlyph:i===2?PhoneGlyph:SiteGlyph})) : CARDS;
+  const locale = useLocale();
+  // Inglês e francês (público europeu) mostram os 4 serviços com preço em euro.
+  const english = locale === "en" || locale === "fr";
+  const cards = english ? getServices(locale).map((s,i)=>({n:String(i+1).padStart(2,"0"),href:s.href,titulo:s.name,desc:s.description,icon:i===0?ChatGlyph:i===2?PhoneGlyph:SiteGlyph})) : CARDS;
   return (
     <Section id="vitrine" width="wide" className="pt-28">
       <div className="mx-auto max-w-2xl text-center">
@@ -91,7 +93,7 @@ export function VitrineIntro() {
                   <p className="mt-2.5 text-sm leading-relaxed text-ink-muted">
                     {c.desc}
                   </p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-cyan">{english && i === 3 ? "Explore this service" : t("vitrineIntro.viewDemo")}<ArrowRight className="h-3.5 w-3.5" />
+                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-cyan">{english && i === 3 ? (locale === "fr" ? "Découvrir ce service" : "Explore this service") : t("vitrineIntro.viewDemo")}<ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
               </TiltCard>

@@ -1,5 +1,5 @@
 import createMiddleware from "next-intl/middleware";
-import { NextResponse, type NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
@@ -16,7 +16,23 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(`${CANONICAL_ORIGIN}${pathname}${search}`, 308);
   }
 
-  return intlMiddleware(request);
+  return intlMiddleware(withoutFrench(request));
+}
+
+// Navegador em francês que entra pela raiz cai no /en: o público europeu começa
+// em inglês. O /fr segue no ar, no seletor de idioma e no cookie NEXT_LOCALE
+// (quem escolher FR uma vez volta pro /fr nas próximas visitas).
+function withoutFrench(request: NextRequest): NextRequest {
+  const accept = request.headers.get("accept-language");
+  if (!accept || !/fr/i.test(accept)) return request;
+  const filtered = accept
+    .split(",")
+    .filter((part) => !/^\s*fr(?:[-;]|\s*$)/i.test(part))
+    .join(",");
+  const headers = new Headers(request.headers);
+  if (filtered.trim()) headers.set("accept-language", filtered);
+  else headers.delete("accept-language");
+  return new NextRequest(request, { headers });
 }
 
 export const config = {
