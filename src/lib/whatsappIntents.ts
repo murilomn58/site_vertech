@@ -1,4 +1,5 @@
 import { buildWhatsAppURL } from "@/lib/whatsappBuilder";
+import { BRUNO_WHATSAPP } from "@/lib/constants";
 
 /**
  * Deep-links de WhatsApp por INTENÇÃO da vitrine.
@@ -41,7 +42,17 @@ const EN: Record<Intent, string> = {
  outro: "Hi Murilo! I found Vertech’s website and would like to discuss a project."
 };
 
+// Versão francesa: o WhatsApp vai pro Bruno Zanella (representante na França).
+const FR: Record<Intent, string> = {
+  "assistente-ia": "Bonjour Bruno ! J’ai vu la démo de l’assistant IA de Vertech et j’aimerais en avoir un pour mon entreprise. Comment ça marche ?",
+  app: "Bonjour Bruno ! J’ai vu la démo d’application de Vertech et j’aimerais parler d’une application mobile pour mon entreprise.",
+  site: "Bonjour Bruno ! J’ai vu les sites réalisés par Vertech et j’aimerais parler d’un site pour mon entreprise.",
+  automacao: "Bonjour Bruno ! J’aimerais parler d’automatisation et d’outils de données pour mon entreprise.",
+  outro: "Bonjour Bruno ! J’ai découvert le site de Vertech et j’aimerais parler d’un projet.",
+};
+
 export function buildIntentURL(intent: Intent, ref?: string, locale = "pt"): string {
+  if (locale === "fr") return buildWhatsAppURL((FR[intent] ?? FR.outro) + (ref ? ` (projet ${ref})` : ""), BRUNO_WHATSAPP);
   if (locale === "en") return buildWhatsAppURL((EN[intent] ?? EN.outro) + (ref ? ` (from the ${ref} project)` : ""));
   const base = MESSAGES[intent] ?? MESSAGES.outro;
   const msg = ref ? `${base} (vim pelo case ${ref})` : base;

@@ -2,9 +2,9 @@ import type { Intent } from "@/lib/whatsappIntents";
 
 /**
  * Fonte única dos cases reais EXIBÍVEIS no site.
- * Regra (vault): só Leila IA, OdontoConnect, Messiê Forró, VertechNews e
- * Padaria Dona Rosa podem ser divulgados nominalmente (todos com contrato
- * assinado). Maracujá, Berlim, Arte Trigo etc. são VETADOS.
+ * Regra (vault): só Leila IA, OdontoConnect, Messiê Forró e VertechNews
+ * podem ser divulgados nominalmente (todos com contrato assinado). A padaria
+ * aparece só como projeto de exemplo, sem nome. Maracujá, Berlim, Arte Trigo etc. são VETADOS.
  * Métricas: só o que é verdadeiro/defensável — nunca inventar número.
  */
 export type Caso = {
@@ -68,16 +68,15 @@ return [
     urlLabel: "vertechnews.com",
   },
   {
-    id: "dona-rosa",
-    nome: "Padaria Dona Rosa",
+    // Projeto de exemplo, anonimizado (não fechou contrato): sem nome nem link.
+    id: "padaria-exemplo",
+    nome: t("showcase.bakeryName"),
     tipo: "site",
     categoria: t("showcase.websiteOrderingSystem"),
-    tagline: t("showcase.aBakeryInFlorianpolisSellingLunch"),
+    tagline: t("showcase.aBakerySellingLunchBoxes"),
     descricao:
-      t("showcase.aWebsiteOnTheBakerysOwn"),
-    destaques: [t("showcase.onlineLunchBoxBuilder"), t("showcase.kitchenDisplaySystem"), t("showcase.ongoingClient")],
-    url: "https://padariadonarosa.com.br",
-    urlLabel: "padariadonarosa.com.br",
+      t("showcase.aWebsiteWithLunchBoxBuilder"),
+    destaques: [t("showcase.onlineLunchBoxBuilder"), t("showcase.kitchenDisplaySystem"), t("showcase.sampleProject")],
   },
 ];
 }

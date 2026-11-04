@@ -4,6 +4,20 @@ import { EMAIL, PHONE, LINKEDIN } from "@/lib/constants";
 import { VertechMark } from "@/components/primitives/icons";
 import { WaCta } from "@/components/primitives/wa-cta";
 
+// Representante comercial na França: aparece nas versões inglesa e francesa.
+const BRUNO = {
+  en: {
+    role: "Sales representative in France",
+    message: "Hi Bruno! I found Vertech’s website and would like to discuss a project.",
+    cta: "Chat with Bruno on WhatsApp",
+  },
+  fr: {
+    role: "Représentant commercial en France",
+    message: "Bonjour Bruno ! J’ai découvert le site de Vertech et j’aimerais parler d’un projet.",
+    cta: "Écrire à Bruno sur WhatsApp",
+  },
+} as const;
+
 export function SiteFooter() {
   const t = useTranslations("website");
   const locale = useLocale();
@@ -72,7 +86,7 @@ export function SiteFooter() {
                   {EMAIL}
                 </a>
               </li>
-              {locale === "en" && <li className="space-y-2 border-t border-line pt-4"><p className="font-semibold text-ink">Bruno Zanella</p><p>Sales representative in France</p><a className="block text-cyan" href="tel:+33656680164">+33 6 56 68 01 64</a><a className="block text-cyan hover:underline" href={"https://wa.me/33656680164?text="+encodeURIComponent("Hi Bruno! I found Vertech’s website and would like to discuss a project.")} target="_blank" rel="noopener noreferrer">Chat with Bruno on WhatsApp</a></li>}<li className="flex gap-3 pt-1">
+              {(locale === "en" || locale === "fr") && <li className="space-y-2 border-t border-line pt-4"><p className="font-semibold text-ink">Bruno Zanella</p><p>{BRUNO[locale].role}</p><a className="block text-cyan" href="tel:+33656680164">+33 6 56 68 01 64</a><a className="block text-cyan hover:underline" href={"https://wa.me/33656680164?text="+encodeURIComponent(BRUNO[locale].message)} target="_blank" rel="noopener noreferrer">{BRUNO[locale].cta}</a></li>}<li className="flex gap-3 pt-1">
                 <a
                   href={LINKEDIN.murilo}
                   target="_blank"

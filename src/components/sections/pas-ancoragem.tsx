@@ -35,7 +35,7 @@ export function PasAncoragem() {
     },
   ];
   const locale = useLocale();
-  if (locale === "en") return <Investment />;
+  if (locale === "en" || locale === "fr") return <Investment />;
   return (
     <Section id="por-que-agora" width="wide">
       <div className="mx-auto max-w-2xl text-center">

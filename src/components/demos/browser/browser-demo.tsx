@@ -10,22 +10,22 @@ const serif = { fontFamily: "Georgia, 'Times New Roman', serif" } as const;
 
 
 
-/* Mini-site de padaria com fotos reais (case Padaria Dona Rosa) — o conteúdo que rola dentro do browser */
+/* Mini-site de padaria (projeto de exemplo, anonimizado): o conteúdo que rola dentro do browser */
 function MiniSitePadaria() {
   const t = useTranslations("website");
   const PRODUTOS = [
-    { img: "/images/mock/dona-rosa/buffet.jpg", n: t("browserDemo.lunchBox700g"), p: t("browserDemo.brl2990") },
-    { img: "/images/mock/dona-rosa/cafe.jpg", n: t("browserDemo.breakfast"), p: t("browserDemo.inStore") },
-    { img: "/images/mock/dona-rosa/coxinha.jpg", n: t("browserDemo.savouryPastries"), p: t("browserDemo.inStore") },
-    { img: "/images/mock/dona-rosa/confeitaria.jpg", n: t("browserDemo.cakesAndSweets"), p: t("browserDemo.inStore") },
+    { img: "/images/mock/padaria-exemplo/buffet.jpg", n: t("browserDemo.lunchBox700g"), p: t("browserDemo.brl2990") },
+    { img: "/images/mock/padaria-exemplo/cafe.jpg", n: t("browserDemo.breakfast"), p: t("browserDemo.inStore") },
+    { img: "/images/mock/padaria-exemplo/coxinha.jpg", n: t("browserDemo.savouryPastries"), p: t("browserDemo.inStore") },
+    { img: "/images/mock/padaria-exemplo/confeitaria.jpg", n: t("browserDemo.cakesAndSweets"), p: t("browserDemo.inStore") },
   ];
   return (
     <div className="text-[#f3e7d3]" style={{ background: "#180f08" }}>
       {/* hero com foto */}
       <div className="relative h-[23rem] overflow-hidden">
         <Image
-          src="/images/mock/dona-rosa/hero-forno.jpg"
-          alt={t("browserDemo.freshBreadAtPadariaDonaRosa")}
+          src="/images/mock/padaria-exemplo/hero-forno.jpg"
+          alt={t("browserDemo.freshBreadFromTheOven")}
           fill
           sizes="500px"
           className="object-cover"
@@ -39,10 +39,8 @@ function MiniSitePadaria() {
           }}
         />
         <div className="absolute inset-x-0 bottom-0 p-6">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#e0a23c]">{t("browserDemo.since2004Florianpolis")}</p>
-          <h3 className="mt-2 text-4xl font-bold leading-[0.95] text-[#f8ecd8]" style={serif}>{t("browserDemo.bakery")}<br />
-            Dona Rosa
-          </h3>
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#e0a23c]">{t("browserDemo.artisanBreadEveryDay")}</p>
+          <h3 className="mt-2 text-4xl font-bold leading-[0.95] text-[#f8ecd8]" style={serif}>{t("browserDemo.bakeryTitle")}</h3>
           <p className="mt-2 text-xs text-[#e7d4b4]">{t("browserDemo.buildYourOwnLunchBox500g")}</p>
           <span className="mt-4 inline-block rounded-full bg-[#e0a23c] px-5 py-2 text-xs font-semibold text-[#180f08]">{t("browserDemo.buildYourLunchBox")}</span>
         </div>
@@ -101,7 +99,7 @@ export function BrowserDemo() {
               <rect x="5" y="11" width="14" height="9" rx="2" />
               <path d="M8 11V7a4 4 0 0 1 8 0v4" />
             </svg>
-            <span className="font-mono text-[10px] text-ink-muted">padariadonarosa.com.br</span>
+            <span className="font-mono text-[10px] text-ink-muted">{t("browserDemo.demoDomain")}</span>
           </div>
         </div>
 

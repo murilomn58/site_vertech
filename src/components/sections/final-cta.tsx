@@ -1,12 +1,13 @@
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Section } from "@/components/primitives/section";
 import { Reveal } from "@/components/primitives/reveal";
 import { WaCta } from "@/components/primitives/wa-cta";
-import { PHONE } from "@/lib/constants";
+import { BRUNO_PHONE, PHONE } from "@/lib/constants";
 
 export function FinalCta() {
   const t = useTranslations("website");
+  const locale = useLocale();
   return (
     <Section id="contato" width="wide">
       <Reveal>
@@ -32,7 +33,7 @@ export function FinalCta() {
             >{t("finalCta.exploreTheDemosAgain")}</a>
           </div>
 
-          <p className="mt-8 font-mono text-xs text-ink-faint">{PHONE}</p>
+          <p className="mt-8 font-mono text-xs text-ink-faint">{locale === "fr" ? BRUNO_PHONE : PHONE}</p>
         </div>
       </Reveal>
     </Section>
