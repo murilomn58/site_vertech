@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 
 export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
  const {locale}=await params;const t=await getTranslations({locale,namespace:"website.privacy"});
- return {title:t("metaTitle"),description:t("metaDescription"),alternates:{canonical:"/"+locale+"/privacidade",languages:{"pt-BR":"/pt/privacidade",en:"/en/privacidade","fr-FR":"/fr/privacidade","x-default":"/pt/privacidade"}},openGraph:{url:"https://vertechsolucoes.com.br/"+locale+"/privacidade",title:t("metaTitle"),description:t("metaDescription")}};
+ return {title:t("metaTitle"),description:t("metaDescription"),alternates:{canonical:"/"+locale+"/privacidade",languages:{"pt-BR":"/pt/privacidade",en:"/en/privacidade","fr-FR":"/fr/privacidade","x-default":"/en/privacidade"}},openGraph:{url:"https://vertechsolucoes.com.br/"+locale+"/privacidade",title:t("metaTitle"),description:t("metaDescription")}};
 }
 function Secao({ titulo, children }: { titulo: string; children: React.ReactNode }) {
   return (
@@ -78,6 +78,7 @@ export default function Privacidade() {
 
         <Secao titulo={t("privacy.6Cookies")}>
           <p>{t("privacy.weUseCookiesEssentialToThe")}</p>
+          <p>{t("privacy.sortlistRadar")}</p>
         </Secao>
 
         <Secao titulo={t("privacy.7HowLongWeKeepData")}>
