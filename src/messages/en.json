@@ -705,9 +705,10 @@
       "4LegalBasisLgpd": "4. Legal basis (LGPD)",
       "weProcessPersonalDataOnThe": "We process personal data on the basis of consent, performance of a contract and preliminary steps at your request, compliance with legal obligations, and legitimate interests, always respecting your rights and freedoms under Article 7 of the LGPD.",
       "5WhoWeShareDataWith": "5. Who we share data with",
-      "weDoNotSellYourData": "We do not sell your data. We may share it with service providers acting on our behalf and under our instructions, such as hosting, email, calendar, messaging and social media providers (including Google, Railway, Meta/WhatsApp and LinkedIn), only as needed to operate our services, and with authorities when required by law.",
+      "weDoNotSellYourData": "We do not sell your data. We may share it with service providers acting on our behalf and under our instructions, such as hosting, email, calendar, messaging and social media providers (including Google, Railway, Meta/WhatsApp, LinkedIn and Sortlist), only as needed to operate our services, and with authorities when required by law.",
       "6Cookies": "6. Cookies",
       "weUseCookiesEssentialToThe": "We use cookies essential to the website's operation and, where applicable, audience measurement cookies. You can manage or block cookies in your browser settings; some features may not work correctly without them.",
+      "sortlistRadar": "We also use Sortlist Radar, an analytics tool by Sortlist (Belgium), to identify the company linked to a visitor's IP address and to measure sessions, clicks, downloads and form submissions, including the non-sensitive data entered in forms, such as name and contact details. It uses cookies and browser local storage. Sortlist processes this data on our behalf, based on our legitimate interest in understanding which companies are interested in our services. You can block this tracking in your browser's privacy settings or with a tracker blocker.",
       "7HowLongWeKeepData": "7. How long we keep data",
       "weKeepDataForAsLong": "We keep data for as long as needed for the purposes above or to comply with legal obligations. Once the purpose has ended, data is deleted or anonymised, except where retention is permitted by the LGPD.",
       "8YourRights": "8. Your rights",
@@ -720,7 +721,7 @@
       "weMayUpdateThisPolicyPeriodically": "We may update this Policy periodically. The current version will always be available on this page, with the date of the latest update shown at the top.",
       "12Contact": "12. Contact",
       "questionsAboutThisPolicyOrHow": "Questions about this Policy or how your data is processed? Contact Vertech Soluções at",
-      "updatedDate": "17 June 2026",
+      "updatedDate": "4 November 2026",
       "metaTitle": "Privacy Policy | Vertech Solutions",
       "metaDescription": "How Vertech Soluções collects, uses, shares and protects personal data under Brazil’s LGPD (Law 13,709/2018)."
     }
