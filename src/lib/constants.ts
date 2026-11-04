@@ -11,6 +11,10 @@ export const WHATSAPP_URL = getWhatsAppUrl();
 export const EMAIL = "admin@vertechsolucoes.com.br";
 export const PHONE = "+55 (49) 99955-1051";
 
+// Bruno Zanella, representante comercial na França: atende o visitante do /fr.
+export const BRUNO_WHATSAPP = "33656680164";
+export const BRUNO_PHONE = "+33 6 56 68 01 64";
+
 export const LINKEDIN = {
   murilo: "https://www.linkedin.com/in/murilonarciso/",
   jean: "https://www.linkedin.com/in/jean-kairo-crispim-a11312284/",
